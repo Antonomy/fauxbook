@@ -1,4 +1,7 @@
 import { useState, useEffect } from 'react';
+import LoginPage from '../LoginPage.js/LoginPage';
+
+
 import NewOrderPage from '../NewOrderPage/NewOrderPage';
 import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
 import FruitsPage from '../FruitsPage/FruitsPage';
