@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import AuthPage from '../AuthPage/AuthPage';
 import NewOrderPage from '../NewOrderPage/NewOrderPage';
 import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
 import FruitsPage from '../FruitsPage/FruitsPage';
@@ -35,7 +34,6 @@ function App() {
             <Route path="/fruits" element={<FruitsPage />} />
             <Route path="/orders/new" element={<NewOrderPage />} />
             <Route path="/orders" element={<OrderHistoryPage/>} />
-            <Route path="/" element={<NewOrderPage />}/>
             <Route path="/signup" element={<SignUpPage />}/>
           </Routes>
         </>
