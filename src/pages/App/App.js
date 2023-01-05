@@ -1,4 +1,8 @@
 import { useState, useEffect } from 'react';
+import { Routes, Route} from 'react-router-dom';
+// Components
+import NavBar from '../../components/NavBar/NavBar';
+// Pages
 import SignUpPage from '../SignUpPage/SignUpPage';
 import LoginPage from '../LoginPage.js/LoginPage';
 import ForgotPasswordPage from '../ForgotPasswordPage/ForgotPasswordPage';
@@ -6,7 +10,7 @@ import PolicyPage from '../PolicyPage/PolicyPage';
 import AboutPage from '../AboutPage/AboutPage';
 import FriendsPage from '../FriendsPage/FriendsPage';
 import PhotosPage from '../PhotosPage/PhotosPage';
-import { Routes, Route} from 'react-router-dom';
+
 
 function App() {
   const [state, setState] = useState(null)
