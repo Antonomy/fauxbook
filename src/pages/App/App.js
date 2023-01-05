@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import LoginPage from '../LoginPage.js/LoginPage';
 import NewOrderPage from '../NewOrderPage/NewOrderPage';
 import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
-import FruitsPage from '../FruitsPage/FruitsPage';
 import SignUpPage from '../SignUpPage/SignUpPage';
 import ForgotPasswordPage from '../ForgotPasswordPage/ForgotPasswordPage';
 import NavBar from '../../components/NavBar/NavBar';
@@ -33,7 +32,6 @@ function App() {
         <>
           <NavBar />
           <Routes>
-            <Route path="/fruits" element={<FruitsPage />} />
             <Route path="/orders/new" element={<NewOrderPage />} />
             <Route path="/orders" element={<OrderHistoryPage/>} />
             <Route path="/signup" element={<SignUpPage />}/>
