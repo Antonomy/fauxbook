@@ -1,11 +1,16 @@
 import { useState, useEffect } from 'react';
-import LoginPage from '../LoginPage.js/LoginPage';
-import NewOrderPage from '../NewOrderPage/NewOrderPage';
-import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
-import SignUpPage from '../SignUpPage/SignUpPage';
-import ForgotPasswordPage from '../ForgotPasswordPage/ForgotPasswordPage';
+import { Routes, Route} from 'react-router-dom';
+// Components
 import NavBar from '../../components/NavBar/NavBar';
-import { Routes, Route} from 'react-router-dom'
+// Pages
+import SignUpPage from '../SignUpPage/SignUpPage';
+import LoginPage from '../LoginPage.js/LoginPage';
+import ForgotPasswordPage from '../ForgotPasswordPage/ForgotPasswordPage';
+import PolicyPage from '../PolicyPage/PolicyPage';
+import AboutPage from '../AboutPage/AboutPage';
+import FriendsPage from '../FriendsPage/FriendsPage';
+import PhotosPage from '../PhotosPage/PhotosPage';
+
 
 function App() {
   const [state, setState] = useState(null)
@@ -32,11 +37,14 @@ function App() {
         <>
           <NavBar />
           <Routes>
-            <Route path="/orders/new" element={<NewOrderPage />} />
-            <Route path="/orders" element={<OrderHistoryPage/>} />
-            <Route path="/signup" element={<SignUpPage />}/>
-            <Route path="/forgotpassword" element={<ForgotPasswordPage />}/>
             <Route path="/" element={<LoginPage />}/>
+            <Route path="/signup" element={<SignUpPage />}/>
+            <Route path="/login" element={<LoginPage />}/>
+            <Route path="/forgotpassword" element={<ForgotPasswordPage />}/>
+            <Route path="/policy" element={<PolicyPage />}/>
+            <Route path="/about" element={<AboutPage />}/>
+            <Route path="/friends" element={<FriendsPage />}/>
+            <Route path="/photos" element={<PhotosPage />}/>
           </Routes>
         </>
         //  :
