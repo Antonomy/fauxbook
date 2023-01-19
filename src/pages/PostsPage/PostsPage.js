@@ -1,4 +1,6 @@
 import styles from './PostsPage.module.scss'
+
+import NavBar from "../../components/NavBar/NavBar"
 import PostForm from '../../components/PostForm'
 import PhotosPreview from '../../components/PhotosPreview/PhotosPreview'
 
