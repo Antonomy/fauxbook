@@ -32,8 +32,8 @@ export default function LoginForm ({ setUser }) {
           <label>Password</label>
           <input type='password' name='password' value={credentials.password} onChange={handleChange} required />
           <button type='submit'>LOG IN</button>
-          <p>Forgot password?</p>
-          <p>Create A New Account</p>
+          <div className='{styles.div}'>Forgot password?</div>
+          <div className='{styles.div}'>Create A New Account</div>
         </form>
       </div>
       <h1 className='error-message'>&nbsp;{error}</h1>
