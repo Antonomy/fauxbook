@@ -10,6 +10,7 @@ import PolicyPage from '../PolicyPage/PolicyPage';
 import AboutPage from '../AboutPage/AboutPage';
 import FriendsPage from '../FriendsPage/FriendsPage';
 import PhotosPage from '../PhotosPage/PhotosPage';
+import NewsFeedPage from '../NewsFeedPage/NewsFeedPage';
 
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
             <Route path="/login" element={<LoginPage />}/>
             <Route path="/forgotpassword" element={<ForgotPasswordPage />}/>
             <Route path="/policy" element={<PolicyPage />}/>
+            <Route path="/newsfeed" element={<NewsFeedPage />} />
             <Route path="/about" element={<AboutPage />}/>
             <Route path="/friends" element={<FriendsPage />}/>
             <Route path="/photos" element={<PhotosPage />}/>
