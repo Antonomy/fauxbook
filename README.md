@@ -9,6 +9,7 @@ Yeva Gavrilov - Front End Developer
 Antony Yu - Github Manager, Scrum Master
 
 Trello Board:
+https://trello.com/c/ezmA9IwP/3-wireframe
 
 Wireframes:
 ERD:
