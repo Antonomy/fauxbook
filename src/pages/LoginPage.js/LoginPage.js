@@ -6,7 +6,7 @@ export default function LogInPage(props){
     return(
         <main>
             <h1>fauxbook</h1>
-            <p>Connect with friends and the world around on Facebook.</p>
+            <h2>Connect with friends and the world around on Facebook.</h2>
             <LoginForm setUser={props.setUser}/>          
         </main>
     )
