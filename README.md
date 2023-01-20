@@ -11,7 +11,7 @@ Antony Yu - Github Manager, Scrum Master
 Trello Board:
 https://trello.com/b/jDgQKXm7/fauxbook
 
-Wireframes:
+Wireframes:https://trello.com/c/ezmA9IwP/3-wireframe
 ERD:
 
 
