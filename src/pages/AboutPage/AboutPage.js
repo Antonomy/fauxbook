@@ -4,6 +4,7 @@ export default function AboutPage () {
     return (
         <div>
             <div>Bio - this is like a brand statement</div>
+            <div>Birthday</div>
             <div>Workplace</div>
             <div>High School</div>
             <div>College</div>
