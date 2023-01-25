@@ -23,9 +23,10 @@ app.use(require('./config/checkToken'))
 app.use('/api', routes) <====== Finish code once you got it
 */
 app.use('/api/users', require('./routes/api/users'))
-const ensureLoggedIn = require('./config/ensureLoggedIn');
-app.use('/api/items', ensureLoggedIn, require('./routes/api/posts'));
-// app.use('/api/orders', ensureLoggedIn, require('./routes/api/orders'));
+
+// app.use('/api/posts', require('./routes/api/posts'))
+// app.use('/api/comments', require('./routes/api/comments'))
+
 app.get('/api/test', (req, res) => {
     res.json({'eureka': 'you have found it'})
 })

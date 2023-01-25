@@ -1,23 +1,28 @@
 const { Schema, model } = require('mongoose')
 
 const commentSchema = new Schema({
-    commenter: { 
+    // References Post model
+    post: {
+        type: Schema.Types.ObjectId,
+        ref: 'Post',
+    },
+    content: {
         type: String,
-        required: true 
-  },
+        required: true
+    },
     replies: {
         type: String
-  },
+    },
     createdDate: {
         type: Date,
         default: Date.now
     },
     reactions: {
-        type: String 
-    },
-    photo: {
         type: String
     }
+    // photo: {
+    //     type: String
+    // }
 
 })
 
