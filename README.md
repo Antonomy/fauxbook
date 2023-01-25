@@ -1,3 +1,20 @@
+Fauxbook
+
+Contributors:
+Christine Iyer - Database Manager
+Svetlana - API Manager 
+Meilyn Duluc - Designer
+Kenneth Presedo - Documenter
+Yeva Gavrilov - Front End Developer
+Antony Yu - Github Manager, Scrum Master
+
+Trello Board:
+https://trello.com/b/jDgQKXm7/fauxbook
+
+Wireframes:https://trello.com/c/ezmA9IwP/3-wireframe
+ERD:
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

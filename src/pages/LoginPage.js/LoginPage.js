@@ -1,6 +1,7 @@
 // Log In Page
 import "./LoginPage.module.scss"
 import LoginForm from "../../components/LoginForm/LoginForm"
+import styles from './LoginPage.module.scss'
 
 export default function LogInPage(props){
     return(
