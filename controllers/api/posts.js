@@ -1,46 +1,29 @@
-
 const Post = require('../../models/post')
+
 
 const dataController = {
   // Index,
   index (req, res, next) {
-    Post.find({}, (err, foundReviews) => {
+    Post.find({}, (err, foundPosts) => {
       if (err) {
         res.status(400).send({
           msg: err.message
         })
       } else {
-        res.locals.data.reviews = foundReviews
+        res.locals.data.rosts = foundPosts
         next()
       }
     })
   },
 
-  reviewIndex (req, res, next) {
-    Post.find({ movieId: req.params.id}, (err, foundReviews) => {
+  postIndex (req, res, next) {
+    Post.find({ postId: req.params.id}, (err, foundPosts) => {
       if (err) {
         res.status(400).send({
           msg: err.message
         })
       } else {
-        res.locals.data.reviews = foundReviews
-        next()
-      }
-    })
-    .sort({_id:-1})
-    
-  },
-
-  reviewExcludeUserIndex (req, res, next) {
-    Post.find({ $and: [
-      { movieId: req.params.id}, {user: {$ne: req.params.username}}
-    ]}, (err, foundReviews) => {
-      if (err) {
-        res.status(400).send({
-          msg: err.message
-        })
-      } else {
-        res.locals.data.reviews = foundReviews
+        res.locals.data.rosts = foundPosts
         next()
       }
     })
@@ -48,14 +31,16 @@ const dataController = {
     
   },
 
-  userReviewShow (req, res, next) {
-    Post.findOne({ movieId: req.params.id, user: req.params.username}, (err, foundReviews) => {
+  postExcludeUserIndex (req, res, next) {
+    Post.find({ $and: [ //change
+      { postId: req.params.id}, {user: {$ne: req.params.username}} //change
+    ]}, (err, foundPosts) => {
       if (err) {
         res.status(400).send({
           msg: err.message
         })
       } else {
-        res.locals.data.reviews = foundReviews
+        res.locals.data.rosts = foundPosts
         next()
       }
     })
@@ -63,14 +48,29 @@ const dataController = {
     
   },
 
-  userReviewIndex (req, res, next) {
-    Post.find({ user: req.params.username}, (err, foundReviews) => {
+  userPostShow (req, res, next) {
+    Post.findOne({ postId: req.params.id, user: req.params.username}, (err, foundPosts) => {
       if (err) {
         res.status(400).send({
           msg: err.message
         })
       } else {
-        res.locals.data.reviews = foundReviews
+        res.locals.data.posts = foundPosts
+        next()
+      }
+    })
+    .sort({_id:-1})
+    
+  },
+
+  userPostIndex (req, res, next) {
+    Post.find({ user: req.params.username}, (err, foundPosts) => {
+      if (err) {
+        res.status(400).send({
+          msg: err.message
+        })
+      } else {
+        res.locals.data.rosts = foundPosts
         next()
       }
     })
@@ -79,13 +79,13 @@ const dataController = {
   },
   // Destroy
   destroy (req, res, next) {
-    Post.findByIdAndDelete(req.params.id, (err, deletedReview) => {
+    Post.findByIdAndDelete(req.params.id, (err, deletedPost) => {
       if (err) {
         res.status(400).send({
           msg: err.message
         })
       } else {
-        res.locals.data.post = deletedReview
+        res.locals.data.post = deletedPost
         next()
       }
     })
@@ -93,13 +93,13 @@ const dataController = {
   // Update
   update (req, res, next) {
 
-    Post.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedReview) => {
+    Post.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedPost) => {
       if (err) {
         res.status(400).send({
           msg: err.message
         })
       } else {
-        res.locals.data.post = updatedReview
+        res.locals.data.post = updatedPost
         next()
       }
     })
@@ -107,13 +107,13 @@ const dataController = {
   // Create
   create (req, res, next) {
    
-    Post.create(req.body, (err, createdReview) => {
+    Post.create(req.body, (err, createdPost) => {
       if (err) {
         res.status(400).send({
           msg: err.message
         })
       } else {
-        res.locals.data.post = createdReview
+        res.locals.data.post = createdPost
         next()
       }
     })
@@ -121,14 +121,14 @@ const dataController = {
   // Edit
   // Show
   show (req, res, next) {
-    Post.findById(req.params.id, (err, foundReview) => {
+    Post.findById(req.params.id, (err, foundPost) => {
       if (err) {
         res.status(404).send({
           msg: err.message,
           output: 'Could not find a post with that ID'
         })
       } else {
-        res.locals.data.post = foundReview
+        res.locals.data.post = foundPost
         next()
       }
     })
@@ -137,7 +137,7 @@ const dataController = {
 
 const apiController = {
     index (req, res, next) {
-      res.json(res.locals.data.reviews)
+      res.json(res.locals.data.posts)
     },
     show (req, res, next) {
       res.json(res.locals.data.post)
