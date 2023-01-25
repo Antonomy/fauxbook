@@ -1,6 +1,5 @@
 const Post = require('../../models/post')
 
-
 const dataController = {
   // Index,
   index (req, res, next) {
