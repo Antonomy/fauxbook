@@ -9,20 +9,20 @@ const dataController = {
           msg: err.message
         })
       } else {
-        res.locals.data.posts = foundPosts
+        res.locals.data.rosts = foundPosts
         next()
       }
     })
   },
 
   postIndex (req, res, next) {
-    Post.find({ movieId: req.params.id}, (err, foundPosts) => {
+    Post.find({ postId: req.params.id}, (err, foundPosts) => {
       if (err) {
         res.status(400).send({
           msg: err.message
         })
       } else {
-        res.locals.data.posts = foundPosts
+        res.locals.data.rosts = foundPosts
         next()
       }
     })
@@ -31,15 +31,15 @@ const dataController = {
   },
 
   postExcludeUserIndex (req, res, next) {
-    Post.find({ $and: [
-      { movieId: req.params.id}, {user: {$ne: req.params.username}}
+    Post.find({ $and: [ //change
+      { postId: req.params.id}, {user: {$ne: req.params.username}} //change
     ]}, (err, foundPosts) => {
       if (err) {
         res.status(400).send({
           msg: err.message
         })
       } else {
-        res.locals.data.posts = foundPosts
+        res.locals.data.rosts = foundPosts
         next()
       }
     })
@@ -48,7 +48,7 @@ const dataController = {
   },
 
   userPostShow (req, res, next) {
-    Post.findOne({ movieId: req.params.id, user: req.params.username}, (err, foundPosts) => {
+    Post.findOne({ postId: req.params.id, user: req.params.username}, (err, foundPosts) => {
       if (err) {
         res.status(400).send({
           msg: err.message
@@ -69,7 +69,7 @@ const dataController = {
           msg: err.message
         })
       } else {
-        res.locals.data.posts = foundPosts
+        res.locals.data.rosts = foundPosts
         next()
       }
     })
