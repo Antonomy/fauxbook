@@ -22,9 +22,11 @@ const postSchema = new Schema({
      type: String
 }
 
-})
+}, {
+    timestamps: true
+  })
 
-module.exports = post('Post', postSchema)
+module.exports = model('Post', postSchema)
 
 
 
