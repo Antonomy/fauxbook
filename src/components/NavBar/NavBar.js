@@ -12,9 +12,11 @@ export default function NavBar() {
       &nbsp; | &nbsp;
       <Link to="/friends">Friends</Link>
       &nbsp; | &nbsp;
+      <Link to="/requests">Requests</Link>
+      &nbsp; | &nbsp;
       <Link to="/photos">Photos</Link>
       &nbsp; | &nbsp;
-      <Link to="/postspage">USERNAME</Link>
+      <Link to="/posts">USERNAME</Link>
       &nbsp; | &nbsp;
       <br />
       &nbsp;TO BE REMOVED - only here for convenience: &nbsp;

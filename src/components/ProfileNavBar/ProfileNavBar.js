@@ -1,6 +1,5 @@
 import styles from './ProfileNavBar.module.scss';
 import { Link } from 'react-router-dom';
-import ProfileDirectory from '../ProfileDirectory/ProfileDirectory';
 
 export default function ProfileNavBar(props) {
     return (
@@ -18,9 +17,15 @@ export default function ProfileNavBar(props) {
             {/* UNFRIEND button should only show up IF FRIENDS */}
             <button>Unfriend</button>
             {/* This button should .slice user's _id from the recipient's friends array */}
-
-            <Link to="/friends">friends</Link>
-            <ProfileDirectory />
+            <br />
+            
+            <Link to="/postspage">Posts</Link>
+            &nbsp; | &nbsp;
+            <Link to="/about">About</Link>
+            &nbsp; | &nbsp;
+            <Link to="/friends">Friends</Link>
+            &nbsp; | &nbsp;
+            <Link to="/photos">Photos</Link>
         </div>
     )
 }
