@@ -5,7 +5,7 @@ import styles from './SignUpPage.module.scss'
 
 export default class SignUpPage extends Component {
     state = {
-        name: '',
+        firstName: '',
         lastName: '',
         email: '',
         password: '',
@@ -40,7 +40,7 @@ export default class SignUpPage extends Component {
             <div className="form-container">
               <form autoComplete="off" onSubmit={this.handleSubmit}>
                 <label>First Name</label>
-                <input type="text" name="name" value={this.state.name} onChange={this.handleChange} required />
+                <input type="text" name="firstName" value={this.state.firstName} onChange={this.handleChange} required />
                 <label>Last Name</label>
                 <input type="text" name="lastName" value={this.state.lastName} onChange={this.handleChange} required />
                 <label>Email</label>
