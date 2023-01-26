@@ -1,12 +1,12 @@
 // Log In Page
-import "./LoginPage.module.scss"
+import "./LoginPage.css"
 import LoginForm from "../../components/LoginForm/LoginForm"
-import styles from './LoginPage.module.scss'
+
 
 export default function LogInPage(props){
     return(
         <main>
-            <div>
+            <div className="title-box">
             <h1>fauxbook</h1>
             <h2>Connect with friends and the world around on Facebook.</h2>
             </div>  

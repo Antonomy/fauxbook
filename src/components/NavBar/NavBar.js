@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
-
+import './NavBar.css'
 
 export default function NavBar() {
   return (
-    <nav>
-       <Link to="/newsfeed">LOGO</Link>
+    <nav className="nav">
+       <Link to="/newsfeed" className='logo'>LOGO</Link>
        &nbsp; | &nbsp;
       <Link to="/newsfeed">HOMEICON</Link>
       &nbsp; | &nbsp;
