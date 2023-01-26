@@ -16,7 +16,7 @@ const userSchema = new Schema({
           type: String,
           required: true
      },
-     userPassword: {
+     password: {
           type: String,
           trim: true,
           minLength: 3,
@@ -35,7 +35,7 @@ const userSchema = new Schema({
      },
      profilePhoto: {
           type: String,
-          required: true
+          required: false
      },
      currentCity: {
           type: String,
@@ -47,14 +47,14 @@ const userSchema = new Schema({
      },
      coverPhoto: {
           type: String,
-          required: true
+          required: false
      },
      birthday: {
-          type: Date,
+          type: String,
           required: true
      },
      createdDate: {
-          type: Date,
+          type: String,
           required: true
      },
      employer: {
