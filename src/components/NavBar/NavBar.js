@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 
+
 export default function NavBar() {
   return (
     <nav>
@@ -15,7 +16,6 @@ export default function NavBar() {
       &nbsp; | &nbsp;
       <Link to="/posts">USERNAME</Link>
       &nbsp; | &nbsp;
-      <Link to="/posts">Logout</Link>
       <br />
       &nbsp;TO BE REMOVED - only here for convenience: &nbsp;
       <Link to="/policy">Policy</Link>
