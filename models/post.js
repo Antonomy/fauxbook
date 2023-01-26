@@ -1,9 +1,13 @@
 const { Schema, model } = require('mongoose')
 
 const postSchema = new Schema({
-    post: { 
-        type: String,
-        required: true 
+  post: { 
+    type: String,
+    required: false 
+},
+  
+  user: { 
+      type: Schema.Types.ObjectId, ref: 'user' 
   },
 
     comments: { 
