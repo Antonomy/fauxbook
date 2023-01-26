@@ -13,6 +13,7 @@ import FriendsPage from '../FriendsPage/FriendsPage';
 import PhotosPage from '../PhotosPage/PhotosPage';
 import NewsFeedPage from '../NewsFeedPage/NewsFeedPage';
 import PostsPage from '../PostsPage/PostsPage';
+import RequestsPage from '../RequestsPage/RequestsPage';
 
 
 function App() {
@@ -48,6 +49,7 @@ function App() {
             <Route path="/newsfeed" element={<NewsFeedPage />} />
             <Route path="/posts" element={<PostsPage />} />
             <Route path="/about" element={<AboutPage />}/>
+            <Route path="/requests" element={<RequestsPage />}/>
             <Route path="/friends" element={<FriendsPage />}/>
             <Route path="/photos" element={<PhotosPage />}/>
             <Route path="/logout" element={<UserLogOut />}/>

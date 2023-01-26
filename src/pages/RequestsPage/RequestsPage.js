@@ -1,4 +1,4 @@
-import styles from './RequestsListPage.module.scss'
+import styles from './RequestsPage.module.scss'
 import ProfileNavBar from '../../components/ProfileNavBar/ProfileNavBar'
 
 export default function RequestsListPage() {
