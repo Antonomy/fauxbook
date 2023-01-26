@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 
+
 export default function NavBar() {
   return (
     <nav>
@@ -13,9 +14,8 @@ export default function NavBar() {
       &nbsp; | &nbsp;
       <Link to="/photos">Photos</Link>
       &nbsp; | &nbsp;
-      <Link to="/posts">USERNAME</Link>
+      <Link to="/postspage">USERNAME</Link>
       &nbsp; | &nbsp;
-      <Link to="/posts">Logout</Link>
       <br />
       &nbsp;TO BE REMOVED - only here for convenience: &nbsp;
       <Link to="/policy">Policy</Link>
@@ -23,6 +23,8 @@ export default function NavBar() {
       <Link to="/login">Login</Link>
       &nbsp; | &nbsp;
       <Link to="/forgotpassword">Forgot Password</Link>
+      &nbsp; | &nbsp;
+      <Link to="/login">Log Out</Link>
     </nav>
   );
 }

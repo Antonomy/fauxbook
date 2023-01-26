@@ -1,6 +1,5 @@
 const Post = require('../../models/post')
 
-
 const dataController = {
   // Index,
   index (req, res, next) {
@@ -10,20 +9,24 @@ const dataController = {
           msg: err.message
         })
       } else {
-        res.locals.data.rosts = foundPosts
+
+        res.locals.data.posts = foundPosts
+
         next()
       }
     })
   },
 
   postIndex (req, res, next) {
+
     Post.find({ postId: req.params.id}, (err, foundPosts) => {
       if (err) {
         res.status(400).send({
           msg: err.message
         })
       } else {
-        res.locals.data.rosts = foundPosts
+        res.locals.data.posts = foundPosts
+
         next()
       }
     })
@@ -32,15 +35,19 @@ const dataController = {
   },
 
   postExcludeUserIndex (req, res, next) {
+
     Post.find({ $and: [ //change
       { postId: req.params.id}, {user: {$ne: req.params.username}} //change
+
     ]}, (err, foundPosts) => {
       if (err) {
         res.status(400).send({
           msg: err.message
         })
       } else {
-        res.locals.data.rosts = foundPosts
+
+        res.locals.data.posts = foundPosts
+
         next()
       }
     })
@@ -49,6 +56,7 @@ const dataController = {
   },
 
   userPostShow (req, res, next) {
+
     Post.findOne({ postId: req.params.id, user: req.params.username}, (err, foundPosts) => {
       if (err) {
         res.status(400).send({
@@ -70,7 +78,8 @@ const dataController = {
           msg: err.message
         })
       } else {
-        res.locals.data.rosts = foundPosts
+        res.locals.data.posts = foundPosts
+
         next()
       }
     })

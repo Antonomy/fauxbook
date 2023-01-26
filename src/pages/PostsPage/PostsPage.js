@@ -6,12 +6,14 @@ import PostForm from '../../components/PostForm/PostForm'
 import PhotosPreview from '../../components/PhotosPreview/PhotosPreview'
 import UserPosts from '../../components/UserPosts/UserPosts'
 import FriendsPreview from '../../components/FriendsPreview/FriendsPreview'
+import PostsHeader from '../../components/PostsHeader/PostsHeader'
 
 export default function PostsPage () {
     return(
         <div>
         <ProfileNavBar />
         <PostForm />
+        <PostsHeader />
         <UserPosts />
         <PhotosPreview />
         <FriendsPreview />
