@@ -11,6 +11,10 @@ export default function ProfileNavBar(props) {
             </div>
             <img src="" alt="profile picture" />
             <h2>USERNAME</h2>
+            {/* if not friends and not self*/}
+            <button>Request Friend</button>
+            {/* if friends */}
+            
             <Link to="/friends">friends</Link>
             <ProfileDirectory />
         </div>
