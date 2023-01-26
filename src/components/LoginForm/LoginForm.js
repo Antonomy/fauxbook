@@ -27,6 +27,7 @@ export default function LoginForm ({ setUser }) {
     <div>
       <div className='form-container'>
         <form autoComplete='off' onSubmit={handleSubmit}>
+          <div className='form-box'>
           <label>Email</label>
           <input type='email' name='email' value={credentials.email} onChange={handleChange} required />
           <label>Password</label>
@@ -34,6 +35,7 @@ export default function LoginForm ({ setUser }) {
           <button type='submit'>LOG IN</button>
           <p>Forgot password?</p>
           <p>Create A New Account</p>
+          </div>
         </form>
       </div>
       <h1 className='error-message'>&nbsp;{error}</h1>

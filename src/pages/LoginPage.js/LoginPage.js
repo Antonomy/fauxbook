@@ -6,9 +6,11 @@ import styles from './LoginPage.module.scss'
 export default function LogInPage(props){
     return(
         <main>
+            <div>
             <h1>fauxbook</h1>
             <h2>Connect with friends and the world around on Facebook.</h2>
-            <LoginForm setUser={props.setUser}/>          
+            </div>  
+            <LoginForm setUser={props.setUser}/>        
         </main>
     )
 }

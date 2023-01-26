@@ -24,7 +24,7 @@ const userSchema = new Schema({
      },
      phone: {
           type: String,
-          required: true
+          required: false
      },
      email: {
           type: String,
@@ -35,57 +35,64 @@ const userSchema = new Schema({
      },
      profilePhoto: {
           type: String,
-          required: true
+          required: false
      },
      currentCity: {
           type: String,
-          required: true
+          required: false
      },
      accountType: {
           type: String,
-          required: true
+          required: false
      },
      coverPhoto: {
           type: String,
-          required: true
+          required: false
      },
      birthday: {
           type: Date,
-          required: true
+          required: false
      },
      createdDate: {
           type: Date,
-          required: true
+          required: false
      },
      employer: {
-          type: String
+          type: String,required: false
      },
      highSchool: {
-          type: String
+          type: String,required: false
      },
      college: {
-          type: String
+          type: String,
+          required: false
      },
      hometown: {
-          type: String
+          type: String,
+          required: false
      },
      relationshipStatus: {
-          type: String
+          type: String,
+          required: false
      },
      interests: {
-          type: String
+          type: String,
+          required: false
      },
      friends: { 
           type: Schema.Types.ObjectId, ref: 'UserId' 
      },
      sentFriendsRequest: {
-          type: String
+          type: String,
+          required: false
      },
      receivedFriendRequests: {
-          type: String
+          type: String,
+          required: false
      },
      blockedFriends: {
-          type: String
+          type: String,
+          required: false
      }
 
 
@@ -94,16 +101,6 @@ const userSchema = new Schema({
 // sentFriendRequests[]
 // receivedFriendRequests[]
 // blockedFriends[]
-
-
-
-
-
-
-
-
-
-
 
 }, {
      timestamps: true,
