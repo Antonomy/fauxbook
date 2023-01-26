@@ -14,10 +14,7 @@ const postSchema = new Schema({
         type: String,
         required: false
   },
-    createdDate: {
-        type: Date,
-        default: Date.now
-    },
+   
     photo: {
         type: String,
         required: false 
