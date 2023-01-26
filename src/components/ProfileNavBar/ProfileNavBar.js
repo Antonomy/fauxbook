@@ -11,10 +11,14 @@ export default function ProfileNavBar(props) {
             </div>
             <img src="" alt="profile picture" />
             <h2>USERNAME</h2>
-            {/* if not friends and not self*/}
+
+            {/* REQUEST FRIEND button should only show up if NOT FRIENDS and NOT SELF*/}
             <button>Request Friend</button>
-            {/* if friends */}
-            
+            {/* This button should .push() user's _id to the recipients requests array */}
+            {/* UNFRIEND button should only show up IF FRIENDS */}
+            <button>Unfriend</button>
+            {/* This button should .slice user's _id from the recipient's friends array */}
+
             <Link to="/friends">friends</Link>
             <ProfileDirectory />
         </div>

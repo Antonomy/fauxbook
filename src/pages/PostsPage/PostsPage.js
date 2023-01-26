@@ -4,7 +4,7 @@ import NavBar from "../../components/NavBar/NavBar"
 import ProfileNavBar from '../../components/ProfileNavBar/ProfileNavBar'
 import PostForm from '../../components/PostForm/PostForm'
 import PhotosPreview from '../../components/PhotosPreview/PhotosPreview'
-import UserPosts from '../../components/UserPosts/UserPosts'
+import UserPosts from '../../components/Post/Post'
 import FriendsPreview from '../../components/FriendsPreview/FriendsPreview'
 import PostsHeader from '../../components/PostsHeader/PostsHeader'
 
