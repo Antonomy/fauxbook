@@ -3,16 +3,16 @@ const { Schema, model } = require('mongoose')
 const postSchema = new Schema({
     post: { 
         type: String,
-        require: true 
+        required: true 
   },
 
     comments: { 
         type: String,
-        require: false 
+        required: false 
   },
     replies: {
         type: String,
-        require: false
+        required: false
   },
     createdDate: {
         type: Date,
@@ -20,15 +20,15 @@ const postSchema = new Schema({
     },
     photo: {
         type: String,
-        require: false 
+        required: false 
     },
     video: {
         type: String,
-        require: false
+        required: false
     },
     reaction: {
      type: String,
-     require: false
+     required: false
 }
 
 }, {

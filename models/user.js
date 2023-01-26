@@ -6,94 +6,94 @@ const SALT_ROUNDS = 6
 const userSchema = new Schema({
      firstName: {
           type: String,
-          require: true
+          required: true
      },
      lastName: {
           type: String,
-          require: true
+          required: true
      },
      userName: {
           type: String,
-          require: true
+          required: true
      },
      password: {
           type: String,
           trim: true,
           minLength: 3,
-          require: true
+          required: true
      },
      phone: {
           type: String,
-          require: false
+          required: false
      },
      email: {
           type: String,
           unique: true,
           trim: true,
           lowercase: true,
-          require: true
+          required: true
      },
      profilePhoto: {
           type: String,
-          require: false
+          required: false
      },
      currentCity: {
           type: String,
-          require: false
+          required: false
      },
      accountType: {
           type: String,
-          require: false
+          required: false
      },
      coverPhoto: {
           type: String,
-          require: false
+          required: false
      },
      birthday: {
 
           type: Date,
-          require: false
+          required: false
      },
      createdDate: {
           type: Date,
-          require: false
+          required: false
      },
      employer: {
-          type: String,require: false
+          type: String,required: false
      },
      highSchool: {
-          type: String,require: false
+          type: String,required: false
      },
      college: {
           type: String,
-          require: false
+          required: false
      },
      hometown: {
           type: String,
-          require: false
+          required: false
      },
      relationshipStatus: {
           type: String,
-          require: false
+          required: false
      },
      interests: {
           type: String,
-          require: false
+          required: false
      },
      friends: { 
           type: Schema.Types.ObjectId, ref: 'UserId' 
      },
      sentFriendsRequest: {
           type: String,
-          require: false
+          required: false
      },
      receivedFriendRequests: {
           type: String,
-          require: false
+          required: false
      },
      blockedFriends: {
           type: String,
-          require: false
+          required: false
      }
 
 

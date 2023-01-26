@@ -8,7 +8,7 @@ const commentSchema = new Schema({
     },
     content: {
         type: String,
-        require: true
+        required: true
     },
     replies: {
         type: String
