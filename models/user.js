@@ -12,20 +12,6 @@ const userSchema = new Schema({
           type: String,
           required: true
      },
-     userName: {
-          type: String,
-          required: true
-     },
-     userPassword: {
-          type: String,
-          trim: true,
-          minLength: 3,
-          required: true
-     },
-     phone: {
-          type: String,
-          required: false
-     },
      email: {
           type: String,
           unique: true,
@@ -33,6 +19,29 @@ const userSchema = new Schema({
           lowercase: true,
           required: true
      },
+     password: {
+          type: String,
+          trim: true,
+          minLength: 3,
+          required: true
+     },
+     confirm: {
+          type: String,
+          trim: true,
+          minLength: 3,
+          required: true
+     },
+     birthday: {
+          type: Date,
+          required: true
+     },
+
+
+     phone: {
+          type: String,
+          required: false
+     },
+
      profilePhoto: {
           type: String,
           required: false
@@ -49,19 +58,15 @@ const userSchema = new Schema({
           type: String,
           required: false
      },
-     birthday: {
-          type: Date,
-          required: false
-     },
      createdDate: {
           type: Date,
           required: false
      },
      employer: {
-          type: String,required: false
+          type: String, required: false
      },
      highSchool: {
-          type: String,required: false
+          type: String, required: false
      },
      college: {
           type: String,
@@ -79,8 +84,12 @@ const userSchema = new Schema({
           type: String,
           required: false
      },
-     friends: { 
-          type: Schema.Types.ObjectId, ref: 'UserId' 
+     posts: {
+          type: Schema.Types.ObjectId, ref: 'UserId'
+     },
+     
+     friends: {
+          type: Schema.Types.ObjectId, ref: 'UserId'
      },
      sentFriendsRequest: {
           type: String,
@@ -96,11 +105,11 @@ const userSchema = new Schema({
      }
 
 
-// interests []
-// friends[]
-// sentFriendRequests[]
-// receivedFriendRequests[]
-// blockedFriends[]
+     // interests []
+     // friends[]
+     // sentFriendRequests[]
+     // receivedFriendRequests[]
+     // blockedFriends[]
 
 }, {
      timestamps: true,
