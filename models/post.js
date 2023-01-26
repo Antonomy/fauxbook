@@ -1,34 +1,68 @@
 const { Schema, model } = require('mongoose')
 
 const postSchema = new Schema({
+    post: String
+  },
+
+//     comments: { 
+//         type: String,
+//         required: false 
+//   },
+//     replies: {
+//         type: String,
+//         required: false
+//   },
+//     createdDate: {
+//         type: Date,
+//         default: Date.now
+//     },
+//     photo: {
+//         type: String,
+//         required: false 
+//     },
+//     video: {
+//         type: String,
+//         required: false
+//     },
+//     reaction: {
+//      type: String,
+//      required: false
+// }
+
+{
+
     comments: { 
         type: String,
-        required: true 
+        required: false 
   },
     replies: {
-        type: String
+        type: String,
+        required: false
   },
-    createdDate: {
-        type: Date,
-        default: Date.now
-    },
+   
     photo: {
-        type: String 
+        type: String,
+        required: false 
     },
     video: {
-        type: String
+        type: String,
+        required: false
     },
     reaction: {
-     type: String
+     type: String,
+     required: false
 }
 
 }, {
+
     timestamps: true
   })
 
-module.exports = model('Post', postSchema)
 
 
+const Post = model('Post', postSchema)
+
+module.exports = Post
 
 
 

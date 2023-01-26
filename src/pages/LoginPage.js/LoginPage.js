@@ -11,6 +11,7 @@ export default function LogInPage(props){
             <h2>Connect with friends and the world around on Facebook.</h2>
             </div>  
             <LoginForm setUser={props.setUser}/>        
+
         </main>
     )
 }

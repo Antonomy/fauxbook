@@ -1,10 +1,10 @@
-import styles from './UserPosts.module.sass'
+import styles from './Post.module.scss'
 import { Link } from 'react-router-dom'
 import { useState } from "react";
 
 import PostsHeader from '../PostsHeader/PostsHeader';
 
-export default function UserPosts(props) {
+export default function Post(props) {
 const [comment, setComment] = useState("")
 
 const handleChange = (evt) => {
@@ -12,7 +12,7 @@ const handleChange = (evt) => {
 }
     return (
         <div>
-            <div className={styles.UserPosts}>
+            <div className={styles.Post}>
                 <Link to="/postspage">UserName</Link>
                 <p>date posted on</p>
                 <button>...</button>
