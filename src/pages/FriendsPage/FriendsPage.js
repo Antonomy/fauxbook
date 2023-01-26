@@ -1,4 +1,5 @@
 import styles from './FriendsPage.module.scss'
+import User from '../../components/User/User'
 import ProfileNavBar from '../../components/ProfileNavBar/ProfileNavBar'
 
 export default function FriendsPage() {
@@ -7,13 +8,11 @@ export default function FriendsPage() {
             <ProfileNavBar />
             Loop and list out all the user's friends
             <ul>
-                <li>Friend</li>
-                <li>Friend</li>
-                <li>Friend</li>
-                <li>Friend</li>
-                <li>Friend</li>
-                <li>Friend</li>
-                <li>Friend</li>
+                <User />
+                <User />
+                <User />
+                <User />
+                <User />
             </ul>
         </div>
     )

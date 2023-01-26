@@ -1,5 +1,6 @@
 import styles from './RequestsPage.module.scss'
 import ProfileNavBar from '../../components/ProfileNavBar/ProfileNavBar'
+import Request from '../../components/Request/Request'
 
 export default function RequestsListPage() {
     return (
@@ -7,13 +8,12 @@ export default function RequestsListPage() {
             <ProfileNavBar />
             Loop and list out all the user's friends REQUESTS here.
             <ul>
-                <li>FRIEND REQUEST</li>
-                <li>FRIEND REQUEST</li>
-                <li>FRIEND REQUEST</li>
-                <li>FRIEND REQUEST</li>
-                <li>FRIEND REQUEST</li>
-                <li>FRIEND REQUEST</li>
-                <li>FRIEND REQUEST</li>
+                <Request />
+                <Request />
+                <Request />
+                <Request />
+                <Request />
+                <Request />
             </ul>
         </div>
     )

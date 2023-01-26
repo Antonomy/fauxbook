@@ -1,4 +1,4 @@
-import styles from './Post.module.sass'
+import styles from './Post.module.scss'
 import { Link } from 'react-router-dom'
 import { useState } from "react";
 

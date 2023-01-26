@@ -1,10 +1,14 @@
 import styles from './AboutPage.module.scss'
+import User from '../../components/User/User'
 import ProfileNavBar from '../../components/ProfileNavBar/ProfileNavBar'
 
 export default function AboutPage () {
     return (
         <div>
             <ProfileNavBar />
+            <div>
+            <User />
+        </div>
             <div>Bio - this is like a brand statement</div>
             <div>Birthday</div>
             <div>Workplace</div>
