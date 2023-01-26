@@ -1,67 +1,39 @@
 const { Schema, model } = require('mongoose')
 
 const postSchema = new Schema({
-  post: { 
+  post: {
     type: String,
-    required: false 
-},
-  
-  user: { 
-      type: Schema.Types.ObjectId, ref: 'user' 
+    required: false
   },
 
-//     comments: { 
-//         type: String,
-//         required: false 
-//   },
-//     replies: {
-//         type: String,
-//         required: false
-//   },
-//     createdDate: {
-//         type: Date,
-//         default: Date.now
-//     },
-//     photo: {
-//         type: String,
-//         required: false 
-//     },
-//     video: {
-//         type: String,
-//         required: false
-//     },
-//     reaction: {
-//      type: String,
-//      required: false
-// }
-
-{
-
-    comments: { 
-        type: String,
-        required: false 
+  user: {
+    type: Schema.Types.ObjectId, ref: 'user'
   },
-    replies: {
-        type: String,
-        required: false
+  comments: {
+    type: String,
+    required: false
   },
-   
-    photo: {
-        type: String,
-        required: false 
-    },
-    video: {
-        type: String,
-        required: false
-    },
-    reaction: {
-     type: String,
-     required: false
-}
-}, {
-
-    timestamps: true
-  })
+  replies: {
+    type: String,
+    required: false
+  },
+  photo: {
+    type: String,
+    required: false
+  },
+  video: {
+    type: String,
+    required: false
+  },
+  reaction: {
+    type: String,
+    required: false
+  }}
+  ,
+  {
+  timestamps: true
+  }
+)
 
 
 
