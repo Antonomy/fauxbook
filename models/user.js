@@ -16,7 +16,7 @@ const userSchema = new Schema({
           type: String,
           required: true
      },
-     userPassword: {
+     password: {
           type: String,
           trim: true,
           minLength: 3,
@@ -50,6 +50,7 @@ const userSchema = new Schema({
           required: false
      },
      birthday: {
+
           type: Date,
           required: false
      },
