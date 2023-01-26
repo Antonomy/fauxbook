@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Routes, Route} from 'react-router-dom';
 // Components
 import NavBar from '../../components/NavBar/NavBar';
+import UserLogOut from '../../components/UserLogOut/UserLogOut';
 // Pages
 import SignUpPage from '../SignUpPage/SignUpPage';
 import LoginPage from '../LoginPage.js/LoginPage';
@@ -10,6 +11,9 @@ import PolicyPage from '../PolicyPage/PolicyPage';
 import AboutPage from '../AboutPage/AboutPage';
 import FriendsPage from '../FriendsPage/FriendsPage';
 import PhotosPage from '../PhotosPage/PhotosPage';
+import NewsFeedPage from '../NewsFeedPage/NewsFeedPage';
+import PostsPage from '../PostsPage/PostsPage';
+import RequestsPage from '../RequestsPage/RequestsPage';
 
 
 function App() {
@@ -42,9 +46,13 @@ function App() {
             <Route path="/login" element={<LoginPage />}/>
             <Route path="/forgotpassword" element={<ForgotPasswordPage />}/>
             <Route path="/policy" element={<PolicyPage />}/>
+            <Route path="/newsfeed" element={<NewsFeedPage />} />
+            <Route path="/posts" element={<PostsPage />} />
             <Route path="/about" element={<AboutPage />}/>
+            <Route path="/requests" element={<RequestsPage />}/>
             <Route path="/friends" element={<FriendsPage />}/>
             <Route path="/photos" element={<PhotosPage />}/>
+            <Route path="/logout" element={<UserLogOut />}/>
           </Routes>
         </>
         //  :

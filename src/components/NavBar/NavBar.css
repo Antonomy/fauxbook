@@ -1,0 +1,12 @@
+.nav{
+  overflow: hidden;
+  background-color: #1d72e0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  color: red;
+}
+
+.logo{
+  color: red;
+}

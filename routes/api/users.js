@@ -12,4 +12,4 @@ router.post('/login', dataController.login, apiController.auth)
 // GET /api/users/check-token
 router.get('/check-token', ensureLoggedIn, checkToken)
 
-module.exports = router
+module.exports = router 

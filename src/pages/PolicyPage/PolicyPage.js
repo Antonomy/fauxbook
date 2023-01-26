@@ -1,4 +1,4 @@
-
+import styles from './PolicyPage.module.scss'
 export default function PolicyPage(props) {
 return (
     <div>

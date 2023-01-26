@@ -12,20 +12,6 @@ const userSchema = new Schema({
           type: String,
           required: true
      },
-     userName: {
-          type: String,
-          required: true
-     },
-     userPassword: {
-          type: String,
-          trim: true,
-          minLength: 3,
-          required: true
-     },
-     phone: {
-          type: String,
-          required: true
-     },
      email: {
           type: String,
           unique: true,
@@ -33,77 +19,93 @@ const userSchema = new Schema({
           lowercase: true,
           required: true
      },
-     profilePhoto: {
+     password: {
           type: String,
+          trim: true,
+          minLength: 3,
           required: true
      },
-     currentCity: {
+     confirm: {
           type: String,
-          required: true
-     },
-     accountType: {
-          type: String,
-          required: true
-     },
-     coverPhoto: {
-          type: String,
+          trim: true,
+          minLength: 3,
           required: true
      },
      birthday: {
           type: Date,
           required: true
      },
+
+
+     phone: {
+          type: String,
+          required: false
+     },
+
+     profilePhoto: {
+          type: String,
+          required: false
+     },
+     currentCity: {
+          type: String,
+          required: false
+     },
+     accountType: {
+          type: String,
+          required: false
+     },
+     coverPhoto: {
+          type: String,
+          required: false
+     },
      createdDate: {
           type: Date,
-          required: true
+          required: false
      },
      employer: {
-          type: String
+          type: String, required: false
      },
      highSchool: {
-          type: String
+          type: String, required: false
      },
      college: {
-          type: String
+          type: String,
+          required: false
      },
      hometown: {
-          type: String
+          type: String,
+          required: false
      },
      relationshipStatus: {
-          type: String
+          type: String,
+          required: false
      },
      interests: {
-          type: String
+          type: String,
+          required: false
      },
-     friends: { 
-          type: Schema.Types.ObjectId, ref: 'UserId' 
+     friends: {
+          type: Schema.Types.ObjectId, ref: 'UserId'
      },
      sentFriendsRequest: {
-          type: String
+          type: String,
+          required: false
      },
      receivedFriendRequests: {
-          type: String
+          type: String,
+          required: false
      },
      blockedFriends: {
-          type: String
+          type: String,
+          required: false
      }
 
 
-// interests []
-// friends[]
-// sentFriendRequests[]
-// receivedFriendRequests[]
-// blockedFriends[]
-
-
-
-
-
-
-
-
-
-
+     // interests []
+     // friends[]
+     // sentFriendRequests[]
+     // receivedFriendRequests[]
+     // blockedFriends[]
 
 }, {
      timestamps: true,
