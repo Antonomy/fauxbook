@@ -1,7 +1,13 @@
 const { Schema, model } = require('mongoose')
 
 const postSchema = new Schema({
-    post: String
+  post: { 
+    type: String,
+    required: false 
+},
+  
+  user: { 
+      type: Schema.Types.ObjectId, ref: 'user' 
   },
 
 //     comments: { 
@@ -52,7 +58,6 @@ const postSchema = new Schema({
      type: String,
      required: false
 }
-
 }, {
 
     timestamps: true
