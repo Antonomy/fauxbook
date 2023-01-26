@@ -1,4 +1,4 @@
-import styles from './PhotosPreview.module.sass'
+import styles from './PhotosPreview.module.scss'
 
 export default function PhotosPreview () {
     return (

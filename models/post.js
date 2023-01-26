@@ -10,6 +10,33 @@ const postSchema = new Schema({
       type: Schema.Types.ObjectId, ref: 'user' 
   },
 
+//     comments: { 
+//         type: String,
+//         required: false 
+//   },
+//     replies: {
+//         type: String,
+//         required: false
+//   },
+//     createdDate: {
+//         type: Date,
+//         default: Date.now
+//     },
+//     photo: {
+//         type: String,
+//         required: false 
+//     },
+//     video: {
+//         type: String,
+//         required: false
+//     },
+//     reaction: {
+//      type: String,
+//      required: false
+// }
+
+{
+
     comments: { 
         type: String,
         required: false 
@@ -32,12 +59,15 @@ const postSchema = new Schema({
      required: false
 }
 }, {
+
     timestamps: true
   })
 
-module.exports = model('Post', postSchema)
 
 
+const Post = model('Post', postSchema)
+
+module.exports = Post
 
 
 

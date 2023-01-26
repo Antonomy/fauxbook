@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
-
+import './NavBar.css'
 
 export default function NavBar() {
   return (
-    <nav>
-       <Link to="/newsfeed">LOGO</Link>
+    <nav className="nav">
+       <Link to="/newsfeed" className='logo'>LOGO</Link>
        &nbsp; | &nbsp;
       <Link to="/newsfeed">HOMEICON</Link>
       &nbsp; | &nbsp;
@@ -12,9 +12,11 @@ export default function NavBar() {
       &nbsp; | &nbsp;
       <Link to="/friends">Friends</Link>
       &nbsp; | &nbsp;
+      <Link to="/requests">Requests</Link>
+      &nbsp; | &nbsp;
       <Link to="/photos">Photos</Link>
       &nbsp; | &nbsp;
-      <Link to="/postspage">USERNAME</Link>
+      <Link to="/posts">USERNAME</Link>
       &nbsp; | &nbsp;
       <br />
       &nbsp;TO BE REMOVED - only here for convenience: &nbsp;
