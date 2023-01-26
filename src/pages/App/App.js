@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Routes, Route} from 'react-router-dom';
 // Components
 import NavBar from '../../components/NavBar/NavBar';
+import UserLogOut from '../../components/UserLogOut/UserLogOut';
 // Pages
 import SignUpPage from '../SignUpPage/SignUpPage';
 import LoginPage from '../LoginPage.js/LoginPage';
@@ -49,6 +50,7 @@ function App() {
             <Route path="/about" element={<AboutPage />}/>
             <Route path="/friends" element={<FriendsPage />}/>
             <Route path="/photos" element={<PhotosPage />}/>
+            <Route path="/logout" element={<UserLogOut />}/>
           </Routes>
         </>
         //  :
