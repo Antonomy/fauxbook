@@ -33,7 +33,6 @@
     </li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
@@ -49,7 +48,7 @@ This application provides all the basic and necessary functionality needed for a
 - Authorization
 - Authentication
 
-![fauxbook](./public/app_image.png)
+![fauxbook](./public/images/app_image.png)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -137,6 +136,9 @@ Don't forget to give the project a star ⭐! Thanks again!
 
 - Antony Yu: [github](https://github.com/Antonomy) and [Linkedin](https://www.linkedin.com/in/antonyyu/)
 - Svetlana Moes: [github](https://github.com/rouxgamine) and [Linkedin](https://www.linkedin.com/in/svetlana-moes/)
+- Yeva Gavrilov:
+- Kenneth Presedo:
+- Meilyn Duluc:
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
