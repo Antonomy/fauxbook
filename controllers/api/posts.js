@@ -2,7 +2,7 @@ const Post = require('../../models/post')
 
 const dataController = {
   // Index,
-  index (req, res, next) {
+  index(req, res, next) {
     Post.find({}, (err, foundPosts) => {
       if (err) {
         res.status(400).send({
@@ -15,7 +15,7 @@ const dataController = {
     })
   },
   // Destroy
-  destroy (req, res, next) {
+  destroy(req, res, next) {
     Post.findByIdAndDelete(req.params.id, (err, deletedPost) => {
       if (err) {
         res.status(400).send({
@@ -28,7 +28,7 @@ const dataController = {
     })
   },
   // Update
-  update (req, res, next) {
+  update(req, res, next) {
     Post.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedPost) => {
       if (err) {
         res.status(400).send({
@@ -41,7 +41,7 @@ const dataController = {
     })
   },
   // Create
-  create (req, res, next) {
+  create(req, res, next) {
     Post.create(req.body, (err, createdPost) => {
       if (err) {
         res.status(400).send({
@@ -55,7 +55,7 @@ const dataController = {
   },
   // Edit
   // Show
-  show (req, res, next) {
+  show(req, res, next) {
     Post.findById(req.params.id, (err, foundPost) => {
       if (err) {
         res.status(404).send({
@@ -71,12 +71,12 @@ const dataController = {
 }
 
 const apiController = {
-    index (req, res, next) {
-      res.json(res.locals.data.posts)
-    },
-    show (req, res, next) {
-      res.json(res.locals.data.post)
-    }
+  index(req, res, next) {
+    res.json(res.locals.data.posts)
+  },
+  show(req, res, next) {
+    res.json(res.locals.data.post)
   }
+}
 
 module.exports = { dataController, apiController }
