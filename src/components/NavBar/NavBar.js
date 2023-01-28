@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import './NavBar.css'
 import { logOut } from '../../utilities/users-service';
+import logo from './images/logo.png'
 
 export default function NavBar({setUser}) {
   function handleLogOut() {
@@ -9,7 +10,7 @@ export default function NavBar({setUser}) {
 }
   return (
     <nav className="nav">
-       <Link to="/newsfeed" className='logo'>LOGO</Link>
+       <Link to="/newsfeed" className='logo'><img height='100rem' src={logo} /></Link>
        &nbsp; | &nbsp;
       <Link to="/newsfeed">HOMEICON</Link>
       &nbsp; | &nbsp;
