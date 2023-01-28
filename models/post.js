@@ -1,8 +1,11 @@
 const { Schema, model } = require('mongoose')
 
 const postSchema = new Schema({
-    post: String
+  post: {
+    type: String,
+    required: false
   },
+
 
 //     comments: { 
 //         type: String,
@@ -29,38 +32,42 @@ const postSchema = new Schema({
 //      required: false
 // }
 
+
 {
   user: [{ 
+
     type: Schema.Types.ObjectId, ref: 'User'
 
 }],
 
     comments: [{ 
       type: Schema.Types.ObjectId, ref: 'Comment'
-
   }],
     replies: {
         type: String,
         required: false
   },
-   
-    photo: {
-        type: String,
-        required: false 
-    },
-    video: {
-        type: String,
-        required: false
-    },
-    reaction: {
-     type: String,
-     required: false
-}
-
-}, {
-
-    timestamps: true
-  })
+  replies: {
+    type: String,
+    required: false
+  },
+  photo: {
+    type: String,
+    required: false
+  },
+  video: {
+    type: String,
+    required: false
+  },
+  reaction: {
+    type: String,
+    required: false
+  }}
+  ,
+  {
+  timestamps: true
+  }
+)
 
 
 
