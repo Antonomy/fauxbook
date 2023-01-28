@@ -188,6 +188,8 @@ const dataController = {
   update (req, res, next) {
     Post.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedPost) => {
       if (err) {
+        console.log(req.params)
+        console.log(req.body)
         res.status(400).send({
           msg: err.message
         })

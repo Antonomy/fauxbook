@@ -22,7 +22,7 @@ router.delete('/:id', dataController.destroy, apiController.show)
 // Update /api/comments/:id
 router.put('/:id', dataController.update, apiController.show)
 // Create /api/comments
-router.comment('/', dataController.create, apiController.show)
+router.post('/', dataController.create, apiController.show)
 // Show /api/comments/:id
 router.get('/:id', dataController.show, apiController.show)
 
