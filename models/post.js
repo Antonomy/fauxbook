@@ -32,18 +32,20 @@ const postSchema = new Schema({
 //      required: false
 // }
 
-  user: { 
+
+{
+  user: [{ 
+
     type: Schema.Types.ObjectId, ref: 'User'
 
-},
+}],
 
-    comments: { 
+    comments: [{ 
       type: Schema.Types.ObjectId, ref: 'Comment'
-
-  },
-  comments: {
-    type: String,
-    required: false
+  }],
+    replies: {
+        type: String,
+        required: false
   },
   replies: {
     type: String,
