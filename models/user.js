@@ -35,6 +35,10 @@ const userSchema = new Schema({
           type: Date,
           required: true
      },
+     post: {
+          type: Schema.Types.ObjectId,
+          ref: 'Post',
+      },
 
 
      phone: {
@@ -85,7 +89,7 @@ const userSchema = new Schema({
           required: false
      },
      friends: {
-          type: Schema.Types.ObjectId, ref: 'UserId'
+          type: Schema.Types.ObjectId, ref: 'User'
      },
      sentFriendsRequest: {
           type: String,

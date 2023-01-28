@@ -30,10 +30,14 @@ const postSchema = new Schema({
 // }
 
 {
+  user: { 
+    type: Schema.Types.ObjectId, ref: 'User'
+
+},
 
     comments: { 
-        type: String,
-        required: false 
+      type: Schema.Types.ObjectId, ref: 'Comment'
+
   },
     replies: {
         type: String,
