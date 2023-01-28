@@ -5,8 +5,7 @@ import { getUser } from '../../utilities/users-service';
 import NavBar from '../../components/NavBar/NavBar';
 import UserLogOut from '../../components/UserLogOut/UserLogOut';
 // Pages
-import SignUpPage from '../SignUpPage/SignUpPage';
-import LoginPage from '../LoginPage.js/LoginPage';
+import AuthPage from '../AuthPage/AuthPage';
 import ForgotPasswordPage from '../ForgotPasswordPage/ForgotPasswordPage';
 import PolicyPage from '../PolicyPage/PolicyPage';
 import AboutPage from '../AboutPage/AboutPage';
@@ -38,14 +37,14 @@ function App() {
   return (
     <main className="App">
       {
-        // user ?
+        user ?
         <>
           <NavBar setUser={setUser}/>
           <Routes>
-            <Route path="/" element={<LoginPage user={user} setUser={setUser}/>}/>
+            {/* <Route path="/" element={<LoginPage user={user} setUser={setUser}/>}/>
             <Route path="/signup" element={<SignUpPage user={user} setUser={setUser} />}/>
             <Route path="/login" element={<LoginPage user={user} setUser={setUser}/>}/>
-            <Route path="/forgotpassword" element={<ForgotPasswordPage />}/>
+            <Route path="/forgotpassword" element={<ForgotPasswordPage />}/> */}
             <Route path="/policy" element={<PolicyPage />}/>
             <Route path="/newsfeed" element={<NewsFeedPage />} />
             <Route path="/posts" element={<PostsPage />} />
@@ -57,8 +56,9 @@ function App() {
             <Route path="/*" element={<Navigate to="/newsfeed" />} />
           </Routes>
         </>
-        //  :
-        // <LoginPage setUser={setUser}/>
+         :
+        <AuthPage setUser={setUser}/>
+        
       }
     </main>
   );

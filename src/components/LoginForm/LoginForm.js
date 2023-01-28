@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import * as userService from '../../utilities/users-service'
 import { Link, useNavigate} from 'react-router-dom'
+import './LoginForm.css'
 
 export default function LoginForm ({ setUser }) {
   const [credentials, setCredentials] = useState({
@@ -31,6 +32,11 @@ export default function LoginForm ({ setUser }) {
 }
 
   return (
+    <div>
+    <div className="title-box">
+    <h1>fauxbook</h1>
+    <h2>Connect with friends and the world around on Facebook.</h2>
+    </div>  
     <div className='box'>
       <div className='form-container'>
         <form autoComplete='off' onSubmit={handleSubmit}>
@@ -49,6 +55,7 @@ export default function LoginForm ({ setUser }) {
         </form>
       </div>
       <h1 className='error-message'>&nbsp;{error}</h1>
+    </div>
     </div>
   )
 }
