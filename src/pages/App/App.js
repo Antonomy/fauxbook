@@ -38,14 +38,14 @@ function App() {
   return (
     <main className="App">
       {
-        user ?
+        // user ?
         <>
           <NavBar setUser={setUser}/>
           <Routes>
-            {/* <Route path="/" element={<LoginPage user={user} setUser={setUser}/>}/>
+            <Route path="/" element={<LoginPage user={user} setUser={setUser}/>}/>
             <Route path="/signup" element={<SignUpPage user={user} setUser={setUser} />}/>
             <Route path="/login" element={<LoginPage user={user} setUser={setUser}/>}/>
-            <Route path="/forgotpassword" element={<ForgotPasswordPage />}/> */}
+            <Route path="/forgotpassword" element={<ForgotPasswordPage />}/>
             <Route path="/policy" element={<PolicyPage />}/>
             <Route path="/newsfeed" element={<NewsFeedPage />} />
             <Route path="/posts" element={<PostsPage />} />
@@ -57,8 +57,8 @@ function App() {
             <Route path="/*" element={<Navigate to="/newsfeed" />} />
           </Routes>
         </>
-         :
-        <LoginPage setUser={setUser}/>
+        //  :
+        // <LoginPage setUser={setUser}/>
       }
     </main>
   );
