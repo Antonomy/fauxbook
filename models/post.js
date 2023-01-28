@@ -32,7 +32,6 @@ const postSchema = new Schema({
 //      required: false
 // }
 
-{
   user: { 
     type: Schema.Types.ObjectId, ref: 'User'
 
