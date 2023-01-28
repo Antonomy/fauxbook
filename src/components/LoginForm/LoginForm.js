@@ -8,7 +8,7 @@ export default function LoginForm ({ setUser }) {
     password: ''
   })
   const [error, setError] = useState('')
-  // const navigate = useNavigate() 
+  const navigate = useNavigate() 
 
   const handleChange = (evt) => {
     setCredentials({ ...credentials, [evt.target.name]: evt.target.value })
@@ -20,7 +20,7 @@ export default function LoginForm ({ setUser }) {
     try {
       const user = await userService.login(credentials)
       setUser(user)
-      // navigate('/newsfeed')
+      navigate('/newsfeed')
     } catch (error) {
       setError(error.message)
     }
