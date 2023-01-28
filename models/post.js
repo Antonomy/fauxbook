@@ -35,10 +35,10 @@ const postSchema = new Schema({
 
 }],
 
-    comments: { 
+    comments: [{ 
       type: Schema.Types.ObjectId, ref: 'Comment'
 
-  },
+  }],
     replies: {
         type: String,
         required: false
