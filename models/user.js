@@ -25,16 +25,14 @@ const userSchema = new Schema({
           minLength: 3,
           required: true
      },
-     confirm: {
-          type: String,
-          trim: true,
-          minLength: 3,
-          required: true
-     },
+     
      birthday: {
           type: Date,
           required: true
      },
+     post: [{
+          type: Schema.Types.ObjectId, ref: 'Post'
+      }],
 
 
      phone: {
@@ -84,22 +82,22 @@ const userSchema = new Schema({
           type: String,
           required: false
      },
-     friends: {
-          type: Schema.Types.ObjectId, ref: 'UserId'
-     },
-     sentFriendsRequest: {
-          type: String,
-          required: false
-     },
-     receivedFriendRequests: {
-          type: String,
-          required: false
-     },
-     blockedFriends: {
-          type: String,
-          required: false
-     }
-
+     friends: [{
+          type: Schema.Types.ObjectId, ref: 'User'
+          
+     }],
+     sentFriendsRequest: [{
+          type: Schema.Types.ObjectId, ref: 'User'
+          
+     }],
+     receivedFriendRequests: [{
+          type: Schema.Types.ObjectId, ref: 'User'
+          
+     }],
+     blockedFriends: [{
+          type: Schema.Types.ObjectId, ref: 'User'
+          
+     }]
 
      // interests []
      // friends[]

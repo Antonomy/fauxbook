@@ -1,12 +1,19 @@
 import { Link } from 'react-router-dom';
 import './NavBar.css'
+import { logOut } from '../../utilities/users-service';
+import logo from './images/logo.png'
+import homeIcon from './images/home-icon.png'
 
-export default function NavBar() {
+export default function NavBar({setUser}) {
+  function handleLogOut() {
+    logOut();
+    setUser(null);
+}
   return (
     <nav className="nav">
-       <Link to="/newsfeed" className='logo'>LOGO</Link>
+       <Link to="/newsfeed" className='logo'><img height='100rem' src={logo} /></Link>
        &nbsp; | &nbsp;
-      <Link to="/newsfeed">HOMEICON</Link>
+      <Link to="/newsfeed"><img height='25rem' src={homeIcon} /></Link>
       &nbsp; | &nbsp;
       <Link to="/about">About</Link>
       &nbsp; | &nbsp;
@@ -26,7 +33,7 @@ export default function NavBar() {
       &nbsp; | &nbsp;
       <Link to="/forgotpassword">Forgot Password</Link>
       &nbsp; | &nbsp;
-      <Link to="/login">Log Out</Link>
+      <Link onClick={handleLogOut}>Log Out</Link>
     </nav>
   );
 }
