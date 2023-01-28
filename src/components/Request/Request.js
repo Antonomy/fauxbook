@@ -13,7 +13,7 @@ const handleChange = (evt) => {
         <div>
             <ul>
                 <User />
-                <li>Requester Name</li>
+                <li>Requester Name user.request</li>
                 <button>Accept</button>
                 <button>Reject</button>
             </ul>
