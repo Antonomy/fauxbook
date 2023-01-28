@@ -26,6 +26,10 @@ export default function LoginForm ({ setUser }) {
     }
   }
 
+  function handleSignUp() {
+   navigate('/signup')
+}
+
   return (
     <div className='box'>
       <div className='form-container'>
@@ -38,7 +42,7 @@ export default function LoginForm ({ setUser }) {
           <button type='submit'>LOG IN</button>
           <p>Forgot password?</p>
           <div className='create-btn'>
-          <p>Create A New Account</p>
+          <button onClick={handleSignUp}>Create A New Account</button>
           </div>
           </div>
 
