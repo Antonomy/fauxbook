@@ -1,7 +1,12 @@
 import { Link } from 'react-router-dom';
 import './NavBar.css'
+import { logOut } from '../../utilities/users-service';
 
-export default function NavBar() {
+export default function NavBar({setUser}) {
+  function handleLogOut() {
+    logOut();
+    setUser(null);
+}
   return (
     <nav className="nav">
        <Link to="/newsfeed" className='logo'>LOGO</Link>
@@ -26,7 +31,7 @@ export default function NavBar() {
       &nbsp; | &nbsp;
       <Link to="/forgotpassword">Forgot Password</Link>
       &nbsp; | &nbsp;
-      <Link to="/login">Log Out</Link>
+      <Link onClick={handleLogOut}>Log Out</Link>
     </nav>
   );
 }
