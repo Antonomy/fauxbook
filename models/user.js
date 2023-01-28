@@ -25,12 +25,7 @@ const userSchema = new Schema({
           minLength: 3,
           required: true
      },
-     confirm: {
-          type: String,
-          trim: true,
-          minLength: 3,
-          required: true
-     },
+     
      birthday: {
           type: Date,
           required: true
