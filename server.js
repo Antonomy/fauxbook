@@ -26,6 +26,7 @@ app.use('/api/users', require('./routes/api/users'))
 
 app.use('/api/posts', require('./routes/api/posts'))
 // app.use('/api/comments', require('./routes/api/comments'))
+app.use('/api/photos', require('./routes/api/photos'))
 
 app.get('/api/test', (req, res) => {
     res.json({'eureka': 'you have found it'})
