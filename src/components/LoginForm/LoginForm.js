@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import * as userService from '../../utilities/users-service'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate} from 'react-router-dom'
 
 export default function LoginForm ({ setUser }) {
   const [credentials, setCredentials] = useState({
@@ -8,6 +8,7 @@ export default function LoginForm ({ setUser }) {
     password: ''
   })
   const [error, setError] = useState('')
+  const navigate = useNavigate() 
 
   const handleChange = (evt) => {
     setCredentials({ ...credentials, [evt.target.name]: evt.target.value })
@@ -19,6 +20,7 @@ export default function LoginForm ({ setUser }) {
     try {
       const user = await userService.login(credentials)
       setUser(user)
+      navigate('/newsfeed')
     } catch (error) {
       setError(error.message)
     }
