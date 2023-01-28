@@ -35,10 +35,9 @@ const userSchema = new Schema({
           type: Date,
           required: true
      },
-     post: {
-          type: Schema.Types.ObjectId,
-          ref: 'Post',
-      },
+     post: [{
+          type: Schema.Types.ObjectId, ref: 'Post'
+      }],
 
 
      phone: {
@@ -88,22 +87,22 @@ const userSchema = new Schema({
           type: String,
           required: false
      },
-     friends: {
+     friends: [{
           type: Schema.Types.ObjectId, ref: 'User'
-     },
-     sentFriendsRequest: {
-          type: String,
-          required: false
-     },
-     receivedFriendRequests: {
-          type: String,
-          required: false
-     },
-     blockedFriends: {
-          type: String,
-          required: false
-     }
-
+          
+     }],
+     sentFriendsRequest: [{
+          type: Schema.Types.ObjectId, ref: 'User'
+          
+     }],
+     receivedFriendRequests: [{
+          type: Schema.Types.ObjectId, ref: 'User'
+          
+     }],
+     blockedFriends: [{
+          type: Schema.Types.ObjectId, ref: 'User'
+          
+     }]
 
      // interests []
      // friends[]
