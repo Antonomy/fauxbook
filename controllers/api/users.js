@@ -12,9 +12,12 @@ const checkToken = (req, res) => {
 const dataController = {
   async create (req, res, next) {
     try {
+      console.log(req.body)
       const user = await User.create(req.body)
+      console.log(user)
       // token will be a string
       const token = createJWT(user)
+     console.log("? token WTH")
       // send back the token as a string
       // which we need to account for
       // in the client
@@ -55,10 +58,12 @@ module.exports = {
 /* -- Helper Functions -- */
 
 function createJWT (user) {
+  
   return jwt.sign(
     // data payload
     { user },
     process.env.SECRET,
-    { expiresIn: '24h' , allowInsecureKeySizes: true }
+    { expiresIn: '24h'  }
   )
+
 }

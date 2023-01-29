@@ -26,6 +26,7 @@ const userSchema = new Schema({
           required: true
      },
      
+     
      birthday: {
           type: Date,
           required: true
