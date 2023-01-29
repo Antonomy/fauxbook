@@ -3,7 +3,8 @@ import * as userService from '../../utilities/users-service'
 import { Link, useNavigate} from 'react-router-dom'
 import './LoginForm.css'
 
-export default function LoginForm ({ setUser }) {
+
+export default function LoginForm ({ setUser, setShowSignUp}) {
   const [credentials, setCredentials] = useState({
     email: '',
     password: ''
@@ -21,15 +22,13 @@ export default function LoginForm ({ setUser }) {
     try {
       const user = await userService.login(credentials)
       setUser(user)
-      navigate('/newsfeed')
+      // navigate('/newsfeed')
     } catch (error) {
       setError(error.message)
     }
   }
 
-  function handleSignUp() {
-   navigate('/signup')
-}
+
 
   return (
     <div>
@@ -47,13 +46,15 @@ export default function LoginForm ({ setUser }) {
           <input type='password' name='password' value={credentials.password} onChange={handleChange} required />
           <button type='submit'>LOG IN</button>
           <p>Forgot password?</p>
-          <div className='create-btn'>
-          <button onClick={handleSignUp}>Create A New Account</button>
-          </div>
+           <button className='create-btn' onClick={(evt) => {
+            setShowSignUp(true)
+          }}>Create A New Account</button>
+          
           </div>
 
         </form>
       </div>
+      
       <h1 className='error-message'>&nbsp;{error}</h1>
     </div>
     </div>
