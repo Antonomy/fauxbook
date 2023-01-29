@@ -37,7 +37,7 @@ function App() {
   return (
     <main className="App">
       {
-        user ?
+        // user ?
         <>
           <NavBar setUser={setUser}/>
           <Routes>
@@ -56,8 +56,8 @@ function App() {
             <Route path="/*" element={<Navigate to="/newsfeed" />} />
           </Routes>
         </>
-         :
-        <AuthPage setUser={setUser}/>
+        //  :
+        // <AuthPage setUser={setUser}/>
         
       }
     </main>
