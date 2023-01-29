@@ -16,9 +16,9 @@ export default function SignUpForm ({setUser}) {
   const handleSubmit = async (evt) => {
     evt.preventDefault()
     try {
-      // const formData = { ...credentials }
-      // delete formData.error
-      const user = await userService.signUp(credentials)
+      const formData = { ...credentials }
+      delete formData.confirm
+      const user = await userService.signUp(formData)
       setUser(user)
     } catch (error) {
       setError({ error: 'Sign Up Failed' })
