@@ -1,7 +1,9 @@
 import styles from './PostForm.module.sass'
 import { useState } from "react";
 
-export default function PostForm() {
+export default function PostForm({
+    newPost
+}) {
     const [post, setPost] = useState("")
 
     const handleChange = (evt) => {
@@ -10,7 +12,10 @@ export default function PostForm() {
     return (
         <div>
             <div className={styles.postForm}>
-                <form onSubmit>
+                <form onSubmit={(e) => {
+                    e.preventDefault()
+                    newPost()
+                }}>
                     <label>
                         <input type="text" onChange={handleChange} value={post} placeholder='Whats on your mind?' />
                     </label>
