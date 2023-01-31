@@ -146,15 +146,6 @@ export default function PostsPage() {
                     </ul>) : <h1>No posts yet</h1>
 }
             </>
-            {/* <ul> THIS IS A LOOP
-        <Posts />
-        <Posts />
-        <Posts />
-        <Posts />
-        <Posts />
-        </ul> */}
-            {/* <PhotosPreview />
-        <FriendsPreview /> */}
         </div>
     )
 }

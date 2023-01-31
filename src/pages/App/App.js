@@ -19,7 +19,6 @@ import RequestsPage from '../RequestsPage/RequestsPage';
 function App() {
   const [state, setState] = useState(null)
   const [user, setUser ] = useState(getUser())
-
   const fetchState = async () => {
     try {
       const response = await fetch('/api/test')
@@ -39,7 +38,7 @@ function App() {
       {
         user ?
         <>
-          <NavBar setUser={setUser}/>
+          <NavBar setUser={setUser} />
           <Routes>
             {/* <Route path="/" element={<LoginPage user={user} setUser={setUser}/>}/>
             <Route path="/signup" element={<SignUpPage user={user} setUser={setUser} />}/>
@@ -48,7 +47,7 @@ function App() {
             <Route path="/policy" element={<PolicyPage />}/>
             <Route path="/newsfeed" element={<NewsFeedPage />} />
             <Route path="/posts" element={<PostsPage />} />
-            <Route path="/about" element={<AboutPage />}/>
+            <Route path="/about" element={<AboutPage user={user}/>}/>
             <Route path="/requests" element={<RequestsPage />}/>
             <Route path="/friends" element={<FriendsPage />}/>
             <Route path="/photos" element={<PhotosPage />}/>
