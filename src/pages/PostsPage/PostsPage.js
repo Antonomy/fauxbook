@@ -12,8 +12,9 @@ import { useEffect, useState } from 'react'
 
 
 
-export default function PostsPage() {
+export default function PostsPage({user}) {
     /*--- State --- */
+    const [foundUser, setFoundUser] = useState(null)
     const [token, setToken] = useState('')
     const [posts, setPosts] = useState([]);
     const [foundPost, setFoundPost] = useState(null)
@@ -100,6 +101,24 @@ export default function PostsPage() {
         }
     }
 
+    // get user that is logged in 
+    const getUser = async (id) => {
+        try {
+            const response = await fetch(`/api/user/${id}`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${token}`
+                },
+                body: JSON.stringify({...foundUser})
+            })
+            const data = await response.json()
+            setFoundUser(data)
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
     const handleChange = evt => {
         setNewPost({ ...newPost, [evt.target.name]: evt.target.value })
     }
@@ -107,20 +126,15 @@ export default function PostsPage() {
     useEffect(() => {
         getPosts()
     }, [foundPost])
-    // async function newPost() {
-    //     const createPost = await postsAPI.createPost();
-
-    // }
-
-    // async function fetchUserPosts() {
-    //     const userPosts = await postsAPI.getUserPosts();
-    //     setPosts(posts);
-    // }
+   
 
     return (
         <div>
-            <ProfileNavBar />
+            <ProfileNavBar
+             user={user}
+            />
             <PostForm 
+            user={user}
             createPost={createPost}
             handleChange={handleChange}
             newPost={newPost}
@@ -134,6 +148,7 @@ export default function PostsPage() {
                             posts.map((post) => {
                                 return (
                                 <Post 
+                                user={user}
                                 key={post._id}
                                 post={post}
                                 deletePost={deletePost}

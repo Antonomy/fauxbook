@@ -46,7 +46,7 @@ function App() {
             <Route path="/forgotpassword" element={<ForgotPasswordPage />}/> */}
             <Route path="/policy" element={<PolicyPage />}/>
             <Route path="/newsfeed" element={<NewsFeedPage />} />
-            <Route path="/posts" element={<PostsPage />} />
+            <Route path="/posts" element={<PostsPage user={user}/>} />
             <Route path="/about" element={<AboutPage user={user}/>}/>
             <Route path="/requests" element={<RequestsPage />}/>
             <Route path="/friends" element={<FriendsPage />}/>

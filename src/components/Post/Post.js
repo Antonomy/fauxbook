@@ -7,7 +7,8 @@ import PostsHeader from '../PostsHeader/PostsHeader';
 export default function Post({
     post,
     deletePost,
-    updatePost
+    updatePost,
+    user
     
 }){
 const inputRef = useRef(null)
@@ -21,7 +22,7 @@ const handleChange = (evt) => {
         <div>
             <li>
             <div className={styles.Post}>
-                <Link to="/postspage">UserName</Link>
+                <Link to="/posts">{user.firstName} {user.lastName}</Link>
                 <p>date posted on</p>
                 <h4 onClick={() => setShowInput(!showInput)}>{post.post}</h4>
                 <input
@@ -38,7 +39,7 @@ const handleChange = (evt) => {
                 defaultValue={post.post}
                 />
                 <button onClick={() => deletePost(post._id)}>Delete Post</button>
-                <img src="user posts go here" /> <br />
+                <img className={styles.postPhoto} src={post.photo}/> <br />
                <button>Like</button> &nbsp; 
                <button>Comment</button> &nbsp; 
                <button>Share</button> <br />
