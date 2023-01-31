@@ -6,6 +6,7 @@ export default function PostForm({
     createPost,
     handleChange,
     newPost
+
     
 
    
@@ -28,7 +29,9 @@ export default function PostForm({
                 <form onSubmit={onSubmit}>
                     <label>
                         <input type="text" onChange={handleChange} value={newPost.post} 
-                        name='post' placeholder='Whats on your mind?' />
+                        name='post' placeholder='Whats on your mind?' /> 
+                        <input type="text" onChange={handleChange} value={newPost.photo} 
+                        name='photo' placeholder='import photo here' />
                     </label>
                     <input type="submit" value="post" />
                 </form>
