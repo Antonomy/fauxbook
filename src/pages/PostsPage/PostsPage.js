@@ -27,11 +27,11 @@ export default function PostsPage() {
                method: 'GET',
                headers: {
                 'Content-Type': 'application/json',
-                Authorization: `Bearer ${JSON.parse(localStorage.getItem('token'))}`
+                Authorization: `Bearer ${localStorage.getItem('token')}`
                } 
             })
             const data = await response.json()
-            setPosts(data)
+            setPosts(data.reverse())
         } catch (error) {
             console.error(error)
         }
@@ -43,11 +43,36 @@ export default function PostsPage() {
             const response = await fetch(`api/posts/${id}`, {
                 method: 'DELETE',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${token}`
                 }
             })
             const data = await response.json()
-            setFoundPost(data)
+            const postsCopy = [...posts]
+            const index = postsCopy.findIndex(post => id === post._id)
+            postsCopy.splice(index, 1)
+            setPosts(postsCopy)
+        } catch (error) {
+            console.error(error)
+        }
+    }
+    
+    //update 
+    const updatePost = async (id, updatedData) => {
+        try {
+            const response = await fetch(`/api/posts/${id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${token}`
+                },
+                body: JSON.stringify(updatedData)
+            })
+            const data = await response.json()
+            const postsCopy = [...posts]
+            const index = postsCopy.findIndex(post => id === post._id)
+            postsCopy[index] = {...postsCopy[index], ...updatedData}
+            setPosts(postsCopy)
         } catch (error) {
             console.error(error)
         }
@@ -111,6 +136,8 @@ export default function PostsPage() {
                                 <Post 
                                 key={post._id}
                                 post={post}
+                                deletePost={deletePost}
+                                updatePost={updatePost}
                                 />
                                 
                                 )

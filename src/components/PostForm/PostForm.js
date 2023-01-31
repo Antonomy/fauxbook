@@ -18,13 +18,14 @@ export default function PostForm({
     //     setPost(evt.target.value)
 
     // }
+    const onSubmit = (e) => {
+        e.preventDefault()
+        createPost()
+    }
     return (
         <div>
             <div className={styles.postForm}>
-                <form onSubmit={(e) => {
-                    e.preventDefault()
-                    createPost()
-                }}>
+                <form onSubmit={onSubmit}>
                     <label>
                         <input type="text" onChange={handleChange} value={newPost.post} 
                         name='post' placeholder='Whats on your mind?' />
