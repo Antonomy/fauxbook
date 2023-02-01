@@ -5,7 +5,7 @@ import Request from '../../components/Request/Request'
 export default function RequestsListPage() {
     return (
         <div>
-            <ProfileNavBar />
+            {/* <ProfileNavBar /> */}
             Loop and list out all the user's friends REQUESTS here.
             <ul>
                 <Request />

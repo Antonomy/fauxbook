@@ -6,18 +6,16 @@ const postSchema = new Schema({
     required: true
   },
 
-  user: [{ 
+  user: {
+    type: Schema.Types.ObjectId, ref: 'User',
+  },
 
-    type: Schema.Types.ObjectId, ref: 'User'
-
-}],
-
-    comment: [{ 
-      type: Schema.Types.ObjectId, ref: 'Comment'
+  comment: [{
+    type: Schema.Types.ObjectId, ref: 'Comment'
   }],
-    replies: {
-        type: String,
-        required: false
+  replies: {
+    type: String,
+    required: false
   },
   replies: {
     type: String,
@@ -34,10 +32,11 @@ const postSchema = new Schema({
   reaction: {
     type: String,
     required: false
-  }}
+  }
+}
   ,
   {
-  timestamps: true
+    timestamps: true
   }
 )
 
