@@ -34,7 +34,7 @@ export default function AboutPage({ user }) {
 
     return (
         <div>
-            <ProfileNavBar />
+            {/* <ProfileNavBar /> */}
             <div>First Name: {user.firstName}
                 <span onClick={(e) => { setShowFirstNameInput('true') }}>
                     <img className={styles.editIcon} height='10' src={editIcon} />
