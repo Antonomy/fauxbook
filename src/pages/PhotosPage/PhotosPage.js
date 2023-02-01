@@ -94,7 +94,7 @@ export default function PhotosPage () {
         }}
         />
 
-        <h3 className={styles.photoh3}>Photos (erase this if you need)</h3>
+        <h3 className={styles.photoh3}>Photos</h3>
         <div className={styles.table}>
         {photos.map (photo => {
             return(
