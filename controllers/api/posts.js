@@ -2,6 +2,7 @@ const Post = require('../../models/post')
 
 const dataController = {
   // Index,
+  //populate 
   index(req, res, next) {
     Post.find({}, (err, foundPosts) => {
       if (err) {
@@ -42,6 +43,7 @@ const dataController = {
   },
   // Create
   create(req, res, next) {
+    console.log(req)
     Post.create(req.body, (err, createdPost) => {
       if (err) {
         res.status(400).send({

@@ -12,7 +12,7 @@ import { useEffect, useState } from 'react'
 
 
 
-export default function PostsPage({user}) {
+export default function PostsPage({ user }) {
     /*--- State --- */
     const [foundUser, setFoundUser] = useState(null)
     const [token, setToken] = useState('')
@@ -24,12 +24,12 @@ export default function PostsPage({user}) {
     // index 
     const getPosts = async () => {
         try {
-            const response = await fetch('/api/posts', {
-               method: 'GET',
-               headers: {
-                'Content-Type': 'application/json',
-                Authorization: `Bearer ${localStorage.getItem('token')}`
-               } 
+            const response = await fetch(`/api/posts`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${localStorage.getItem('token')}`
+                }
             })
             const data = await response.json()
             setPosts(data.reverse())
@@ -57,7 +57,7 @@ export default function PostsPage({user}) {
             console.error(error)
         }
     }
-    
+
     //update 
     const updatePost = async (id, updatedData) => {
         try {
@@ -72,7 +72,7 @@ export default function PostsPage({user}) {
             const data = await response.json()
             const postsCopy = [...posts]
             const index = postsCopy.findIndex(post => id === post._id)
-            postsCopy[index] = {...postsCopy[index], ...updatedData}
+            postsCopy[index] = { ...postsCopy[index], ...updatedData }
             setPosts(postsCopy)
         } catch (error) {
             console.error(error)
@@ -82,6 +82,7 @@ export default function PostsPage({user}) {
     //create 
     const createPost = async () => {
         try {
+            console.log({ user })
             const response = await fetch(`/api/posts`, {
                 method: "POST",
                 headers: {
@@ -101,43 +102,27 @@ export default function PostsPage({user}) {
         }
     }
 
-    // get user that is logged in 
-    const getUser = async (id) => {
-        try {
-            const response = await fetch(`/api/user/${id}`, {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json',
-                    Authorization: `Bearer ${token}`
-                },
-                body: JSON.stringify({...foundUser})
-            })
-            const data = await response.json()
-            setFoundUser(data)
-        } catch (error) {
-            console.error(error)
-        }
-    }
+
 
     const handleChange = evt => {
-        setNewPost({ ...newPost, [evt.target.name]: evt.target.value })
+        setNewPost({ ...newPost, [evt.target.name]: evt.target.value, user: user._id })
     }
 
     useEffect(() => {
         getPosts()
     }, [foundPost])
-   
+
 
     return (
         <div>
             <ProfileNavBar
-             user={user}
+                user={user}
             />
-            <PostForm 
-            user={user}
-            createPost={createPost}
-            handleChange={handleChange}
-            newPost={newPost}
+            <PostForm
+                user={user}
+                createPost={createPost}
+                handleChange={handleChange}
+                newPost={newPost}
 
             />
             <PostsHeader />
@@ -147,19 +132,19 @@ export default function PostsPage({user}) {
                         {
                             posts.map((post) => {
                                 return (
-                                <Post 
-                                user={user}
-                                key={post._id}
-                                post={post}
-                                deletePost={deletePost}
-                                updatePost={updatePost}
-                                />
-                                
+                                    <Post
+                                        user={user}
+                                        key={post._id}
+                                        post={post}
+                                        deletePost={deletePost}
+                                        updatePost={updatePost}
+                                    />
+
                                 )
                             })
                         }
                     </ul>) : <h1>No posts yet</h1>
-}
+                }
             </>
         </div>
     )
