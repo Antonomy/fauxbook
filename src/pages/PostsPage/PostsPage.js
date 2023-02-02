@@ -132,7 +132,6 @@ export default function PostsPage({ user }) {
                     posts && posts.length ? (<ul>
                         {
                             posts.map((post) => {
-                                console.log(post)
                                 return (
                                     <Post
                                         user={post.user}

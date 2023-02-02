@@ -23,7 +23,8 @@ const postSchema = new Schema({
   },
   photo: {
     type: String,
-    required: false
+    required: false,
+    default:null
   },
   video: {
     type: String,

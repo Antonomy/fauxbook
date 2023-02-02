@@ -11,9 +11,6 @@ export default function RequestsListPage() {
                 <Request />
                 <Request />
                 <Request />
-                <Request />
-                <Request />
-                <Request />
             </ul>
         </div>
     )
