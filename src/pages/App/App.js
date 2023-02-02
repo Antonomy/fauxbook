@@ -14,6 +14,7 @@ import PhotosPage from '../PhotosPage/PhotosPage';
 import NewsFeedPage from '../NewsFeedPage/NewsFeedPage';
 import PostsPage from '../PostsPage/PostsPage';
 import RequestsPage from '../RequestsPage/RequestsPage';
+import ShowAboutPage from '../ShowAboutPage/ShowAboutPage';
 
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
             <Route path="/policy" element={<PolicyPage />}/>
             <Route path="/newsfeed" element={<NewsFeedPage />} />
             <Route path="/posts" element={<PostsPage user={user}/>} />
+            <Route path="/:id/posts" element={<ShowAboutPage user={user._id}/>}/>
             <Route path="/about" element={<AboutPage user={user}/>}/>
             <Route path="/requests" element={<RequestsPage />}/>
             <Route path="/friends" element={<FriendsPage />}/>

@@ -10,14 +10,14 @@ const checkToken = (req, res) => {
 }
 
 const dataController = {
-  async create (req, res, next) {
+  async create(req, res, next) {
     try {
       console.log(req.body)
       const user = await User.create(req.body)
       console.log(user)
       // token will be a string
       const token = createJWT(user)
-     console.log("? token WTH")
+      console.log("? token WTH")
       // send back the token as a string
       // which we need to account for
       // in the client
@@ -28,7 +28,14 @@ const dataController = {
       res.status(400).json(e)
     }
   },
-  async login (req, res, next) {
+  async index(req, res, next) {
+    const users = await User.find({})
+     res.status(200).json(users)
+     
+   },
+   
+ 
+  async login(req, res, next) {
     try {
       const user = await User.findOne({ email: req.body.email })
       if (!user) throw new Error()
@@ -40,16 +47,19 @@ const dataController = {
     } catch {
       res.status(400).json('Bad Credentials')
     }
-  }, 
-  async index(req,res,next){
-    const users = await User.find({}).populate('user') 
-    res.status(200).json(posts)
   }
+  // async index(req, res, next) {
+  //   const users = await User.find({}).populate('user')
+  //   res.status(200).json(posts)
+  // }
 }
 
 const apiController = {
-  auth (req, res) {
+  auth(req, res) {
     res.json(res.locals.data.token)
+  },
+  index(req, res) {
+    res.json(res.locals.data.user)
   }
 }
 
@@ -59,15 +69,16 @@ module.exports = {
   apiController
 }
 
+
 /* -- Helper Functions -- */
 
-function createJWT (user) {
-  
+function createJWT(user) {
+
   return jwt.sign(
     // data payload
     { user },
     process.env.SECRET,
-    { expiresIn: '24h'  }
+    { expiresIn: '24h' }
   )
 
 }
