@@ -4,7 +4,10 @@ import { logOut } from '../../utilities/users-service';
 import logo from './images/logo.png'
 import homeIcon from './images/home-icon.png'
 
-export default function NavBar({setUser}) {
+export default function NavBar({
+  setUser,
+  user
+}) {
   function handleLogOut() {
     logOut();
     setUser(null);
@@ -42,7 +45,7 @@ export default function NavBar({setUser}) {
       {/* &nbsp;TO BE REMOVED - only here for convenience: &nbsp; */}
       <br/>
       <li>
-      <Link to="/posts" class="tooltip" data-tooltip="Profile" id="btn_profile">USERNAME</Link>
+      <Link to="/posts" class="tooltip" data-tooltip="Profile" id="btn_profile">{user.firstName} {user.lastName}</Link>
       &nbsp; | &nbsp;
       </li>
       <li>
