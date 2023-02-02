@@ -33,7 +33,10 @@ const dataController = {
      res.status(200).json(users)
      
    },
-   
+   async show(req, res,next) {
+    const user = await User.findById(req.params.id)
+    res.status(200).json(user)
+   },
  
   async login(req, res, next) {
     try {
@@ -59,6 +62,9 @@ const apiController = {
     res.json(res.locals.data.token)
   },
   index(req, res) {
+    res.json(res.locals.data.users)
+  },
+  show(req, res) {
     res.json(res.locals.data.user)
   }
 }
