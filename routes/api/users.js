@@ -12,8 +12,13 @@ router.post('/login', dataController.login, apiController.auth)
 // GET /api/users/check-token
 router.get('/check-token', ensureLoggedIn, checkToken)
 
-//GET users /api/users
-router.get('/', dataController.login, apiController.auth)
+//GET users /api/users - commented out because I dont think we need this - yeva
+// router.get('/', dataController.login, apiController.auth)
 
+// GET all users /api/users
+router.get('/', dataController.index, apiController.index)
+
+// Show user by :id YEVA WORKING PLEASE DO NOT DELETE THIS
+// router.get('/:id', dataController.show, apiController.show)
 
 module.exports = router 

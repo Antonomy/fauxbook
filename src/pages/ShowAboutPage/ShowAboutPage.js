@@ -1,4 +1,4 @@
-import styles from './PostsPage.module.scss'
+import styles from './ShowAboutPage.module.scss'
 
 import NavBar from "../../components/NavBar/NavBar"
 import ProfileNavBar from '../../components/ProfileNavBar/ProfileNavBar'
@@ -10,9 +10,7 @@ import Post from '../../components/Post/Post'
 import { useEffect, useState } from 'react'
 
 
-
-
-export default function PostsPage({ user }) {
+export default function ShowAboutPage({ user }) {
     /*--- State --- */
     const [foundUser, setFoundUser] = useState(null)
     const [token, setToken] = useState('')
@@ -119,13 +117,13 @@ export default function PostsPage({ user }) {
             <ProfileNavBar
                 user={user}
             />
-            <PostForm
+            {/* <PostForm
                 user={user}
                 createPost={createPost}
                 handleChange={handleChange}
                 newPost={newPost}
 
-            />
+            /> */}
             <PostsHeader />
             <>
                 {

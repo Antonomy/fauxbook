@@ -24,7 +24,7 @@ export default function Post({
         <div>
             <li>
                 <div className={styles.Post}>
-                    <Link to="/posts">{user.firstName} {user.lastName}</Link>
+                    <Link to={`${user._id}/posts`}>{user.firstName} {user.lastName}</Link>
                     <p>{post.createdAt.slice(0, -14)}</p>
                     <h4 onClick={() => setShowInput(!showInput)}>{post.post}</h4>
                     <input
