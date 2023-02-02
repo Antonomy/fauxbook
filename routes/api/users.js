@@ -12,4 +12,8 @@ router.post('/login', dataController.login, apiController.auth)
 // GET /api/users/check-token
 router.get('/check-token', ensureLoggedIn, checkToken)
 
+//GET users /api/users
+router.get('/', dataController.login, apiController.auth)
+
+
 module.exports = router 

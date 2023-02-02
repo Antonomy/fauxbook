@@ -1,24 +1,48 @@
 import styles from './Post.module.scss'
 import { Link } from 'react-router-dom'
-import { useState } from "react";
+import { useState, useRef} from "react";
 
 import PostsHeader from '../PostsHeader/PostsHeader';
 
-export default function Post(props) {
+export default function Post({
+    post,
+    deletePost,
+    updatePost,
+    user
+    
+}){
+const inputRef = useRef(null)
 const [comment, setComment] = useState("")
+const [showInput, setShowInput] = useState(false)
+
+
 
 const handleChange = (evt) => {
     setComment(evt.target.value)
 }
     return (
         <div>
+            <li>
             <div className={styles.Post}>
-                <Link to="/postspage">UserName</Link>
-                <p>date posted on</p>
-                <button>...</button>
-                <img src="user posts go here" /> <br />
-               <button>Like</button> &nbsp; 
-               <button>Comment</button> &nbsp; 
+                <Link to="/posts">{user.firstName} {user.lastName}</Link>
+                <p>{post.createdAt.slice(0, -14)}</p>
+                <h4 onClick={() => setShowInput(!showInput)}>{post.post}</h4>
+                <input
+                ref={inputRef}
+                style={{ display: showInput ? 'block' : 'none' }}
+                type='text'
+                onKeyDown={(e) => {
+                    if(e.key === 'Enter') {
+                        const postText = inputRef.current.value 
+                        updatePost(post._id, {postText})
+                        setShowInput(false)
+                    }
+                }}
+                defaultValue={post.post}
+                />
+                <button onClick={() => deletePost(post._id)}>Delete Post</button>
+                <img className={styles.postPhoto} src={post.photo}/> <br />
+               <button>Like</button> &nbsp;
                <button>Share</button> <br />
                <form onSubmit>
                     <label>
@@ -27,6 +51,7 @@ const handleChange = (evt) => {
                     <input type="submit" value="post" />
                 </form>
             </div>
+            </li>
         </div>
     )
 }

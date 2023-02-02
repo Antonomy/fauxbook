@@ -2,11 +2,16 @@ const { Schema, model } = require('mongoose')
 
 const commentSchema = new Schema({
     // References Post model
-    post: {
+    post: [{
         type: Schema.Types.ObjectId,
         ref: 'Post',
-    },
-    content: {
+    }],
+    user: [{
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+    }],
+
+    comment: {
         type: String,
         required: true
     },

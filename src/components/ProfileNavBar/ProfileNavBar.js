@@ -1,15 +1,17 @@
 import styles from './ProfileNavBar.module.scss';
 import { Link } from 'react-router-dom';
 
-export default function ProfileNavBar(props) {
+export default function ProfileNavBar({user}) {
+
+
     return (
         <div className={styles.ProfileNavBar}>
             <div className={styles.coverPhoto}>
                 <img src="" alt="cover photo goes here" />
-                <button>Edit Cover Photo Here</button>
+                <button>Add Cover Photo</button>
             </div>
-            <img src="" alt="profile picture" />
-            <h2>USERNAME</h2>
+            <img src={user.profilePhoto} alt="profile picture" />
+            <h2>{user.firstName} {user.lastName}</h2>
 
             {/* REQUEST FRIEND button should only show up if NOT FRIENDS and NOT SELF*/}
             <button>Request Friend</button>

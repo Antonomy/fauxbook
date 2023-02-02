@@ -3,20 +3,19 @@ const { Schema, model } = require('mongoose')
 const postSchema = new Schema({
   post: {
     type: String,
-    required: false
+    required: true
   },
-  user: [{ 
 
-    type: Schema.Types.ObjectId, ref: 'User'
+  user: {
+    type: Schema.Types.ObjectId, ref: 'User',
+  },
 
-}],
-
-    comments: [{ 
-      type: Schema.Types.ObjectId, ref: 'Comment'
+  comment: [{
+    type: Schema.Types.ObjectId, ref: 'Comment'
   }],
-    replies: {
-        type: String,
-        required: false
+  replies: {
+    type: String,
+    required: false
   },
   replies: {
     type: String,
@@ -33,10 +32,11 @@ const postSchema = new Schema({
   reaction: {
     type: String,
     required: false
-  }}
+  }
+}
   ,
   {
-  timestamps: true
+    timestamps: true
   }
 )
 

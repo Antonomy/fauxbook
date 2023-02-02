@@ -5,7 +5,7 @@ import ProfileNavBar from '../../components/ProfileNavBar/ProfileNavBar'
 export default function FriendsPage() {
     return (
         <div>
-            <ProfileNavBar />
+            {/* <ProfileNavBar /> */}
             Loop and list out all the user's friends
             <ul>
                 <User />

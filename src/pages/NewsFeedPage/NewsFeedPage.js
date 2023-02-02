@@ -7,13 +7,13 @@ export default function NewsFeedPage (props) {
         <main>
             <div>Friends Birthdays in the upcoming 7 days</div>
             
-            <PostForm />
+            {/* <PostForm /> */}
             
             <div>This is where we loop out all FRIENDS POSTS and order by timestamp</div>
+            {/* <Post />
             <Post />
             <Post />
-            <Post />
-            
+             */}
         </main>
     )
 
