@@ -89,7 +89,7 @@ export default function PostsPage({ user }) {
                     'Content-Type': 'application/json',
                     Authorization: `Bearer ${token}`
                 },
-                body: JSON.stringify({ ...newPost })
+                body: JSON.stringify({ ...newPost, user: user._id})
             })
             const data = await response.json()
             setFoundPost([data, ...posts])

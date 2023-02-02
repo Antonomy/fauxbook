@@ -41,7 +41,7 @@ export default function AboutPage(user) {
     return (
 
         <main>
-            <ProfileNavBar />
+            <ProfileNavBar user={user}/>
 
             <div>First Name: {user.firstName}
                 <span onClick={(e) => { setShowFirstNameInput('true') }}>

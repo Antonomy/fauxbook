@@ -15,6 +15,8 @@ const inputRef = useRef(null)
 const [comment, setComment] = useState("")
 const [showInput, setShowInput] = useState(false)
 
+
+
 const handleChange = (evt) => {
     setComment(evt.target.value)
 }
@@ -23,7 +25,7 @@ const handleChange = (evt) => {
             <li>
             <div className={styles.Post}>
                 <Link to="/posts">{user.firstName} {user.lastName}</Link>
-                <p>date posted on</p>
+                <p>{post.createdAt.slice(0, -14)}</p>
                 <h4 onClick={() => setShowInput(!showInput)}>{post.post}</h4>
                 <input
                 ref={inputRef}
@@ -40,8 +42,7 @@ const handleChange = (evt) => {
                 />
                 <button onClick={() => deletePost(post._id)}>Delete Post</button>
                 <img className={styles.postPhoto} src={post.photo}/> <br />
-               <button>Like</button> &nbsp; 
-               <button>Comment</button> &nbsp; 
+               <button>Like</button> &nbsp;
                <button>Share</button> <br />
                <form onSubmit>
                     <label>
