@@ -40,6 +40,33 @@ const dataController = {
     } catch {
       res.status(400).json('Bad Credentials')
     }
+  },
+  // Update
+  update(req, res, next) {
+    User.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedUser) => {
+      if (err) {
+        res.status(400).send({
+          msg: err.message
+        })
+      } else {
+        res.locals.data.user = updatedUser
+        next()
+      }
+    })
+  },
+  // Show
+  show(req, res, next) {
+    User.findById(req.params.id, (err, foundUser) => {
+      if (err) {
+        res.status(404).send({
+          msg: err.message,
+          output: 'Could not find a user with that ID'
+        })
+      } else {
+        res.locals.data.user = foundUser
+        next()
+      }
+    })
   }
 }
 
