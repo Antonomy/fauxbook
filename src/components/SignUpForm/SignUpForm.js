@@ -48,7 +48,7 @@ return (
                 <input type="password" name="confirm" value={credentials.confirm} onChange={handleChange} required />
                 <label>Birthday</label>
                 <input type="date" name="birthday" value={credentials.birthday} onChange={handleChange} required />
-                <p>People who use our service may have uploaded your contact information to Facebook. Learn more. <br />
+                <p>People who use our service may have uploaded your contact information to Fauxbook. Learn more. <br />
                 By clicking Sign Up, you agree to our Terms, Privacy Policy and Cookies Policy. You may receive SMS Notifications from us and can opt out any time.</p>
                 <button type="submit" disabled={disable}>SIGN UP</button>
                 <button onClick={() => {
