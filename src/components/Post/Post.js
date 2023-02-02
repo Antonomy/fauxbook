@@ -24,9 +24,10 @@ export default function Post({
         <div>
             <li>
                 <div className={styles.Post}>
-                    <Link to={`${user._id}/posts`}>{user.firstName} {user.lastName}</Link>
-                    <p>{post.createdAt.slice(0, -14)}</p>
-                    <h4 onClick={() => setShowInput(!showInput)}>{post.post}</h4>
+                
+                    <Link to={`${user._id}/posts`}>{user.firstName} {user.lastName}</Link> posted on <span>{post.createdAt.slice(0, -14)}</span>
+                    <br />
+                    <text onClick={() => setShowInput(!showInput)}>{post.post}</text>
                     <input
                         ref={inputRef}
                         style={{ display: showInput ? 'block' : 'none' }}
@@ -40,7 +41,7 @@ export default function Post({
                         }}
                         defaultValue={post.post}
                     />
-                    <button onClick={() => deletePost(post._id)}>Delete Post</button>
+                    <br />
                     {post.photo ?
                         <>
                             <img className={styles.postPhoto} src={post.photo} />
@@ -49,7 +50,7 @@ export default function Post({
                         <></>
                     }
                     <br />
-
+                    <button onClick={() => deletePost(post._id)}>Delete Post</button>
                     <button>Like</button> &nbsp;
                     <button>Share</button> <br />
                     <form onSubmit>
