@@ -3,17 +3,19 @@ const Post = require('../../models/post')
 const dataController = {
   // Index,
   //populate 
-  index(req, res, next) {
-    Post.find({}, (err, foundPosts) => {
-      if (err) {
-        res.status(400).send({
-          msg: err.message
-        })
-      } else {
-        res.locals.data.posts = foundPosts
-        next()
-      }
-    })
+  async index(req, res, next) {
+   const posts = await Post.find({}).populate('user') 
+    res.status(200).json(posts)
+    // Post.find({}, (err, foundPosts) => {
+    //   if (err) {
+    //     res.status(400).send({
+    //       msg: err.message
+    //     })
+    //   } else {
+    //     res.locals.data.posts = foundPosts
+    //     next()
+    //   }
+    // })
   },
   // Destroy
   destroy(req, res, next) {

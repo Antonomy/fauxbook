@@ -110,6 +110,7 @@ export default function PostsPage({ user }) {
 
     useEffect(() => {
         getPosts()
+        setToken(localStorage.getItem('token'))
     }, [foundPost])
 
 
@@ -131,9 +132,10 @@ export default function PostsPage({ user }) {
                     posts && posts.length ? (<ul>
                         {
                             posts.map((post) => {
+                                console.log(post)
                                 return (
                                     <Post
-                                        user={user}
+                                        user={post.user}
                                         key={post._id}
                                         post={post}
                                         deletePost={deletePost}
