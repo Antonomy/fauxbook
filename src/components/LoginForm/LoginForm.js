@@ -45,7 +45,6 @@ export default function LoginForm ({ setUser, setShowSignUp}) {
           <label>Password</label>
           <input type='password' name='password' value={credentials.password} onChange={handleChange} required />
           <button type='submit'>LOG IN</button>
-          <p>Forgot password?</p>
            <button className='create-btn' onClick={(evt) => {
             setShowSignUp(true)
           }}>Create A New Account</button>
