@@ -1,4 +1,5 @@
 const Post = require('../../models/post')
+const { show } = require('./photos')
 
 const dataController = {
   // Index,

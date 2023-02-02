@@ -39,22 +39,22 @@ function App() {
       {
         user ?
         <>
-          <NavBar setUser={setUser} />
+          <NavBar user={user} setUser={setUser} />
           <Routes>
             {/* <Route path="/" element={<LoginPage user={user} setUser={setUser}/>}/>
             <Route path="/signup" element={<SignUpPage user={user} setUser={setUser} />}/>
             <Route path="/login" element={<LoginPage user={user} setUser={setUser}/>}/>
             <Route path="/forgotpassword" element={<ForgotPasswordPage />}/> */}
             <Route path="/policy" element={<PolicyPage />}/>
-            <Route path="/newsfeed" element={<NewsFeedPage />} />
+            <Route path="/newsfeed" element={<NewsFeedPage  user={user}/>} />
             <Route path="/posts" element={<PostsPage user={user}/>} />
-            <Route path="/:id/posts" element={<ShowAboutPage user={user._id}/>}/>
+            <Route path="/:id/posts" element={<ShowAboutPage user={user}/>}/>
             <Route path="/about" element={<AboutPage user={user}/>}/>
             <Route path="/requests" element={<RequestsPage />}/>
             <Route path="/friends" element={<FriendsPage />}/>
             <Route path="/photos" element={<PhotosPage />}/>
             <Route path="/logout" element={<UserLogOut user={user} setUser={setUser}/>}/>
-            <Route path="/*" element={<Navigate to="/newsfeed" />} />
+            {/* <Route path="/*" element={<Navigate to="/newsfeed" />} /> */}
           </Routes>
         </>
          :
