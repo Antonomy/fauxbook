@@ -52,25 +52,6 @@ const dataController = {
     }
   },
 
-  //Show 
-  async show(req, res, next) {
-    User.findById(req.params.id, (err, foundUser) => {
-      if (err) {
-        res.status(404).send({
-          msg: err.message,
-          output: 'Could not find a user with that ID'
-        })
-      } else {
-        res.locals.data.post = foundUser
-        next()
-      }
-    })
-  }
-
-  // async index(req, res, next) {
-  //   const users = await User.find({}).populate('user')
-  //   res.status(200).json(posts)
-  // }
 }
 
 const apiController = {
