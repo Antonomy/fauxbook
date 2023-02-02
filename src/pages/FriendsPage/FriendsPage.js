@@ -6,7 +6,6 @@ export default function FriendsPage() {
     return (
         <div>
             {/* <ProfileNavBar /> */}
-            Loop and list out all the user's friends
             <ul>
                 <User />
                 <User />
