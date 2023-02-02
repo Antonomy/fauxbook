@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
 
-main {
+.login-main {
     display: flex;
     justify-content: space-evenly;
     padding: 0;

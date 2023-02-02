@@ -1,4 +1,4 @@
-import styles from './Post.module.scss'
+import './Post.css';
 import { Link } from 'react-router-dom'
 import { useState } from "react";
 
@@ -12,7 +12,7 @@ const handleChange = (evt) => {
 }
     return (
         <div>
-            <div className={styles.Post}>
+            <div className={Post}>
                 <Link to="/postspage">UserName</Link>
                 <p>date posted on</p>
                 <button>...</button>
