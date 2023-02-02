@@ -21,7 +21,7 @@ export default function ProfileNavBar({user}) {
             {/* This button should .slice user's _id from the recipient's friends array */}
             <br />
             
-            <Link to="/postspage">Posts</Link>
+            <Link to="/posts">Posts</Link>
             &nbsp; | &nbsp;
             <Link to="/about">About</Link>
             &nbsp; | &nbsp;

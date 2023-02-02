@@ -2,14 +2,12 @@ import styles from './RequestsPage.module.scss'
 import ProfileNavBar from '../../components/ProfileNavBar/ProfileNavBar'
 import Request from '../../components/Request/Request'
 
-export default function RequestsListPage() {
+export default function RequestsListPage({user}) {
     return (
         <div>
-            {/* <ProfileNavBar /> */}
+            <ProfileNavBar user={user}/>
             <ul>
-                <Request />
-                <Request />
-                <Request />
+                <h2>Requests</h2>
             </ul>
         </div>
     )
