@@ -40,6 +40,10 @@ const dataController = {
     } catch {
       res.status(400).json('Bad Credentials')
     }
+  }, 
+  async index(req,res,next){
+    const users = await User.find({}).populate('user') 
+    res.status(200).json(posts)
   }
 }
 
