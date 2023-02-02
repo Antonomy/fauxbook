@@ -12,7 +12,6 @@ const handleChange = (evt) => {
     return (
         <div>
             <ul>
-                <User />
                 <li>Requester Name user.request</li>
                 <button>Accept</button>
                 <button>Reject</button>

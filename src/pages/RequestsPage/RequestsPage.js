@@ -8,6 +8,9 @@ export default function RequestsListPage({user}) {
             <ProfileNavBar user={user}/>
             <ul>
                 <h2>Requests</h2>
+                <Request />
+                <Request />
+                <Request />
             </ul>
         </div>
     )
