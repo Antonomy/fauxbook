@@ -6,7 +6,6 @@ export default function RequestsListPage() {
     return (
         <div>
             {/* <ProfileNavBar /> */}
-            Loop and list out all the user's friends REQUESTS here.
             <ul>
                 <Request />
                 <Request />

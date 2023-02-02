@@ -14,7 +14,7 @@ import { useEffect, useState } from 'react'
 
 export default function PostsPage({ user }) {
     /*--- State --- */
-    const [foundUser, setFoundUser] = useState(null)
+
     const [token, setToken] = useState('')
     const [posts, setPosts] = useState([]);
     const [foundPost, setFoundPost] = useState(null)

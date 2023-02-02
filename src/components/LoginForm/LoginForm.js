@@ -34,7 +34,7 @@ export default function LoginForm ({ setUser, setShowSignUp}) {
     <div className='login-main'>
     <div className="title-box">
     <h1>fauxbook</h1>
-    <h2>Connect with friends and the world around on Facebook.</h2>
+    <h2>Connect with friends and the world around on Fauxbook.</h2>
     </div>  
     <div className='box'>
       <div className='form-container'>
@@ -45,7 +45,6 @@ export default function LoginForm ({ setUser, setShowSignUp}) {
           <label>Password</label>
           <input type='password' name='password' value={credentials.password} onChange={handleChange} required />
           <button type='submit'>LOG IN</button>
-          <p>Forgot password?</p>
            <button className='create-btn' onClick={(evt) => {
             setShowSignUp(true)
           }}>Create A New Account</button>
