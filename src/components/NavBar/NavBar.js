@@ -17,7 +17,7 @@ export default function NavBar({
       <nav className='body'>
       <ul>
         <li>
-       <Link to="/newsfeed" className='logo' class="tooltip" data-tooltip="Logo" id="btn_logo"><img height='40rem' src={logo} /></Link>
+       <Link to="/newsfeed" className='logo' class="tooltip" data-tooltip="Logo" id="btn_logo"><img height='40rem' src={logo} className='logo' /></Link>
        &nbsp; | &nbsp;
        </li>
       <li>
@@ -25,19 +25,19 @@ export default function NavBar({
       &nbsp; | &nbsp;
       </li>
       <li>
-      <Link to="/about" class="tooltip" data-tooltip="About" id="btn_About">About</Link>
+      <Link to="/about" class="tooltip" data-tooltip="About" id="btn_About" className='navbarlink'>About</Link>
       &nbsp; | &nbsp;
       </li>
       <li>
-      <Link to="/friends" class="tooltip" data-tooltip="Friends" id="btn_friends">Friends</Link>
+      <Link to="/friends" class="tooltip" data-tooltip="Friends" id="btn_friends" className='navbarlink'>Friends</Link>
       &nbsp; | &nbsp;
       </li>
       <li>
-      <Link to="/requests" class="tooltip" data-tooltip="Requests" id="btn_requests">Requests</Link>
+      <Link to="/requests" class="tooltip" data-tooltip="Requests" id="btn_requests" className='navbarlink'>Requests</Link>
       &nbsp; | &nbsp;
       </li>
       <li>
-      <Link to="/photos" class="tooltip" data-tooltip="Photos" id="btn_photos">Photos</Link>
+      <Link to="/photos" class="tooltip" data-tooltip="Photos" id="btn_photos" className='navbarlink'>Photos</Link>
       &nbsp; | &nbsp;
       </li>
 

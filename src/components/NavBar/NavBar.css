@@ -13,6 +13,7 @@
       align-self: center;
       background-color: #1d72e0;
       color:#1d72e0;
+      border-radius: 1rem;
   }
   .nav{
     
@@ -27,6 +28,12 @@
   }
   nav ul li {
       padding: 3px;
+  }
+
+  .navbarlink{
+    text-decoration: none;
+    color:white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
   
   .tooltip{
@@ -56,11 +63,13 @@
   nav ul{
     min-width: 600px;
     padding: 7px 0px;
-  justify-content: space-between;
+    justify-content: space-between;
+    align-items: center;
   }
   
-  
-  
+  .logo {
+    margin-left: 1rem;
+  }
   
   
   
