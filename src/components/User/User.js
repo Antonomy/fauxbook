@@ -6,7 +6,7 @@ import AboutPage from '../../pages/AboutPage/AboutPage'
 export default function User(props) {
     return (
         <div>
-            <div className={styles.Friend}>
+            <div className={styles.friend}>
                 <div>
                     <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" height="100" alt="photo" />
                 </div>
