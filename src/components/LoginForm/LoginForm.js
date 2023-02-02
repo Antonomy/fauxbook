@@ -31,7 +31,7 @@ export default function LoginForm ({ setUser, setShowSignUp}) {
 
 
   return (
-    <div>
+    <div className='login-main'>
     <div className="title-box">
     <h1>fauxbook</h1>
     <h2>Connect with friends and the world around on Facebook.</h2>
