@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom'
 import { useState } from "react";
 import AboutPage from '../../pages/AboutPage/AboutPage'
 
-export default function User(props) {
+export default function User({ user, friend }) {
     return (
         <div>
+            <Link to={`${user._id}/posts`}>{user.firstName} {user.lastName}</Link>
+
             <div className={styles.friend}>
                 <div>
                     <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" height="100" alt="photo" />
@@ -23,3 +25,8 @@ export default function User(props) {
         </div>
     )
 }
+
+
+{/* <div>
+<img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" height="100" alt="photo" />
+</div> */}

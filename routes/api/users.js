@@ -21,4 +21,5 @@ router.get('/', dataController.index, apiController.index)
 // Show user by :id YEVA WORKING PLEASE DO NOT DELETE THIS
 router.get('/:id', dataController.show, apiController.show)
 
+
 module.exports = router 
