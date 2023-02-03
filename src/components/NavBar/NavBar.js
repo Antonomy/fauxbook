@@ -29,7 +29,7 @@ export default function NavBar({
       &nbsp; | &nbsp;
       </li>
       <li>
-      <Link to="/friends" class="tooltip" data-tooltip="Friends" id="btn_friends" className='navbarlink'>Friends</Link>
+      <Link to="/friends" class="tooltip" data-tooltip="Friends" id="btn_friends" className='navbarlink'>All Users</Link>
       &nbsp; | &nbsp;
       </li>
       <li>
