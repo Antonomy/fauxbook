@@ -1,0 +1,26 @@
+.Post .postPhoto {
+    width: 500px;
+    height: 300px;
+}
+.styles-Post{
+    /* display: flex;
+    flex-direction: row;*/
+    justify-content: center;
+    background-color: lightblue;
+    margin: 1rem;
+    border-radius: 1rem;
+    padding: 10%;
+    width: 800px;
+    text-align: center;
+    
+}
+
+li{
+    list-style: none;
+}
+
+.post__footer {
+     display: flex;
+     justify-content: space-between;  
+     margin-top: 20px; 
+}
