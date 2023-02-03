@@ -1,4 +1,4 @@
-import styles from './ShowAboutPage.module.scss'
+import styles from './ProfilePage.module.scss'
 
 import NavBar from "../../components/NavBar/NavBar"
 import ProfileNavBar from '../../components/ProfileNavBar/ProfileNavBar'
