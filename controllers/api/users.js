@@ -33,15 +33,7 @@ const dataController = {
     res.status(200).json(users)
 
   },
-  async show(req, res, next) {
-    try {
-      const user = await User.findById(req.params.id).populate('post')
-      res.status(200).json(user)
-    } catch (e) {
-      res.status(400).json({ msg: e.message })
 
-    }
-  },
 
   async login(req, res, next) {
     try {
@@ -57,6 +49,70 @@ const dataController = {
     }
   },
 
+  //Show 
+  async show(req, res, next) {
+    User.findById(req.params.id, (err, foundUser) => {
+      if (err) {
+        res.status(404).send({
+          msg: err.message,
+          output: 'Could not find a user with that ID'
+        })
+      } else {
+        res.locals.data.post = foundUser
+        next()
+      }
+    })
+  },
+  async acceptFriendRequest (req, res, next) {
+    if (req.body.userId !== req.params.id) {
+      try {
+        const user = await User.findById(req.params.id)
+        const currentRequest = await User.findById(req.body.userId)
+        if (!user.sentFriendsRequest.includes(req.body.userId)) {
+          await user.updateOne({$push: {sentFriendsRequest: req.body.userId}})
+          await currentRequest.updateOne({$push: {receivedFriendRequests: req.params.id}})
+          res.status(200).json("Friend has been added")
+
+        } else {
+          req.status(403).json("You are friends already")
+
+
+        }
+      } catch (err) {
+        res.status(500).json(err)
+      }
+    } else {
+      req.status(403).json("You cannot add yourself")
+    }
+  },
+
+  async rejectFriendRequest (req, res, next) {
+    if (req.body.userId !== req.params.id) {
+      try {
+        const user = await User.findById(req.params.id)
+        const currentRequest = await User.findById(req.body.userId)
+        if (user.sentFriendsRequest.includes(req.body.userId)) {
+          await user.updateOne({$pull: {sentFriendsRequest: req.body.userId}})
+          await currentRequest.updateOne({$pull: {receivedFriendRequests: req.params.id}})
+          res.status(200).json("Friend request has been rejected")
+
+        } else {
+          req.status(403).json("You are not friends anymore")
+
+
+        }
+      } catch (err) {
+        res.status(500).json(err)
+      }
+    } else {
+      req.status(403).json("You cannot reject yourself")
+    }
+  }
+
+  // async index(req, res, next) {
+  //   const users = await User.find({}).populate('user')
+  //   res.status(200).json(posts)
+  // }
 }
 
 const apiController = {
@@ -64,9 +120,6 @@ const apiController = {
     res.json(res.locals.data.token)
   },
   index(req, res) {
-    res.json(res.locals.data.users)
-  },
-  show(req, res) {
     res.json(res.locals.data.user)
   }
 }

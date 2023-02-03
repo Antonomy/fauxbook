@@ -21,5 +21,12 @@ router.get('/', dataController.index, apiController.index)
 // Show user by :id YEVA WORKING PLEASE DO NOT DELETE THIS
 router.get('/:id', dataController.show)
 
+// Accept friend request  
+router.put("/:id/acceptfriend", dataController.acceptFriendRequest)
+
+// Reject friend request  
+router.put("/:id/rejectfriend", dataController.rejectFriendRequest)
+
+
 
 module.exports = router 
