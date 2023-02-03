@@ -113,8 +113,6 @@ export default function NewsFeedPage ({user}) {
                 createPost={createPost}
                 handleChange={handleChange}
                 newPost={newPost}
-                
-
             />
             <>
             {

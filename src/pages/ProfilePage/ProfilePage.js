@@ -129,13 +129,13 @@ export default function ShowAboutPage({ user }) {
             <ProfileNavBar
                 user={currentUser ? currentUser : user}
             />
-            {/* <PostForm
+            <PostForm
                 user={user}
                 createPost={createPost}
                 handleChange={handleChange}
                 newPost={newPost}
 
-            /> */}
+            />
             <>
                 {
                     currentUser?.post  && currentUser.post.length ? (<ul>
