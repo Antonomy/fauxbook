@@ -22,10 +22,9 @@ export default function Post({
         <div>
             <li>
                 <div className={styles.Post}>
-                    {/* <Link to={`/${user._id}/posts`}>
-                        {user.firstName} {user.lastName}
-                    </Link> */}
-                    posted on <span>{post.createdAt.slice(0, -14)}</span>
+                    {/* <Link to={`/${user._id}/posts`}> {user.firstName} {user.lastName} </Link> */}
+                    posted on
+                    <span>{post.createdAt.slice(0, -14)}</span>
                     <br />
                     <text onClick={() => setShowInput(!showInput)}>{post.post}</text>
                     <input

@@ -53,14 +53,6 @@ export default function NavBar({
       &nbsp; | &nbsp;
       </li>
       <li>
-      <Link to="/login">Login</Link>
-      &nbsp; | &nbsp;
-      </li>
-      <li>
-      <Link to="/forgotpassword">Forgot Password</Link>
-      &nbsp; | &nbsp;
-      </li>
-      <li>
       <Link onClick={handleLogOut}>Log Out</Link>
     </li>
     </ul>
