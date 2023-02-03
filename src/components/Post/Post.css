@@ -2,25 +2,28 @@
     width: 500px;
     height: 300px;
 }
-.styles-Post{
+
+.styles-Post {
     /* display: flex;
     flex-direction: row;*/
     justify-content: center;
-    background-color: lightblue;
+    background-color: white;
+    box-shadow: 5px 5px #385591;
+    border-color: #385591;
+    border: 1px solid #385591;
     margin: 1rem;
     border-radius: 1rem;
     padding: 10%;
     width: 800px;
     text-align: center;
-    
 }
 
-li{
+li {
     list-style: none;
 }
 
 .post__footer {
-     display: flex;
-     justify-content: space-between;  
-     margin-top: 20px; 
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
 }

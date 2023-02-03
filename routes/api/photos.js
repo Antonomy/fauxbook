@@ -2,7 +2,6 @@ const express = require('express')
 const router = express.Router()
 const photoCtrl = require('../../controllers/api/photos')
 
-
 // Index /api/photos
 router.get('/', photoCtrl.indexNotComplete, photoCtrl.jsonPhotos)
 // Index /api/photos/completed
