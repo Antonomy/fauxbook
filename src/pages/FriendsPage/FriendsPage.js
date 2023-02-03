@@ -9,7 +9,7 @@ export default function FriendsPage({ user }) {
     const [friends, setFriends] = useState([])
     const [token, setToken] = useState('')
 
-    useEffect(() => {
+    
         const getFriends = async () => {
             try {
                 const response = await fetch('/api/users', {
@@ -25,11 +25,13 @@ export default function FriendsPage({ user }) {
                 console.error(error)
             }
         }
+       
+    useEffect(() => {
         getFriends();
         setToken(localStorage.getItem('token'))
-
-
     }, [])
+
+
 
     return (
         <div>
