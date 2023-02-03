@@ -1,4 +1,7 @@
 const Post = require('../../models/post')
+const User = require('../../models/user')
+const { show } = require('./photos')
+
 
 const dataController = {
   // Index,
@@ -46,12 +49,15 @@ const dataController = {
   // Create
   create(req, res, next) {
     console.log(req)
-    Post.create(req.body, (err, createdPost) => {
+    Post.create(req.body, async (err, createdPost) => {
       if (err) {
         res.status(400).send({
           msg: err.message
         })
       } else {
+        const user = await User.findById(req.body.user)
+        user.post.addToSet(createdPost)
+        user.save()
         res.locals.data.post = createdPost
         next()
       }

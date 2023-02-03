@@ -19,6 +19,7 @@ router.get('/check-token', ensureLoggedIn, checkToken)
 router.get('/', dataController.index, apiController.index)
 
 // Show user by :id YEVA WORKING PLEASE DO NOT DELETE THIS
-// router.get('/:id', dataController.show, apiController.show)
+router.get('/:id', dataController.show)
+
 
 module.exports = router 

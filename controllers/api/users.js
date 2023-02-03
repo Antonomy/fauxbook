@@ -30,11 +30,19 @@ const dataController = {
   },
   async index(req, res, next) {
     const users = await User.find({})
-     res.status(200).json(users)
-     
-   },
-   
- 
+    res.status(200).json(users)
+
+  },
+  async show(req, res, next) {
+    try {
+      const user = await User.findById(req.params.id).populate('post')
+      res.status(200).json(user)
+    } catch (e) {
+      res.status(400).json({ msg: e.message })
+
+    }
+  },
+
   async login(req, res, next) {
     try {
       const user = await User.findOne({ email: req.body.email })
@@ -47,11 +55,8 @@ const dataController = {
     } catch {
       res.status(400).json('Bad Credentials')
     }
-  }
-  // async index(req, res, next) {
-  //   const users = await User.find({}).populate('user')
-  //   res.status(200).json(posts)
-  // }
+  },
+
 }
 
 const apiController = {
@@ -59,6 +64,9 @@ const apiController = {
     res.json(res.locals.data.token)
   },
   index(req, res) {
+    res.json(res.locals.data.users)
+  },
+  show(req, res) {
     res.json(res.locals.data.user)
   }
 }

@@ -14,7 +14,7 @@ import { useEffect, useState } from 'react'
 
 export default function PostsPage({ user }) {
     /*--- State --- */
-    const [foundUser, setFoundUser] = useState(null)
+
     const [token, setToken] = useState('')
     const [posts, setPosts] = useState([]);
     const [foundPost, setFoundPost] = useState(null)
@@ -102,7 +102,7 @@ export default function PostsPage({ user }) {
         }
     }
 
-
+console.log(user)
 
     const handleChange = evt => {
         setNewPost({ ...newPost, [evt.target.name]: evt.target.value, user: user._id })
