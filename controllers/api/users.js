@@ -10,14 +10,14 @@ const checkToken = (req, res) => {
 }
 
 const dataController = {
-  async create(req, res, next) {
+  async create (req, res, next) {
     try {
       console.log(req.body)
       const user = await User.create(req.body)
       console.log(user)
       // token will be a string
       const token = createJWT(user)
-      console.log("? token WTH")
+      console.log('? token WTH')
       // send back the token as a string
       // which we need to account for
       // in the client
@@ -28,14 +28,12 @@ const dataController = {
       res.status(400).json(e)
     }
   },
-  async index(req, res, next) {
+  async index (req, res, next) {
     const users = await User.find({})
     res.status(200).json(users)
-
   },
 
-
-  async login(req, res, next) {
+  async login (req, res, next) {
     try {
       const user = await User.findOne({ email: req.body.email })
       if (!user) throw new Error()
@@ -49,40 +47,32 @@ const dataController = {
     }
   },
 
-  //Show 
-  async show(req, res, next) {
-    User.findById(req.params.id, (err, foundUser) => {
-      if (err) {
-        res.status(404).send({
-          msg: err.message,
-          output: 'Could not find a user with that ID'
-        })
-      } else {
-        res.locals.data.post = foundUser
-        next()
-      }
-    })
+  async show (req, res, next) {
+    try {
+      const user = await User.findById(req.params.id).populate('post')
+      res.status(200).json(user)
+    } catch (e) {
+      res.status(400).json({ msg: e.message })
+    }
   },
+
   async acceptFriendRequest (req, res, next) {
     if (req.body.userId !== req.params.id) {
       try {
         const user = await User.findById(req.params.id)
         const currentRequest = await User.findById(req.body.userId)
         if (!user.sentFriendsRequest.includes(req.body.userId)) {
-          await user.updateOne({$push: {sentFriendsRequest: req.body.userId}})
-          await currentRequest.updateOne({$push: {receivedFriendRequests: req.params.id}})
-          res.status(200).json("Friend has been added")
-
+          await user.updateOne({ $push: { sentFriendsRequest: req.body.userId } })
+          await currentRequest.updateOne({ $push: { receivedFriendRequests: req.params.id } })
+          res.status(200).json('Friend has been added')
         } else {
-          req.status(403).json("You are friends already")
-
-
+          req.status(403).json('You are friends already')
         }
       } catch (err) {
         res.status(500).json(err)
       }
     } else {
-      req.status(403).json("You cannot add yourself")
+      req.status(403).json('You cannot add yourself')
     }
   },
 
@@ -92,20 +82,17 @@ const dataController = {
         const user = await User.findById(req.params.id)
         const currentRequest = await User.findById(req.body.userId)
         if (user.sentFriendsRequest.includes(req.body.userId)) {
-          await user.updateOne({$pull: {sentFriendsRequest: req.body.userId}})
-          await currentRequest.updateOne({$pull: {receivedFriendRequests: req.params.id}})
-          res.status(200).json("Friend request has been rejected")
-
+          await user.updateOne({ $pull: { sentFriendsRequest: req.body.userId } })
+          await currentRequest.updateOne({ $pull: { receivedFriendRequests: req.params.id } })
+          res.status(200).json('Friend request has been rejected')
         } else {
-          req.status(403).json("You are not friends anymore")
-
-
+          req.status(403).json('You are not friends anymore')
         }
       } catch (err) {
         res.status(500).json(err)
       }
     } else {
-      req.status(403).json("You cannot reject yourself")
+      req.status(403).json('You cannot reject yourself')
     }
   }
 
@@ -116,10 +103,13 @@ const dataController = {
 }
 
 const apiController = {
-  auth(req, res) {
+  auth (req, res) {
     res.json(res.locals.data.token)
   },
-  index(req, res) {
+  index (req, res) {
+    res.json(res.locals.data.user)
+  },
+  show (req, res) {
     res.json(res.locals.data.user)
   }
 }
@@ -130,16 +120,13 @@ module.exports = {
   apiController
 }
 
-
 /* -- Helper Functions -- */
 
-function createJWT(user) {
-
+function createJWT (user) {
   return jwt.sign(
     // data payload
     { user },
     process.env.SECRET,
     { expiresIn: '24h' }
   )
-
 }

@@ -2,8 +2,6 @@
 // const router = express.Router()
 // const { dataController, apiController } = require('../../controllers/api/posts')
 
-
-
 // // Index /api/posts/post/:id
 // router.get('/post/:id', dataController.postIndex, apiController.index)
 
@@ -15,8 +13,6 @@
 
 // // Index /api/posts/post/:id/user/:username
 // router.get('/post/:id/user/:username', dataController.userPostShow, apiController.index)
-
-
 
 const express = require('express')
 const router = express.Router()
@@ -45,8 +41,5 @@ router.get('/:id', dataController.show, apiController.show)
 
 // // // Index /api/posts/post/:id/user/:username
 // router.get('/post/:id/user/:username', dataController.userPostShow, apiController.index)
-
-
-
 
 module.exports = router
