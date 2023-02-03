@@ -23,8 +23,9 @@ export default function Post({
             <li>
 
                 <div className='styles-Post'>
-                    
+                    <div className='newsfeed-name'>
                     <Link to={`/${user._id}/posts`}> {user.firstName} {user.lastName} </Link>
+                    </div>
                     
                     posted on
                     <span>{post.createdAt.slice(0, -14)}</span>
@@ -52,20 +53,22 @@ export default function Post({
                         <></>
                     }
                     <br />
-                    {/* <button onClick={() => deletePost(post._id)}>Delete Post</button>
-                    <button>Like</button> &nbsp;
-                    <button>Share</button> <br /> */}
-                    <form onSubmit>
-                        <label>
-                            <input type="text" onChange={handleChange} value={comment} placeholder='Write A Comment' />
-                        </label>
-                        <input type="submit" value="post" />
-                    </form>
+                    
                     <div className='post__footer'>
                     <button onClick={() => deletePost(post._id)}>Delete Post</button>
                     <button>Like</button> &nbsp;
                     <button>Share</button> <br />
                     </div>
+                    
+                    <br/>
+
+                    <form onSubmit>
+                        <label>
+                            <input type="text" className='comment' onChange={handleChange} value={comment} placeholder='Write A Comment' />
+                        </label>
+                        <input type="submit" value="post" />
+                    </form>
+                
                 </div>
             </li>
         </div>
