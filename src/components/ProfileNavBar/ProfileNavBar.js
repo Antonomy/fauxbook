@@ -23,7 +23,7 @@ export default function ProfileNavBar({user}) {
             
             <Link to={`/${user._id}/posts`}>Posts</Link>
             &nbsp; | &nbsp;
-            <Link to="/about">About</Link>
+            <Link to={`/${user._id}/about`}>About</Link>
             &nbsp; | &nbsp;
             <Link to="/friends">Friends</Link>
             &nbsp; | &nbsp;

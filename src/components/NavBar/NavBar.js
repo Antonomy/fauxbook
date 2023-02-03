@@ -25,7 +25,7 @@ export default function NavBar({
       &nbsp; | &nbsp;
       </li>
       <li>
-      <Link to="/about" class="tooltip" data-tooltip="About" id="btn_About" className='navbarlink'>About</Link>
+      <Link to={`/${user._id}/about`} class="tooltip" data-tooltip="About" id="btn_About" className='navbarlink'>About</Link>
       &nbsp; | &nbsp;
       </li>
       <li>
