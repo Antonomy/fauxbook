@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap');
+
+
 .Post .postPhoto {
     width: 500px;
     height: 300px;
@@ -40,6 +43,11 @@ button {
     background-color: #385591;
     color: white;
     box-shadow: 0 1px 8px rgba(0,0,0,0.3);
+	padding: 2px 18px 3px 18px;
+	border-top: 1px white solid;
+	border-left: 1px white solid;
+	border-right: 1px #000033 solid;
+	border-bottom: 1px #000033 solid; 
 }
 
 .comment{
@@ -48,5 +56,13 @@ button {
 
 .newsfeed-name{
     float: left;
+    
+}
+
+.nfn{
+    text-decoration: none;
+    color: black;
+    font-family: 'Merriweather', serif;
+    font-size: larger;
 
 }
