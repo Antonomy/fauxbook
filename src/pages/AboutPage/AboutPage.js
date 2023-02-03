@@ -3,18 +3,19 @@ import styles from './AboutPage.module.scss'
 import User from '../../components/User/User'
 import ProfileNavBar from '../../components/ProfileNavBar/ProfileNavBar'
 import editIcon from './images/editpencilicon.png'
+import coverPhoto from './images/cover.png'
 
 export default function AboutPage(user) {
-    const [showSelfEditRights, setShowSelfEditRights] = useState(false)
-    const [showFirstNameInput, setShowFirstNameInput] = useState(false)
-    const [showLastNameInput, setShowLastNameInput] = useState(false)
-    const [showEmailInput, setShowEmailInput] = useState(false)
-    const [showBirthdayInput, setShowBirthdayInput] = useState(false)
-    const [showHighSchoolInput, setShowHighSchoolInput] = useState(false)
-    const [showCollegeInput, setShowCollegeInput] = useState(false)
-    const [showCurrentCityInput, setShowCurrentCityInput] = useState(false)
-    const [showHometownInput, setShowHometownInput] = useState(false)
-    const [showRelationshipStatusInput, setShowRelationshipStatusInput] = useState(false)
+    // const [showSelfEditRights, setShowSelfEditRights] = useState(false)
+    // const [showFirstNameInput, setShowFirstNameInput] = useState(false)
+    // const [showLastNameInput, setShowLastNameInput] = useState(false)
+    // const [showEmailInput, setShowEmailInput] = useState(false)
+    // const [showBirthdayInput, setShowBirthdayInput] = useState(false)
+    // const [showHighSchoolInput, setShowHighSchoolInput] = useState(false)
+    // const [showCollegeInput, setShowCollegeInput] = useState(false)
+    // const [showCurrentCityInput, setShowCurrentCityInput] = useState(false)
+    // const [showHometownInput, setShowHometownInput] = useState(false)
+    // const [showRelationshipStatusInput, setShowRelationshipStatusInput] = useState(false)
 
     const [foundUser, setFoundUser] = useState(null)
 
@@ -252,11 +253,11 @@ export default function AboutPage(user) {
                     }
                 </div> */}
                 <div className={styles.pageContainer}>Page Container
-                <header className={styles.header}>header</header>
+                <header className={styles.bigHeader}>header</header>
 
                 <div className={styles.afterForm}>
-                    <div className={styles.header}>Profile Picture
-                        <div className={styles.coverPhoto}> Cover Picture
+                    <div className={styles.littleHeader}>A header
+                        <div className={styles.coverPhoto} > Cover Picture<img src={coverPhoto} alt="logo" />
                             <div className={styles.profileInfo}>Count Friends
                                 <div className={styles.middleStuff}>Five
                                 </div>
