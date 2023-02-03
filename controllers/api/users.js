@@ -49,20 +49,16 @@ const dataController = {
     }
   },
 
-  //Show 
   async show(req, res, next) {
-    User.findById(req.params.id, (err, foundUser) => {
-      if (err) {
-        res.status(404).send({
-          msg: err.message,
-          output: 'Could not find a user with that ID'
-        })
-      } else {
-        res.locals.data.post = foundUser
-        next()
-      }
-    })
+    try {
+      const user = await User.findById(req.params.id).populate('post')
+      res.status(200).json(user)
+    } catch (e) {
+      res.status(400).json({ msg: e.message })
+
+    }
   },
+  
   async acceptFriendRequest (req, res, next) {
     if (req.body.userId !== req.params.id) {
       try {
@@ -120,6 +116,9 @@ const apiController = {
     res.json(res.locals.data.token)
   },
   index(req, res) {
+    res.json(res.locals.data.user)
+  },
+  show(req, res) {
     res.json(res.locals.data.user)
   }
 }
