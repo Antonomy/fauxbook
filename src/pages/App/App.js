@@ -54,7 +54,7 @@ function App () {
               * ----- * Delete later possibly? * --- *
               <Route path='/:userId/users' element={<ProfilePage user={user._id} />} />
               * ----- * ---------------------------------------------------- * --- *
-              <Route path='/photos' element={<PhotosPage user={user} />} />
+              <Route path='/:userId/photos' element={<PhotosPage user={user} />} />
               <Route path='/logout' element={<UserLogOut user={user} setUser={setUser} />} />
               {/* <Route path="/*" element={<Navigate to="/newsfeed" />} /> */}
             </Routes>
