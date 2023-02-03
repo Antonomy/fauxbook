@@ -107,12 +107,6 @@ export default function NewsFeedPage ({user}) {
 
     return (
         <main className='container'>
-
-            <div classname='l-sidebar'> 
-                <h3>
-                    Friends Birthdays in the upcoming 7 days
-                </h3>
-            </div>
             
             <PostForm
                 user={user}

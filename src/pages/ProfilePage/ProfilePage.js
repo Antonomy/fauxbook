@@ -5,7 +5,6 @@ import ProfileNavBar from '../../components/ProfileNavBar/ProfileNavBar'
 import PostForm from '../../components/PostForm/PostForm'
 import PhotosPreview from '../../components/PhotosPreview/PhotosPreview'
 import FriendsPreview from '../../components/FriendsPreview/FriendsPreview'
-import PostsHeader from '../../components/PostsHeader/PostsHeader'
 import Post from '../../components/Post/Post'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
@@ -137,7 +136,6 @@ export default function ShowAboutPage({ user }) {
                 newPost={newPost}
 
             /> */}
-            <PostsHeader />
             <>
                 {
                     currentUser?.post  && currentUser.post.length ? (<ul>
