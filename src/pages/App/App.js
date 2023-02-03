@@ -50,7 +50,7 @@ function App() {
             <Route path="/posts" element={<PostsPage user={user}/>} />
             <Route path="/:userId/posts" element={<ProfilePage user={user}/>}/>
             <Route path="/:userId/about" element={<AboutPage user={user}/>}/>
-            <Route path="/requests" element={<RequestsPage user={user}/>}/>
+            <Route path="/:userId/requests" element={<RequestsPage user={user}/>}/>
             <Route path="/friends" element={<FriendsPage user={user}/>}/>
             * ----- * Delete later possibly? * --- *
             <Route path="/:userId/users" element={<ProfilePage user={user._id}/>}/>
