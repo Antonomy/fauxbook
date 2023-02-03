@@ -40,14 +40,14 @@ export default function NavBar({
       <Link to="/photos" class="tooltip" data-tooltip="Photos" id="btn_photos" className='navbarlink'>Photos</Link>
       &nbsp; | &nbsp;
       </li>
-
+      <li>
+      <Link to={`/${user._id}/posts`} class="tooltip" data-tooltip="Profile" id="btn_profile" className='navbarlink'>{user.firstName} {user.lastName}'s Profile </Link>
+      &nbsp; | &nbsp;
+      </li>
       <br />
       {/* &nbsp;TO BE REMOVED - only here for convenience: &nbsp; */}
       <br/>
-      <li>
-      <Link to={`/${user._id}/posts`} class="tooltip" data-tooltip="Profile" id="btn_profile">{user.firstName} {user.lastName}</Link>
-      &nbsp; | &nbsp;
-      </li>
+      
       <li>
       <Link to="/policy" class="tooltip" data-tooltip="Policy" id="btn_policy">Policy</Link>
       &nbsp; | &nbsp;
