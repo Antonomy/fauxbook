@@ -20,7 +20,7 @@ export default function NavBar({
             <Link to="/newsfeed" className='logo' id="btn_logo"><img height='40rem' src={logo} className='logo' /></Link>
           </li>
           <li>
-            <Link to="/newsfeed" class="tooltip" data-tooltip="Home" id="btn_home"><img height='25rem' src={homeIcon} /></Link>
+            <Link to="/newsfeed" id="btn_home"><img height='25rem' src={homeIcon} /></Link>
 
           </li>
           <li>

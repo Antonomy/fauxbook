@@ -4,9 +4,6 @@
 
 }
 
-/* :root{
-      --btn-width-100: 100px;
-  } */
 .body {
   margin: 0px;
   padding: 1px;
@@ -81,4 +78,17 @@ nav ul {
 
 .logo {
   margin-left: 1rem;
+}
+
+#btn_home{
+  padding: .5rem;
+  display: flex;
+  border-radius: 1rem;
+}
+
+#btn_home:hover{
+  background-color: white;
+  padding: .5rem;
+  display: flex;
+  border-radius: 1rem;
 }
