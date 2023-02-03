@@ -30,14 +30,19 @@ const dataController = {
   },
   async index(req, res, next) {
     const users = await User.find({})
-     res.status(200).json(users)
-     
-   },
-   async show(req, res,next) {
-    const user = await User.findById(req.params.id)
-    res.status(200).json(user)
-   },
- 
+    res.status(200).json(users)
+
+  },
+  async show(req, res, next) {
+    try {
+      const user = await User.findById(req.params.id).populate('post')
+      res.status(200).json(user)
+    } catch (e) {
+      res.status(400).json({ msg: e.message })
+
+    }
+  },
+
   async login(req, res, next) {
     try {
       const user = await User.findOne({ email: req.body.email })

@@ -48,11 +48,11 @@ function App() {
             <Route path="/policy" element={<PolicyPage />}/>
             <Route path="/newsfeed" element={<NewsFeedPage  user={user}/>} />
             <Route path="/posts" element={<PostsPage user={user}/>} />
-            <Route path="/:id/posts" element={<ShowAboutPage user={user}/>}/>
+            <Route path="/:userId/posts" element={<ShowAboutPage user={user}/>}/>
             <Route path="/about" element={<AboutPage user={user}/>}/>
             <Route path="/requests" element={<RequestsPage user={user}/>}/>
             <Route path="/friends" element={<FriendsPage user={user}/>}/>
-            <Route path="/:id/users" element={<ShowAboutPage user={user._id}/>}/>
+            <Route path="/:userId/users" element={<ShowAboutPage user={user._id}/>}/>
             <Route path="/photos" element={<PhotosPage user={user}/>}/>
             <Route path="/logout" element={<UserLogOut user={user} setUser={setUser}/>}/>
             {/* <Route path="/*" element={<Navigate to="/newsfeed" />} /> */}
