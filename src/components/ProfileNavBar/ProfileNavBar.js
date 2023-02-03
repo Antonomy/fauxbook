@@ -9,14 +9,9 @@ export default function ProfileNavBar ({ user }) {
         <button>Add Cover Photo</button>
       </div>
       <img src={user.profilePhoto} alt='profile picture' />
-      <h2>{user.firstName} {user.lastName}</h2>
-
-      {/* REQUEST FRIEND button should only show up if NOT FRIENDS and NOT SELF */}
+      <h2 className="username">{user.firstName} {user.lastName}</h2>
       <button>Request Friend</button>
-      {/* This button should .push() user's _id to the recipients requests array */}
-      {/* UNFRIEND button should only show up IF FRIENDS */}
       <button>Unfriend</button>
-      {/* This button should .slice user's _id from the recipient's friends array */}
       <br />
 
       <Link to={`/${user._id}/posts`}>Profile</Link>
