@@ -32,7 +32,7 @@ export default function NavBar({
 
           </li>
           <li>
-            <Link to="`/${user._id}/requests`" class="tooltip" data-tooltip="Requests" id="btn_requests" className='navbarlink'>Requests</Link>
+            <Link to={`/${user._id}/requests`} class="tooltip" data-tooltip="Requests" id="btn_requests" className='navbarlink'>Requests</Link>
 
           </li>
           <li>
