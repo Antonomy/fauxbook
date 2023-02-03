@@ -49,7 +49,7 @@ function App() {
             <Route path="/newsfeed" element={<NewsFeedPage  user={user}/>} />
             <Route path="/posts" element={<PostsPage user={user}/>} />
             <Route path="/:userId/posts" element={<ProfilePage user={user}/>}/>
-            <Route path="/about" element={<AboutPage user={user}/>}/>
+            <Route path="/:userId/about" element={<AboutPage user={user}/>}/>
             <Route path="/requests" element={<RequestsPage user={user}/>}/>
             <Route path="/friends" element={<FriendsPage user={user}/>}/>
             * ----- * Delete later possibly? * --- *
