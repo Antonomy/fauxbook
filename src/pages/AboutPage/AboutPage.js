@@ -1,8 +1,9 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import styles from './AboutPage.module.scss'
 import User from '../../components/User/User'
 import ProfileNavBar from '../../components/ProfileNavBar/ProfileNavBar'
 import editIcon from './images/editpencilicon.png'
+import { useParams } from 'react-router-dom';
 
 export default function AboutPage(user) {
     const [showSelfEditRights, setShowSelfEditRights] = useState(false)
@@ -17,7 +18,8 @@ export default function AboutPage(user) {
     const [showRelationshipStatusInput, setShowRelationshipStatusInput] = useState(false)
 
     const [foundUser, setFoundUser] = useState(null)
-
+    const [currentUser, setCurrentUser] = useState({})
+    const { userId } = useParams()
 
     // update
     const updateUser = async (id, updatedData) => {
@@ -35,9 +37,23 @@ export default function AboutPage(user) {
             console.error(error)
         }
     }
+    const getOneUser = async () => {
+        try {
+            const response = await fetch(`/api/users/${userId}`)
+            const data = await response.json()
+            setCurrentUser(data)
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
     const handleUpdate = (evt) => {
         setFoundUser({ ...foundUser, [evt.target.name]: evt.target.value })
     }
+
+    useEffect(() => {
+        getOneUser()
+    }, [userId])
 
     // if(user._id=req.params.id) setShowSelfEditRights(true)
 
@@ -45,7 +61,7 @@ export default function AboutPage(user) {
 
         <main>
             <ProfileNavBar user={user} />
-
+            
             <div>First Name: {user.firstName}
                 {showSelfEditRights ?
                     <>
@@ -67,6 +83,7 @@ export default function AboutPage(user) {
                     </>
                     :
                     <></>
+                    
                 }
             </div>
             <div>Last Name: {user.lastName}
