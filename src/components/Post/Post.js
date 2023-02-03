@@ -21,8 +21,11 @@ export default function Post({
     return (
         <div>
             <li>
+
                 <div className='styles-Post'>
-                    {/* <Link to={`/${user._id}/posts`}> {user.firstName} {user.lastName} </Link> */}
+                    
+                    <Link to={`/${user._id}/posts`}> {user.firstName} {user.lastName} </Link>
+                    
                     posted on
                     <span>{post.createdAt.slice(0, -14)}</span>
                     <br />
