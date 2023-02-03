@@ -15,7 +15,6 @@ export default function NavBar({
   return (
     <nav className="nav">
       <nav className='body'>
-
         <ul>
           <li>
             <Link to="/newsfeed" className='logo' id="btn_logo"><img height='40rem' src={logo} className='logo' /></Link>
