@@ -8,7 +8,7 @@ import FriendsPreview from '../../components/FriendsPreview/FriendsPreview'
 import PostsHeader from '../../components/PostsHeader/PostsHeader'
 import Post from '../../components/Post/Post'
 import { useEffect, useState } from 'react'
-
+import { useParams } from 'react-router-dom';
 
 export default function ShowAboutPage({ user }) {
     /*--- State --- */
@@ -19,6 +19,9 @@ export default function ShowAboutPage({ user }) {
     const [newPost, setNewPost] = useState({
         post: ''
     })
+    const [currentUser, setCurrentUser] = useState({})
+    const { userId } = useParams()
+
     // index 
     const getPosts = async () => {
         try {
@@ -87,7 +90,7 @@ export default function ShowAboutPage({ user }) {
                     'Content-Type': 'application/json',
                     Authorization: `Bearer ${token}`
                 },
-                body: JSON.stringify({ ...newPost, user: user._id})
+                body: JSON.stringify({ ...newPost, user: user._id })
             })
             const data = await response.json()
             setFoundPost([data, ...posts])
@@ -100,6 +103,15 @@ export default function ShowAboutPage({ user }) {
         }
     }
 
+    const getOneUser = async () => {
+        try {
+            const response = await fetch(`/api/users/${userId}`)
+            const data = await response.json()
+            setCurrentUser(data)
+        } catch (error) {
+            console.error(error)
+        }
+    }
 
 
     const handleChange = evt => {
@@ -107,15 +119,16 @@ export default function ShowAboutPage({ user }) {
     }
 
     useEffect(() => {
+        getOneUser()
         getPosts()
         setToken(localStorage.getItem('token'))
-    }, [foundPost])
+    }, [foundPost, userId])
 
 
     return (
         <div>
             <ProfileNavBar
-                user={user}
+                user={currentUser ? currentUser : user}
             />
             {/* <PostForm
                 user={user}
@@ -127,9 +140,9 @@ export default function ShowAboutPage({ user }) {
             <PostsHeader />
             <>
                 {
-                    posts && posts.length ? (<ul>
+                    currentUser?.post  && currentUser.post.length ? (<ul>
                         {
-                            posts.map((post) => {
+                            currentUser.post.map((post) => {
                                 return (
                                     <Post
                                         user={post.user}
