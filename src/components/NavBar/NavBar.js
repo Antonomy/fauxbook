@@ -45,7 +45,7 @@ export default function NavBar({
       {/* &nbsp;TO BE REMOVED - only here for convenience: &nbsp; */}
       <br/>
       <li>
-      <Link to="/posts" class="tooltip" data-tooltip="Profile" id="btn_profile">{user.firstName} {user.lastName}</Link>
+      <Link to={`/${user._id}/posts`} class="tooltip" data-tooltip="Profile" id="btn_profile">{user.firstName} {user.lastName}</Link>
       &nbsp; | &nbsp;
       </li>
       <li>
