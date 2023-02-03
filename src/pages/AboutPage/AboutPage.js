@@ -251,10 +251,12 @@ export default function AboutPage(user) {
                         <></>
                     }
                 </div> */}
+                <div className={styles.pageContainer}>Page Container
+                <header className={styles.header}>header</header>
 
-                <div className={styles.afterForm}>Cover Picture
+                <div className={styles.afterForm}>
                     <div className={styles.header}>Profile Picture
-                        <div className={styles.coverPhoto}> First NameLast Name
+                        <div className={styles.coverPhoto}> Cover Picture
                             <div className={styles.profileInfo}>Count Friends
                                 <div className={styles.middleStuff}>Five
                                 </div>
@@ -275,6 +277,7 @@ export default function AboutPage(user) {
                     <div className={styles.cards}>
                         <img src='./images.cover.png' /><h1>Posts</h1>
                     </div>
+                </div>
                 </div>
 
             </div>
