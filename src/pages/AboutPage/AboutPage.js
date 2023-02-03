@@ -4,18 +4,20 @@ import User from '../../components/User/User'
 import ProfileNavBar from '../../components/ProfileNavBar/ProfileNavBar'
 import editIcon from './images/editpencilicon.png'
 import coverPhoto from './images/cover.png'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import Container from 'react-bootstrap/Container'
 
 export default function AboutPage(user) {
-    // const [showSelfEditRights, setShowSelfEditRights] = useState(false)
-    // const [showFirstNameInput, setShowFirstNameInput] = useState(false)
-    // const [showLastNameInput, setShowLastNameInput] = useState(false)
-    // const [showEmailInput, setShowEmailInput] = useState(false)
-    // const [showBirthdayInput, setShowBirthdayInput] = useState(false)
-    // const [showHighSchoolInput, setShowHighSchoolInput] = useState(false)
-    // const [showCollegeInput, setShowCollegeInput] = useState(false)
-    // const [showCurrentCityInput, setShowCurrentCityInput] = useState(false)
-    // const [showHometownInput, setShowHometownInput] = useState(false)
-    // const [showRelationshipStatusInput, setShowRelationshipStatusInput] = useState(false)
+    const [showSelfEditRights, setShowSelfEditRights] = useState(false)
+    const [showFirstNameInput, setShowFirstNameInput] = useState(false)
+    const [showLastNameInput, setShowLastNameInput] = useState(false)
+    const [showEmailInput, setShowEmailInput] = useState(false)
+    const [showBirthdayInput, setShowBirthdayInput] = useState(false)
+    const [showHighSchoolInput, setShowHighSchoolInput] = useState(false)
+    const [showCollegeInput, setShowCollegeInput] = useState(false)
+    const [showCurrentCityInput, setShowCurrentCityInput] = useState(false)
+    const [showHometownInput, setShowHometownInput] = useState(false)
+    const [showRelationshipStatusInput, setShowRelationshipStatusInput] = useState(false)
 
     const [foundUser, setFoundUser] = useState(null)
 
@@ -42,9 +44,14 @@ export default function AboutPage(user) {
 
     // if(user._id=req.params.id) setShowSelfEditRights(true)
     return (
-        <main>
+    
+    <main>
+    
+        
             <div className={styles.aboutPage}>
-                {/* <ProfileNavBar user={user} />
+                <ProfileNavBar user={user} />
+<Container style={{"width":"100%"}} align='left'>
+                
                 <div>First Name:My name is Crystal {user.firstName}
                     {showSelfEditRights ?
                         <>
@@ -251,21 +258,21 @@ export default function AboutPage(user) {
                         :
                         <></>
                     }
-                </div> */}
+                </div>
                 <div className={styles.pageContainer}>Page Container
                 <header className={styles.bigHeader}>header</header>
 
                 <div className={styles.afterForm}>
                     <div className={styles.littleHeader}>A header
-                        <div className={styles.coverPhoto} > Cover Picture<img src={coverPhoto} alt="logo" />
+                        {/* <div className={styles.coverPhoto} > Cover Picture<img src={coverPhoto} alt="logo" /> */}
                             <div className={styles.profileInfo}>Count Friends
                                 <div className={styles.middleStuff}>Five
                                 </div>
-                            </div>
+                            {/* </div> */}
                         </div>
                     </div>
                 </div>
-                <div className={styles.profileBody}>
+                {/* <div className={styles.profileBody}>
                     <div className={styles.cards}><h1>INTRO</h1>
                         <img src='./images.cover.png' />
                     </div>
@@ -278,10 +285,11 @@ export default function AboutPage(user) {
                     <div className={styles.cards}>
                         <img src='./images.cover.png' /><h1>Posts</h1>
                     </div>
+                </div> */}
                 </div>
-                </div>
-
-            </div>
+              </Container>
+            </div> 
+            
         </main>
     )
 }
