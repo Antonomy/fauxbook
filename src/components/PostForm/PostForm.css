@@ -1,0 +1,71 @@
+body {
+    margin: 0px 0px;
+    background-color: #f0f2f5;
+  }
+
+.postform{
+    margin: 20px;
+    padding: 5px;
+}
+
+.td{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#c-inp{
+    padding-left: 20px;
+}
+#c-inp input {
+    width: 100%;
+    font-size: 20px;
+    border: 0;
+    padding: 0;
+    margin: 0;
+  }
+
+  
+
+  .woym {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    size: 100px;
+    border-radius: 5px;
+    padding: 80px;
+    margin: 7px;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.3);
+    margin-right: 90px;
+    background-color: aliceblue;
+    
+  }
+
+  .ipp{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 5px;
+    padding: 3px;
+    margin: 7px;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.3);
+    margin-right: 90px;
+  }
+
+  .ip{
+    background: url(https://png.pngtree.com/element_our/20190528/ourmid/pngtree-photo-icon-image_1128397.jpg);
+    
+  }
+
+  .post-btn{
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 5px 5px;
+    border-radius: 5px;
+    background: #385591;
+    font-weight: 500;
+    display: inline-block;
+    margin-bottom: 5px;
+  }
+
+  

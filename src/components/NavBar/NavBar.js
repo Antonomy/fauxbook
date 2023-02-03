@@ -65,6 +65,6 @@ export default function NavBar({
     </li>
     </ul>
     </nav>
-    </nav>
+        </nav>
   );
 }

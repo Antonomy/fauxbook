@@ -1,12 +1,12 @@
-import styles from './ProfileNavBar.module.scss';
+import './ProfileNavBar.css';
 import { Link } from 'react-router-dom';
 
 export default function ProfileNavBar({user}) {
 
 
     return (
-        <div className={styles.ProfileNavBar}>
-            <div className={styles.coverPhoto}>
+        <div className='styles.ProfileNavBar'>
+            <div className='styles.coverPhoto'>
                 <img src="" alt="cover photo goes here" />
                 <button>Add Cover Photo</button>
             </div>

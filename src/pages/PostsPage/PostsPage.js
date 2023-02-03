@@ -1,4 +1,4 @@
-import styles from './PostsPage.module.scss'
+import './PostsPage.css'
 
 import NavBar from "../../components/NavBar/NavBar"
 import ProfileNavBar from '../../components/ProfileNavBar/ProfileNavBar'
