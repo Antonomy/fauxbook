@@ -106,14 +106,20 @@ export default function NewsFeedPage ({user}) {
 
 
     return (
-        <main>
-            <div>Friends Birthdays in the upcoming 7 days</div>
+        <main className='container'>
+
+            <div classname='l-sidebar'> 
+                <h3>
+                    Friends Birthdays in the upcoming 7 days
+                </h3>
+            </div>
             
             <PostForm
                 user={user}
                 createPost={createPost}
                 handleChange={handleChange}
                 newPost={newPost}
+                
 
             />
             <>

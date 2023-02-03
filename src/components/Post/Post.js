@@ -1,4 +1,4 @@
-import styles from './Post.module.scss'
+import './Post.css'
 import { Link } from 'react-router-dom'
 import { useState, useRef } from "react";
 
@@ -21,7 +21,7 @@ export default function Post({
     return (
         <div>
             <li>
-                <div className={styles.Post}>
+                <div className='styles-Post'>
                     {/* <Link to={`/${user._id}/posts`}> {user.firstName} {user.lastName} </Link> */}
                     posted on
                     <span>{post.createdAt.slice(0, -14)}</span>
@@ -43,21 +43,26 @@ export default function Post({
                     <br />
                     {post.photo ?
                         <>
-                            <img className={styles.postPhoto} src={post.photo} />
+                            <img className='styles.postPhoto' src={post.photo} />
                         </>
                         :
                         <></>
                     }
                     <br />
-                    <button onClick={() => deletePost(post._id)}>Delete Post</button>
+                    {/* <button onClick={() => deletePost(post._id)}>Delete Post</button>
                     <button>Like</button> &nbsp;
-                    <button>Share</button> <br />
+                    <button>Share</button> <br /> */}
                     <form onSubmit>
                         <label>
                             <input type="text" onChange={handleChange} value={comment} placeholder='Write A Comment' />
                         </label>
                         <input type="submit" value="post" />
                     </form>
+                    <div className='post__footer'>
+                    <button onClick={() => deletePost(post._id)}>Delete Post</button>
+                    <button>Like</button> &nbsp;
+                    <button>Share</button> <br />
+                    </div>
                 </div>
             </li>
         </div>

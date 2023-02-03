@@ -6,6 +6,7 @@ body {
 .postform{
     margin: 20px;
     padding: 5px;
+    width: 80%;
 }
 
 .td{
@@ -30,10 +31,11 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    width: 80%;
     size: 100px;
     border-radius: 5px;
-    padding: 80px;
-    margin: 7px;
+    padding: 8px;
+    margin: 0px;
     box-shadow: 0 1px 8px rgba(0,0,0,0.3);
     margin-right: 90px;
     background-color: aliceblue;
