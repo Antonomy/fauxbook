@@ -24,7 +24,7 @@ export default function Post({
 
                 <div className='styles-Post'>
                     <div className='newsfeed-name'>
-                    <Link to={`/${user._id}/posts`}> {user.firstName} {user.lastName} </Link>
+                    <Link className='nfn' to={`/${user._id}/posts`}> {user.firstName} {user.lastName} </Link>
                     </div>
                     
                     posted on
