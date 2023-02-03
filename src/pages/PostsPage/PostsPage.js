@@ -102,7 +102,7 @@ export default function PostsPage({ user }) {
         }
     }
 
-
+console.log(user)
 
     const handleChange = evt => {
         setNewPost({ ...newPost, [evt.target.name]: evt.target.value, user: user._id })
