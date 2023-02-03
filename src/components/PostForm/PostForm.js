@@ -26,10 +26,9 @@ export default function PostForm ({
             type='text' className='woym' onChange={handleChange} value={newPost.post}
             name='post' placeholder='Whats on your mind?'
           />
-
           <input
             className='ip' type='text' onChange={handleChange} value={newPost.photo}
-            name='photo' placeholder=''
+            name='photo' placeholder='Insert Photo Link Here (optional)'
           />
         </label>
         <input className='post-btn' type='submit' value='post' />
