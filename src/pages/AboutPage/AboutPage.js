@@ -5,7 +5,7 @@ import ProfileNavBar from '../../components/ProfileNavBar/ProfileNavBar'
 import editIcon from './images/editpencilicon.png'
 import coverPhoto from './images/cover.png'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import Container from 'react-bootstrap/Container'
+import { Container, Row, Col } from 'react-bootstrap'
 
 export default function AboutPage(user) {
     const [showSelfEditRights, setShowSelfEditRights] = useState(false)
@@ -51,6 +51,7 @@ export default function AboutPage(user) {
             <div className={styles.aboutPage}>
                 <ProfileNavBar user={user} />
 <Container style={{"width":"100%"}} align='left'>
+    <Col>
                 
                 <div>First Name:My name is Crystal {user.firstName}
                     {showSelfEditRights ?
@@ -287,6 +288,7 @@ export default function AboutPage(user) {
                     </div>
                 </div> */}
                 </div>
+                </Col>
               </Container>
             </div> 
             
