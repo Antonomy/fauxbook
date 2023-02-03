@@ -61,7 +61,6 @@ export default function AboutPage (user) {
 
     <main>
       <ProfileNavBar user={user} />
-      {console.log(user)}
       <div>First Name: {user.firstName}
         {showSelfEditRights
           ? <>
