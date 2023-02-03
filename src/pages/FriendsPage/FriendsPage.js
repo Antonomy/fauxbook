@@ -5,7 +5,7 @@ import User from '../../components/User/User'
 import { useState, useEffect } from 'react';
 
 
-export default function FriendsPage({ user }) {
+export default function FriendsPage({}) {
     const [friends, setFriends] = useState([])
     const [token, setToken] = useState('')
 
@@ -43,6 +43,7 @@ export default function FriendsPage({ user }) {
                             // <h2>HELLO FRIEND!</h2>
 
                             <User
+                                key={user.id}
                                 user = {user}
                                 // user = {friend.user}
                                 // key = {friend._id}
