@@ -25,7 +25,7 @@ export default function ProfileNavBar ({ user }) {
             &nbsp; | &nbsp;
       <Link to='/friends'>Friends</Link>
             &nbsp; | &nbsp;
-      <Link to='/photos'>Photos</Link>
+      <Link to={`/${user._id}/photos`}>Photos</Link>
     </div>
   )
 }

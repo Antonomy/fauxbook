@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 import styles from './PhotosPage.module.scss'
 // import ProfileNavBar from '../../components/ProfileNavBar/ProfileNavBar'
 
@@ -10,6 +11,9 @@ export default function PhotosPage ({ user }) {
     caption: '',
     completed: true
   })
+  const [currentUser, setCurrentUser] = useState({})
+  const { userId } = useParams()
+
   const createPhoto = async () => {
     const body = { ...newPhoto }
     try {
@@ -68,9 +72,26 @@ export default function PhotosPage ({ user }) {
       console.error(error)
     }
   }
+
+  const getOneUser = async () => {
+    try {
+      const response = await fetch(`/api/users/${userId}`)
+      const data = await response.json()
+      setCurrentUser(data)
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+  
   useEffect(() => {
     getPhotos()
   }, [])
+
+  useEffect(() => {
+    getOneUser()
+  }, [userId])
+  
   return (
 
     <main className={styles.main}>
