@@ -1,4 +1,4 @@
-import styles from './PostForm.module.sass'
+import './PostForm.css';
 import { useState } from "react";
 
 
@@ -25,7 +25,7 @@ export default function PostForm({
     }
     return (
         <div>
-            <div className={styles.postForm}>
+            <div className="postform">
                 <form onSubmit={onSubmit}>
                     <label>
                         <input type="text" onChange={handleChange} value={newPost.post} 
@@ -33,7 +33,7 @@ export default function PostForm({
                         <input type="text" onChange={handleChange} value={newPost.photo} 
                         name='photo' placeholder='import photo here' />
                     </label>
-                    <input type="submit" value="post" />
+                    <input className='post-btn' type="submit" value="post" />
                 </form>
             </div>
         </div>

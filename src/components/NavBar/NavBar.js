@@ -62,6 +62,6 @@ export default function NavBar({setUser}) {
     </li>
     </ul>
     </nav>
-    </nav>
+        </nav>
   );
 }

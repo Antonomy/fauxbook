@@ -1,4 +1,4 @@
-import styles from './NewsFeedPage.module.sass'
+import './NewsFeedPage.css'
 import PostForm from '../../components/PostForm/PostForm'
 import Post from '../../components/Post/Post'
 
