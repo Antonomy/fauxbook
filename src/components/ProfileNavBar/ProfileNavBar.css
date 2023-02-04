@@ -11,3 +11,10 @@
 .friendrequestbutton{
     width: 10rem;
 }
+
+.profilephoto{
+    max-height: 15rem;
+    max-width: 15rem;
+    border: .5rem solid #385591;
+    border-radius: 3rem;
+}
