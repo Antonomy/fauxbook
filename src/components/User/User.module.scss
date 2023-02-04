@@ -1,5 +1,4 @@
 .friend {
-        justify-content: center;
         background-color: white;
         box-shadow: 5px 5px #385591;
         border-color: #385591;
@@ -10,3 +9,10 @@
         width: 35vw;
         text-align: center;
 }
+
+.friend>li{
+        text-decoration: none;
+}
+
+.userdetails{
+        list-style:none;}
