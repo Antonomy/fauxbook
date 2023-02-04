@@ -49,7 +49,8 @@ This application provides all the basic and necessary functionality needed for n
 - Authorization
 - Authentication
 
-![fauxbook](./public/images/app_image.png)
+faux.herokuapp.com
+![Screen Shot 2023-02-03 at 20 33 49 2](https://user-images.githubusercontent.com/110072790/216775406-6da66434-4431-4f2f-9199-1ad4af6abe7b.png)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
