@@ -62,6 +62,7 @@ export default function AboutPage(user) {
   return (
 
     <main className=''>
+      <div>
       <ProfileNavBar user={currentUser} />
 
       <div>First Name: {currentUser.firstName}
@@ -82,7 +83,7 @@ export default function AboutPage(user) {
                 }
               }}
             />
-            </>
+          </>
           : <></>}
       </div>
       <div>Last Name: {currentUser.lastName}
@@ -103,7 +104,7 @@ export default function AboutPage(user) {
                 }
               }}
             />
-            </>
+          </>
           : <></>}
       </div>
       <div>Email: {currentUser.email}
@@ -125,9 +126,9 @@ export default function AboutPage(user) {
               }}
             />
 
-            </>
-            : <></>}
-        </div>
+          </>
+          : <></>}
+      </div>
 
 
 
@@ -151,9 +152,9 @@ export default function AboutPage(user) {
               }}
             />
 
-            </>
-            : <></>}
-        </div>
+          </>
+          : <></>}
+      </div>
 
 
       <div>High School: {currentUser.highSchool}
@@ -174,7 +175,7 @@ export default function AboutPage(user) {
                 }
               }}
             />
-            </>
+          </>
           : <></>}
       </div>
       <div>College: {currentUser.college}
@@ -196,9 +197,9 @@ export default function AboutPage(user) {
               }}
             />
 
-            </>
-            : <></>}
-        </div>
+          </>
+          : <></>}
+      </div>
 
 
       <div>Current City: {currentUser.currentCity}
@@ -220,9 +221,9 @@ export default function AboutPage(user) {
               }}
             />
 
-            </>
-            : <></>}
-        </div>
+          </>
+          : <></>}
+      </div>
 
 
       <div>Home Town: {currentUser.hometown}
@@ -244,9 +245,9 @@ export default function AboutPage(user) {
               }}
             />
 
-            </>
-            : <></>}
-        </div>
+          </>
+          : <></>}
+      </div>
 
 
       <div>Relationship Status: {currentUser.relationshipStatus}
@@ -268,10 +269,11 @@ export default function AboutPage(user) {
               }}
             />
 
-            </>
-            : <></>}
-        </div>
+          </>
+          : <></>}
+      
       </div>
-    </main>
+    </div>
+    </main >
   )
 }
