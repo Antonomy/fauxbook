@@ -25,7 +25,7 @@ router.get('/:id', dataController.show)
 router.put('/:id/sentfriendsrequest', dataController.sentFriendsRequest)
 
 // Receive friend request /api/users/:id/receivedfriendrequests
-router.put('/:id/receivedfriendrequests', dataController.receivedFriendRequests)
+router.put('/:id/removefriend', dataController.removeFriend)
 
 // Show all friends of particular user /api/users/getfriends/:userId
 router.get('/getfriends/:userId', dataController.getFriends)

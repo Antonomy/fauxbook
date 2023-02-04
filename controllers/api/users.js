@@ -64,7 +64,6 @@ const dataController = {
         return User.findById(friendId)
         
       })
-      
     )
     let friendsList = []
     friends.map(friend => {
@@ -97,7 +96,7 @@ const dataController = {
     }
   },
 
-  async receivedFriendRequests (req, res, next) {
+  async removeFriend (req, res, next) {
     if (req.body.userId !== req.params.id) {
       try {
         const user = await User.findById(req.params.id)
