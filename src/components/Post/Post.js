@@ -28,8 +28,8 @@ export default function Post ({
         <img src={user.profilePhoto} alt='profile picture' className="postprofilephoto"/>
         <br/>
           <Link className='nfn' to={`/${user._id}/posts`}> {user.firstName} {user.lastName} </Link>
-          posted on 
-          <span> {post.createdAt.slice(0, -14)}</span>
+          posted on
+          <span>{post.createdAt.slice(0, -14)}</span>
           <br />
           <text onClick={() => setShowInput(!showInput)}>{post.post}</text>
           <input

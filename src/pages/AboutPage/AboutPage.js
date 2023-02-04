@@ -5,7 +5,7 @@ import ProfileNavBar from '../../components/ProfileNavBar/ProfileNavBar'
 import editIcon from './images/editpencilicon.png'
 import { useParams } from 'react-router-dom'
 
-export default function AboutPage(user) {
+export default function AboutPage (user) {
   const [loggedInUser, setLoggedInUser] = useState(null)
   const [showSelfEditRights, setShowSelfEditRights] = useState(false)
   const [showFirstNameInput, setShowFirstNameInput] = useState(false)
@@ -33,7 +33,7 @@ export default function AboutPage(user) {
         body: JSON.stringify({ ...updatedData })
       })
       const data = await response.json()
-      setCurrentUser(data)
+      setFoundUser(data)
     } catch (error) {
       console.error(error)
     }
@@ -47,7 +47,7 @@ export default function AboutPage(user) {
       console.error(error)
     }
   }
-
+  
 
   const handleUpdate = (evt) => {
     setFoundUser({ ...foundUser, [evt.target.name]: evt.target.value })
@@ -61,11 +61,9 @@ export default function AboutPage(user) {
 
   return (
 
-    <main className=''>
-      <div>
+    <main>
       <ProfileNavBar user={currentUser} />
-
-      <div>First Name: {currentUser.firstName}
+      <div>First Name: {user.firstName}
         {showSelfEditRights
           ? <>
             <span onClick={(e) => { setShowFirstNameInput('true') }}>
@@ -83,10 +81,10 @@ export default function AboutPage(user) {
                 }
               }}
             />
-          </>
+            </>
           : <></>}
       </div>
-      <div>Last Name: {currentUser.lastName}
+      <div>Last Name: {user.lastName}
         {showSelfEditRights
           ? <>
             <span onClick={(e) => { setShowLastNameInput('true') }}>
@@ -104,10 +102,10 @@ export default function AboutPage(user) {
                 }
               }}
             />
-          </>
+            </>
           : <></>}
       </div>
-      <div>Email: {currentUser.email}
+      <div>Email: {user.email}
         {showSelfEditRights
           ? <>
             <span onClick={(e) => { setShowEmailInput('true') }}>
@@ -125,15 +123,11 @@ export default function AboutPage(user) {
                 }
               }}
             />
-
-          </>
+            </>
           : <></>}
       </div>
 
-
-
-      <div>Birthday: {currentUser.birthday}
-
+      <div>Birthday: {user.birthday}
         {showSelfEditRights
           ? <>
             <span onClick={(e) => { setShowBirthdayInput('true') }}>
@@ -151,13 +145,11 @@ export default function AboutPage(user) {
                 }
               }}
             />
-
-          </>
+            </>
           : <></>}
       </div>
 
-
-      <div>High School: {currentUser.highSchool}
+      <div>High School: {user.highSchool}
         {showSelfEditRights
           ? <>
             <span onClick={(e) => { setShowHighSchoolInput('true') }}>
@@ -175,10 +167,10 @@ export default function AboutPage(user) {
                 }
               }}
             />
-          </>
+            </>
           : <></>}
       </div>
-      <div>College: {currentUser.college}
+      <div>College: {user.college}
         {showSelfEditRights
           ? <>
             <span onClick={(e) => { setShowCollegeInput('true') }}>
@@ -196,13 +188,11 @@ export default function AboutPage(user) {
                 }
               }}
             />
-
-          </>
+            </>
           : <></>}
       </div>
 
-
-      <div>Current City: {currentUser.currentCity}
+      <div>Current City: {user.currentCity}
         {showSelfEditRights
           ? <>
             <span onClick={(e) => { setShowCurrentCityInput('true') }}>
@@ -220,13 +210,11 @@ export default function AboutPage(user) {
                 }
               }}
             />
-
-          </>
+            </>
           : <></>}
       </div>
 
-
-      <div>Home Town: {currentUser.hometown}
+      <div>Home Town: {user.hometown}
         {showSelfEditRights
           ? <>
             <span onClick={(e) => { setShowHometownInput('true') }}>
@@ -244,13 +232,11 @@ export default function AboutPage(user) {
                 }
               }}
             />
-
-          </>
+            </>
           : <></>}
       </div>
 
-
-      <div>Relationship Status: {currentUser.relationshipStatus}
+      <div>Relationship Status: {user.relationshipStatus}
         {showSelfEditRights
           ? <>
             <span onClick={(e) => { setShowRelationshipStatusInput('true') }}>
@@ -268,12 +254,10 @@ export default function AboutPage(user) {
                 }
               }}
             />
-
-          </>
+            </>
           : <></>}
-      
       </div>
-    </div>
-    </main >
+
+    </main>
   )
 }
