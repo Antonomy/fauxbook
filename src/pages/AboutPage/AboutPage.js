@@ -127,7 +127,7 @@ export default function AboutPage (user) {
           : <></>}
       </div>
 
-      <div>Birthday: {user.birthday}
+      <div>Birthday: {user.birthday} 
         {showSelfEditRights
           ? <>
             <span onClick={(e) => { setShowBirthdayInput('true') }}>
