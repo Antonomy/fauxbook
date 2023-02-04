@@ -56,8 +56,7 @@ const dataController = {
     }
   },
 
-  //get friends
-  async getFriends (req, res) {
+  async getFriends (req, res, next) {
   try {
     const user = await User.findById(req.params.userId)
     const friends = await Promise.all(
@@ -78,7 +77,7 @@ const dataController = {
   }
 },
 
-  async acceptFriend (req, res, next) {
+  async sentFriendsRequest (req, res, next) {
     if (req.body.userId !== req.params.id) {
       try {
         const user = await User.findById(req.params.id)
@@ -91,14 +90,14 @@ const dataController = {
           req.status(403).json('You are friends already')
         }
       } catch (err) {
-        res.status(500).json(err)
+        res.status(500).json("Error")
       }
     } else {
       req.status(403).json('You cannot add yourself')
     }
   },
 
-  async rejectFriend (req, res, next) {
+  async receivedFriendRequests (req, res, next) {
     if (req.body.userId !== req.params.id) {
       try {
         const user = await User.findById(req.params.id)
