@@ -1,41 +1,29 @@
-import styles from './PostForm.module.sass'
-import { useState } from "react";
+import './PostForm.css'
 
-
-export default function PostForm({
-    createPost,
-    handleChange,
-    newPost
-
-    
-
-   
-   
+export default function PostForm ({
+  createPost,
+  handleChange,
+  newPost
 
 }) {
-    // const [post, setPost] = useState("")
-    
-    // const handleChange = (evt) => {
-    //     setPost(evt.target.value)
+  const onSubmit = (e) => {
+    e.preventDefault()
+    createPost()
+  }
+  return (
+    <div className="post-form-container">
+      <form onSubmit={onSubmit} className='postform'>
+          <input
+            type='text' className='woym' onChange={handleChange} value={newPost.post}
+            name='post' placeholder='Whats on your mind?'
+          />
+          <input
+            className='ip' type='text' onChange={handleChange} value={newPost.photo}
+            name='photo' placeholder='Insert Photo Link Here (optional)'
+          />
+        <input className='post-btn' type='submit' value='post' />
+      </form>
 
-    // }
-    const onSubmit = (e) => {
-        e.preventDefault()
-        createPost()
-    }
-    return (
-        <div>
-            <div className={styles.postForm}>
-                <form onSubmit={onSubmit}>
-                    <label>
-                        <input type="text" onChange={handleChange} value={newPost.post} 
-                        name='post' placeholder='Whats on your mind?' /> 
-                        <input type="text" onChange={handleChange} value={newPost.photo} 
-                        name='photo' placeholder='import photo here' />
-                    </label>
-                    <input type="submit" value="post" />
-                </form>
-            </div>
-        </div>
-    )
+    </div>
+  )
 }

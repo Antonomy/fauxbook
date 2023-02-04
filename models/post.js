@@ -7,7 +7,7 @@ const postSchema = new Schema({
   },
 
   user: {
-    type: Schema.Types.ObjectId, ref: 'User',
+    type: Schema.Types.ObjectId, ref: 'User'
   },
 
   comment: [{
@@ -23,7 +23,8 @@ const postSchema = new Schema({
   },
   photo: {
     type: String,
-    required: false
+    required: false,
+    default: null
   },
   video: {
     type: String,
@@ -34,17 +35,12 @@ const postSchema = new Schema({
     required: false
   }
 }
-  ,
-  {
-    timestamps: true
-  }
+,
+{
+  timestamps: true
+}
 )
-
-
 
 const Post = model('Post', postSchema)
 
 module.exports = Post
-
-
-

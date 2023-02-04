@@ -1,9 +1,15 @@
-import './NewsFeedPage.css'
+import styles from './ProfilePage.module.scss'
+
+import NavBar from '../../components/NavBar/NavBar'
+import ProfileNavBar from '../../components/ProfileNavBar/ProfileNavBar'
 import PostForm from '../../components/PostForm/PostForm'
+import PhotosPreview from '../../components/PhotosPreview/PhotosPreview'
+import FriendsPreview from '../../components/FriendsPreview/FriendsPreview'
 import Post from '../../components/Post/Post'
 import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 
-export default function NewsFeedPage ({ user }) {
+export default function ShowAboutPage ({ user }) {
   /* --- State --- */
   const [foundUser, setFoundUser] = useState(null)
   const [token, setToken] = useState('')
@@ -12,6 +18,9 @@ export default function NewsFeedPage ({ user }) {
   const [newPost, setNewPost] = useState({
     post: ''
   })
+  const [currentUser, setCurrentUser] = useState({})
+  const { userId } = useParams()
+
   // index
   const getPosts = async () => {
     try {
@@ -93,18 +102,31 @@ export default function NewsFeedPage ({ user }) {
     }
   }
 
+  const getOneUser = async () => {
+    try {
+      const response = await fetch(`/api/users/${userId}`)
+      const data = await response.json()
+      setCurrentUser(data)
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
   const handleChange = evt => {
     setNewPost({ ...newPost, [evt.target.name]: evt.target.value, user: user._id })
   }
 
   useEffect(() => {
+    getOneUser()
     getPosts()
     setToken(localStorage.getItem('token'))
-  }, [foundPost])
+  }, [foundPost, userId])
 
   return (
-    <main className='container'>
-
+    <div>
+      <ProfileNavBar
+        user={currentUser || user}
+      />
       <PostForm
         user={user}
         createPost={createPost}
@@ -113,10 +135,10 @@ export default function NewsFeedPage ({ user }) {
       />
       <>
         {
-                    posts && posts.length
+                    currentUser.post && currentUser.post.length
                       ? (<ul>
                         {
-                            posts.map((post) => {
+                            currentUser.post.map((post) => {
                               return (
                                 <Post
                                   user={post.user}
@@ -133,7 +155,6 @@ export default function NewsFeedPage ({ user }) {
                       : <h1>No posts yet</h1>
                 }
       </>
-
-    </main>
+    </div>
   )
 }
