@@ -7,7 +7,7 @@ export default function User ({ user }) {
   return (
       <div className={styles.friend}>
         <div>
-          <img src={user.profilePhoto} height='100' alt='photo' />
+          <img src={user.profilePhoto} height='100' alt='photo' className={styles.userprofilephoto}/>
         </div>
         <li className={styles.userdetails}> <Link to={`/${user._id}/posts`}>{user.firstName} {user.lastName}</Link></li>
         {user.email?<li className={styles.userdetails}>{user.email}</li>:<></>}
