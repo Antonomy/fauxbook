@@ -5,24 +5,32 @@
     width: 500px;
     height: 300px;
 }
-.styles-Post{
-    /* display: flex;
-    flex-direction: row;*/
-    justify-content: center;
+
+.styles-Post {
     background-color: white;
+    box-shadow: 5px 5px #385591;
+    border-color: #385591;
+    border: 1px solid #385591;
     margin: 1rem;
-    border-radius: 1px;
-    padding: 10%;
-    width: 800px;
+    border-radius: 1rem;
+    padding: 1rem;
+    width: 50vw;
+
     text-align: center;
-    
 }
 
-li{
+html{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.post-container {
     list-style: none;
+    display: flex;
+    justify-content: center;
 }
 
 .post__footer {
+
      display: flex;
      justify-content: space-between;  
      margin-top: 20px;
@@ -54,4 +62,5 @@ button {
     color: black;
     font-family: 'Merriweather', serif;
     font-size: larger;
+
 }

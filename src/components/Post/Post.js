@@ -1,5 +1,6 @@
 import './Post.css'
 import { Link } from 'react-router-dom'
+
 import { useState, useRef } from "react";
 import { Delete } from '@mui/icons-material';
 import { ThumbUp } from '@mui/icons-material';
@@ -7,24 +8,24 @@ import { Send } from '@mui/icons-material';
 import { Avatar } from '@mui/material';
 import PostsHeader from '../PostsHeader/PostsHeader';
 
-export default function Post({
-    post,
-    deletePost,
-    updatePost,
-    user
+
+export default function Post ({
+  post,
+  deletePost,
+  updatePost,
+  user
 
 }) {
-    const inputRef = useRef(null)
-    const [comment, setComment] = useState("")
-    const [showInput, setShowInput] = useState(false)
+  const inputRef = useRef(null)
+  const [comment, setComment] = useState('')
+  const [showInput, setShowInput] = useState(false)
 
-    const handleChange = (evt) => {
-        setComment(evt.target.value)
-    }
-    return (
-        <div>
-            <li>
-
+  const handleChange = (evt) => {
+    setComment(evt.target.value)
+  }
+  return (
+    <div>
+      <li className="post-container">
                 <div className='styles-Post'>
                     <div className='newsfeed-name'>
                         
@@ -67,15 +68,8 @@ export default function Post({
                     
                     <br/>
 
-                    <form onSubmit>
-                        <label>
-                            <input type="text" className='comment' onChange={handleChange} value={comment} placeholder='Write A Comment' />
-                        </label>
-                        <input type="submit" value="post" />
-                    </form>
-                
-                </div>
-            </li>
         </div>
-    )
+      </li>
+    </div>
+  )
 }

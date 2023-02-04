@@ -24,7 +24,7 @@
 //             setNewPhoto({
 //                 pic: ''
 //             })
-//         } catch (error) {   
+//         } catch (error) {
 //             console.error(error)
 //         }
 //     }
@@ -35,7 +35,7 @@
 //             const index = photos.findIndex((photo) => photo._id === id)
 //             const photosCopy = [...photos]
 //             const subject = photosCopy[index]
-//             subject.completed = true 
+//             subject.completed = true
 //             const response = await fetch(`/api/photos/${id}`, {
 //                 method: 'DELETE',
 //                 headers: {
@@ -67,11 +67,11 @@
 //         getPhotos()
 //     }, [])
 //     return(<>
-//         <input id="input" type="text" placeholder='Insert Photo Here' 
-//         value={newPhoto.title} 
+//         <input id="input" type="text" placeholder='Insert Photo Here'
+//         value={newPhoto.title}
 //         onChange={(e) => {
 //             setNewPhoto({...newPhoto, title: e.target.value})
-//         }} 
+//         }}
 //         onKeyDown={(e) => {
 //             e.key === 'Enter' && createPhoto()
 //         }}
@@ -86,7 +86,7 @@
 //                     <img id="pic"src={`${photo.pic}`} alt=""></img>
 //                     <div id="borrar"onClick={() => moveToCompleted(photo._id) }>Delete</div>
 //                 </div>
-                
+
 //             )})
 //         }
 //         </div>

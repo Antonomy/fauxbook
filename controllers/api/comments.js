@@ -9,7 +9,6 @@ const dataController = {
           msg: err.message
         })
       } else {
-
         res.locals.data.comments = foundComments
 
         next()
@@ -18,8 +17,7 @@ const dataController = {
   },
 
   commentIndex (req, res, next) {
-
-    Comment.find({ commentId: req.params.id}, (err, foundComments) => {
+    Comment.find({ commentId: req.params.id }, (err, foundComments) => {
       if (err) {
         res.status(400).send({
           msg: err.message
@@ -30,34 +28,31 @@ const dataController = {
         next()
       }
     })
-    .sort({_id:-1})
-    
+      .sort({ _id: -1 })
   },
 
   commentExcludeUserIndex (req, res, next) {
+    Comment.find({
+      $and: [ // change
+        { commentId: req.params.id }, { user: { $ne: req.params.username } } // change
 
-    Comment.find({ $and: [ //change
-      { commentId: req.params.id}, {user: {$ne: req.params.username}} //change
-
-    ]}, (err, foundComments) => {
+      ]
+    }, (err, foundComments) => {
       if (err) {
         res.status(400).send({
           msg: err.message
         })
       } else {
-
         res.locals.data.comments = foundComments
 
         next()
       }
     })
-    .sort({_id:-1})
-    
+      .sort({ _id: -1 })
   },
 
   userCommentShow (req, res, next) {
-
-    Comment.findOne({ commentId: req.params.id, user: req.params.username}, (err, foundComments) => {
+    Comment.findOne({ commentId: req.params.id, user: req.params.username }, (err, foundComments) => {
       if (err) {
         res.status(400).send({
           msg: err.message
@@ -67,12 +62,11 @@ const dataController = {
         next()
       }
     })
-    .sort({_id:-1})
-    
+      .sort({ _id: -1 })
   },
 
   userCommentIndex (req, res, next) {
-    Comment.find({ user: req.params.username}, (err, foundComments) => {
+    Comment.find({ user: req.params.username }, (err, foundComments) => {
       if (err) {
         res.status(400).send({
           msg: err.message
@@ -83,8 +77,7 @@ const dataController = {
         next()
       }
     })
-    .sort({_id:-1})
-    
+      .sort({ _id: -1 })
   },
   // Destroy
   destroy (req, res, next) {
@@ -101,7 +94,6 @@ const dataController = {
   },
   // Update
   update (req, res, next) {
-
     Comment.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedComment) => {
       if (err) {
         res.status(400).send({
@@ -115,7 +107,6 @@ const dataController = {
   },
   // Create
   create (req, res, next) {
-   
     Comment.create(req.body, (err, createdComment) => {
       if (err) {
         res.status(400).send({
@@ -145,12 +136,12 @@ const dataController = {
 }
 
 const apiController = {
-    index (req, res, next) {
-      res.json(res.locals.data.comments)
-    },
-    show (req, res, next) {
-      res.json(res.locals.data.comment)
-    }
+  index (req, res, next) {
+    res.json(res.locals.data.comments)
+  },
+  show (req, res, next) {
+    res.json(res.locals.data.comment)
   }
+}
 
 module.exports = { dataController, apiController }

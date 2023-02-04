@@ -1,73 +1,46 @@
 body {
-    margin: 0px 0px;
-    background-color: #f0f2f5;
-  }
-
-.postform{
-    margin: 20px;
-    padding: 5px;
-    width: 80%;
+  margin: 0px 0px;
+  background-color: #f0f2f5;
+  padding: 1rem;
 }
 
-.td{
-    display: table-cell;
-    vertical-align: middle;
+.post-form-container {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
 }
 
-#c-inp{
-    padding-left: 20px;
+.postform {
+  margin: 0 2.5rem;
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-#c-inp input {
-    width: 100%;
-    font-size: 20px;
-    border: 0;
-    padding: 0;
-    margin: 0;
-  }
 
-  
+.woym {
+  border-radius: .5rem;
+  padding: 3rem 1.5rem;
+  margin-bottom: 0;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+  background-color: aliceblue;
+  text-align: center;
+}
+.ip{
+  padding: .5rem;
+  text-align: center;
+  border-radius: .5rem;
+  margin:.1rem 0;
+}
 
-  .woym {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 80%;
-    size: 100px;
-    border-radius: 5px;
-    padding: 8px;
-    margin: 0px;
-    box-shadow: 0 1px 8px rgba(0,0,0,0.3);
-    margin-right: 90px;
-    background-color: aliceblue;
-    
-  }
-
-  .ipp{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border-radius: 5px;
-    padding: 3px;
-    margin: 7px;
-    box-shadow: 0 1px 8px rgba(0,0,0,0.3);
-    margin-right: 90px;
-  }
-
-  .ip{
-    background: url(https://png.pngtree.com/element_our/20190528/ourmid/pngtree-photo-icon-image_1128397.jpg);
-    
-  }
-
-  .post-btn{
-    color: #fff;
-    font-size: 16px;
-    text-decoration: none;
-    padding: 5px 5px;
-    border-radius: 5px;
-    background: #385591;
-    font-weight: 500;
-    display: inline-block;
-    margin-bottom: 5px;
-  }
-
-  
+.post-btn {
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+  padding: 5px 5px;
+  border-radius: 5px;
+  background: #385591;
+  font-weight: 500;
+  display: inline-block;
+  margin-bottom: 5px;
+}
