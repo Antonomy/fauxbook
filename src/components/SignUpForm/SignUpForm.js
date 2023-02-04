@@ -33,8 +33,8 @@ export default function SignUpForm ({ setUser, setShowSignUp }) {
 
   return (
     <div>
-      <div className='form-container'>
-        <form autoComplete='off' onSubmit={handleSubmit}>
+      <div className={styles.formcontainer}>
+        <form autoComplete='off' onSubmit={handleSubmit} className={styles.formfields}>
           <label>First Name</label>
           <input type='text' name='firstName' value={credentials.firstName} onChange={handleChange} required />
           <label>Last Name</label>

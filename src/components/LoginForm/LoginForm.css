@@ -11,14 +11,15 @@
     background: #f0f2f5;
     font-family: Arial, sans-serif;
 }
+.title-box {
+    margin: 5rem;
+}
+
 
 .box {
     margin: 5rem;
 }
 
-.title-box {
-    margin: 5rem;
-}
 
 .title-box h1 {
     color: #1d72e0;
