@@ -6,6 +6,7 @@ import editIcon from './images/editpencilicon.png'
 import { useParams } from 'react-router-dom'
 
 export default function AboutPage (user) {
+  const [loggedInUser, setLoggedInUser] = useState(null)
   const [showSelfEditRights, setShowSelfEditRights] = useState(false)
   const [showFirstNameInput, setShowFirstNameInput] = useState(false)
   const [showLastNameInput, setShowLastNameInput] = useState(false)
@@ -46,6 +47,7 @@ export default function AboutPage (user) {
       console.error(error)
     }
   }
+  
 
   const handleUpdate = (evt) => {
     setFoundUser({ ...foundUser, [evt.target.name]: evt.target.value })
@@ -60,7 +62,7 @@ export default function AboutPage (user) {
   return (
 
     <main>
-      <ProfileNavBar user={user} />
+      <ProfileNavBar user={currentUser} />
       <div>First Name: {user.firstName}
         {showSelfEditRights
           ? <>

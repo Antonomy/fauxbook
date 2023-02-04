@@ -8,7 +8,8 @@ export default function Post ({
   post,
   deletePost,
   updatePost,
-  user
+  user,
+  result
 
 }) {
   const inputRef = useRef(null)
@@ -62,7 +63,12 @@ export default function Post ({
             <input type='submit' value='post' />
           </form>
           <div className='post__footer'>
-            <button onClick={() => deletePost(post._id)}>Delete Post</button>
+            {
+              result ?
+              <button onClick={() => deletePost(post._id)}>Delete Post</button> :
+              ""
+            }
+           
             <button>Like</button> &nbsp;
             <button>Share</button> <br />
           </div>
