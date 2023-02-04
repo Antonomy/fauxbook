@@ -9,9 +9,9 @@ import Post from '../../components/Post/Post'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
-export default function ShowAboutPage ({ user }) {
+export default function ProfilePage ({ user }) {
   /* --- State --- */
-  const [foundUser, setFoundUser] = useState(null)
+  const [loggedInUser, setLoggedInUser] = useState(null)
   const [token, setToken] = useState('')
   const [posts, setPosts] = useState([])
   const [foundPost, setFoundPost] = useState(null)
@@ -41,7 +41,7 @@ export default function ShowAboutPage ({ user }) {
   // delete
   const deletePost = async (id) => {
     try {
-      const response = await fetch(`api/posts/${id}`, {
+      const response = await fetch(`/api/posts/${id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -49,10 +49,11 @@ export default function ShowAboutPage ({ user }) {
         }
       })
       const data = await response.json()
-      const postsCopy = [...posts]
-      const index = postsCopy.findIndex(post => id === post._id)
-      postsCopy.splice(index, 1)
-      setPosts(postsCopy)
+    //   const postsCopy = [...posts]
+    //   const index = postsCopy.findIndex(post => id === post._id)
+    //   postsCopy.splice(index, 1)
+    setFoundPost(data)
+    //   setPosts(postsCopy)
     } catch (error) {
       console.error(error)
     }
@@ -112,12 +113,34 @@ export default function ShowAboutPage ({ user }) {
     }
   }
 
+  const getById = async (id) => {
+    try {
+      const response = await fetch(`/api/users/${id}`)
+      const data = await response.json()
+      setLoggedInUser(data)
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+
+  const doesUserOwnsPost = async (loggedInUser, post) => {
+    for(let i=0; i < loggedInUser.post.length; i++) {
+        const userPost = loggedInUser.post[i]
+        if(userPost._id === post._id) {
+            return true
+        } 
+    } 
+        return false
+  }
+
   const handleChange = evt => {
     setNewPost({ ...newPost, [evt.target.name]: evt.target.value, user: user._id })
   }
 
   useEffect(() => {
     getOneUser()
+    getById(user._id)
     getPosts()
     setToken(localStorage.getItem('token'))
   }, [foundPost, userId])
@@ -139,11 +162,14 @@ export default function ShowAboutPage ({ user }) {
                       ? (<ul>
                         {
                             currentUser.post.map((post) => {
+                                const result = doesUserOwnsPost(loggedInUser, post)
+                    
                               return (
                                 <Post
-                                  user={post.user}
+                                  user={currentUser}
                                   key={post._id}
                                   post={post}
+                                  result={result}
                                   deletePost={deletePost}
                                   updatePost={updatePost}
                                 />

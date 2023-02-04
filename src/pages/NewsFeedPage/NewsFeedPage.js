@@ -3,15 +3,18 @@ import PostForm from '../../components/PostForm/PostForm'
 import Post from '../../components/Post/Post'
 import { useEffect, useState } from 'react'
 
+
 export default function NewsFeedPage ({ user }) {
   /* --- State --- */
-  const [foundUser, setFoundUser] = useState(null)
+  const [loggedInUser, setLoggedInUser] = useState(null)
   const [token, setToken] = useState('')
   const [posts, setPosts] = useState([])
   const [foundPost, setFoundPost] = useState(null)
+  const [currentUser, setCurrentUser] = useState({})
   const [newPost, setNewPost] = useState({
     post: ''
   })
+
   // index
   const getPosts = async () => {
     try {
@@ -70,6 +73,8 @@ export default function NewsFeedPage ({ user }) {
     }
   }
 
+
+
   // create
   const createPost = async () => {
     try {
@@ -91,6 +96,27 @@ export default function NewsFeedPage ({ user }) {
         post: ''
       })
     }
+  }
+
+  const getById = async (id) => {
+    try {
+      const response = await fetch(`/api/users/${id}`)
+      const data = await response.json()
+      setLoggedInUser(data)
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+
+  const doesUserOwnsPost = async (loggedInUser, post) => {
+    for(let i=0; i < loggedInUser.post.length; i++) {
+        const userPost = loggedInUser.post[i]
+        if(userPost._id === post._id) {
+            return true
+        } 
+    } 
+        return false
   }
 
   const handleChange = evt => {
@@ -117,6 +143,7 @@ export default function NewsFeedPage ({ user }) {
                       ? (<ul>
                         {
                             posts.map((post) => {
+                              const result = doesUserOwnsPost(loggedInUser, post)
                               return (
                                 <Post
                                   user={post.user}
