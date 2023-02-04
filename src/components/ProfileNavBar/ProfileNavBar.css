@@ -15,4 +15,6 @@
 .profilephoto{
     max-height: 15rem;
     max-width: 15rem;
+    border: 1rem solid #385591;
+    border-radius: 2rem;
 }
