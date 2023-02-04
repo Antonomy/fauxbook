@@ -4,9 +4,7 @@ import { Link } from 'react-router-dom'
 export default function ProfileNavBar({ user }) {
   return (
     <div className='styles-ProfileNavBar'>
-        <img src='' alt='cover photo goes here' />
-        <button>Add Cover Photo</button>
-      <img src={user.profilePhoto} alt='profile picture' />
+      <img src={user.profilePhoto} alt='profile picture' className="profilephoto"/>
       <h2 className="username">{user.firstName} {user.lastName}</h2>
       <div className="request-unfriend-container">
       <button className="friendrequestbutton">Request Friend</button>

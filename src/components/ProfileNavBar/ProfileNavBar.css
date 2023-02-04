@@ -11,3 +11,8 @@
 .friendrequestbutton{
     width: 10rem;
 }
+
+.profilephoto{
+    max-height: 15rem;
+    max-width: 15rem;
+}
