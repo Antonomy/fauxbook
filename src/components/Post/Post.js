@@ -20,7 +20,7 @@ export default function Post ({
   }
   return (
     <div>
-      <li>
+      <li className="post-container">
 
 
         <div className='styles-Post'>
