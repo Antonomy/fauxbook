@@ -1,3 +1,13 @@
 .styles-ProfileNavBar{
     margin: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.profilenavlinks{
+    margin: 1rem 0;
+}
+
+.friendrequestbutton{
+    width: 10rem;
 }

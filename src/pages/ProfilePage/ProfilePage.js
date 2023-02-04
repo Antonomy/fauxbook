@@ -135,7 +135,7 @@ export default function ShowAboutPage ({ user }) {
       />
       <>
         {
-                    currentUser?.post && currentUser.post.length
+                    currentUser.post && currentUser.post.length
                       ? (<ul>
                         {
                             currentUser.post.map((post) => {
