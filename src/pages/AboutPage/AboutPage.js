@@ -129,24 +129,26 @@ export default function AboutPage(user) {
             : <></>}
         </div>
 
-        <div>Birthday: {user.birthday}
-          {showSelfEditRights
-            ? <>
-              <span onClick={(e) => { setShowBirthdayInput('true') }}>
-                <img className={styles.editIcon} height='10' src={editIcon} />
-              </span>
-              <input
-                style={{ display: showBirthdayInput ? 'block' : 'none' }}
-                type='text'
-                name='birthday'
-                onChange={handleUpdate}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter') {
-                    updateUser(user._id, { message: e.target.value })
-                    setShowBirthdayInput('false')
-                  }
-                }}
-              />
+
+      <div>Birthday: {user.birthday} 
+        {showSelfEditRights
+          ? <>
+            <span onClick={(e) => { setShowBirthdayInput('true') }}>
+              <img className={styles.editIcon} height='10' src={editIcon} />
+            </span>
+            <input
+              style={{ display: showBirthdayInput ? 'block' : 'none' }}
+              type='text'
+              name='birthday'
+              onChange={handleUpdate}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  updateUser(user._id, { message: e.target.value })
+                  setShowBirthdayInput('false')
+                }
+              }}
+            />
+
             </>
             : <></>}
         </div>
