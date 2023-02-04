@@ -56,28 +56,7 @@ const dataController = {
     }
   },
 
-  async getFriends (req, res, next) {
-  try {
-    const user = await User.findById(req.params.userId)
-    const friends = await Promise.all(
-      user.receivedFriendRequests.map(friendId =>{
-        return User.findById(friendId)
-        
-      })
-      
-    )
-    let friendsList = []
-    friends.map(friend => {
-      const {_id, firstName, lastName} = friend
-      friendsList.push({_id, firstName, lastName})
-    })
-    res.status(200).json(friendsList)
-  } catch(error){
-    res.status(500).json(error)
-  }
-},
-
-  async sentFriendsRequest (req, res, next) {
+  async acceptFriendRequest (req, res, next) {
     if (req.body.userId !== req.params.id) {
       try {
         const user = await User.findById(req.params.id)
@@ -90,14 +69,14 @@ const dataController = {
           req.status(403).json('You are friends already')
         }
       } catch (err) {
-        res.status(500).json("Error")
+        res.status(500).json(err)
       }
     } else {
       req.status(403).json('You cannot add yourself')
     }
   },
 
-  async receivedFriendRequests (req, res, next) {
+  async rejectFriendRequest (req, res, next) {
     if (req.body.userId !== req.params.id) {
       try {
         const user = await User.findById(req.params.id)
