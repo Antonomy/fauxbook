@@ -22,9 +22,10 @@ router.get('/', dataController.index, apiController.index)
 router.get('/:id', dataController.show)
 
 // Accept friend request
-router.put('/:id/acceptfriend', dataController.acceptFriendRequest)
+router.put('/:id/acceptfriend', dataController.acceptFriend)
 
 // Reject friend request
-router.put('/:id/rejectfriend', dataController.rejectFriendRequest)
+router.put('/:id/rejectfriend', dataController.rejectFriend)
 
+router.get("/getfriends/:userId", dataController.getFriends)
 module.exports = router

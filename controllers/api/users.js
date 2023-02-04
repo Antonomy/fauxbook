@@ -56,7 +56,29 @@ const dataController = {
     }
   },
 
-  async acceptFriendRequest (req, res, next) {
+  //get friends
+  async getFriends (req, res) {
+  try {
+    const user = await User.findById(req.params.userId)
+    const friends = await Promise.all(
+      user.receivedFriendRequests.map(friendId =>{
+        return User.findById(friendId)
+        
+      })
+      
+    )
+    let friendsList = []
+    friends.map(friend => {
+      const {_id, firstName, lastName} = friend
+      friendsList.push({_id, firstName, lastName})
+    })
+    res.status(200).json(friendsList)
+  } catch(error){
+    res.status(500).json(error)
+  }
+},
+
+  async acceptFriend (req, res, next) {
     if (req.body.userId !== req.params.id) {
       try {
         const user = await User.findById(req.params.id)
@@ -76,7 +98,7 @@ const dataController = {
     }
   },
 
-  async rejectFriendRequest (req, res, next) {
+  async rejectFriend (req, res, next) {
     if (req.body.userId !== req.params.id) {
       try {
         const user = await User.findById(req.params.id)
