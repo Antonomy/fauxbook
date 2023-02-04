@@ -1,5 +1,4 @@
 import './PostForm.css'
-import { useState } from 'react'
 
 export default function PostForm ({
   createPost,
@@ -7,21 +6,13 @@ export default function PostForm ({
   newPost
 
 }) {
-  // const [post, setPost] = useState("")
-
-  // const handleChange = (evt) => {
-  //     setPost(evt.target.value)
-
-  // }
   const onSubmit = (e) => {
     e.preventDefault()
     createPost()
   }
   return (
-    <div className='postform'>
-
-      <form onSubmit={onSubmit}>
-        <label>
+    <div className="post-form-container">
+      <form onSubmit={onSubmit} className='postform'>
           <input
             type='text' className='woym' onChange={handleChange} value={newPost.post}
             name='post' placeholder='Whats on your mind?'
@@ -30,7 +21,6 @@ export default function PostForm ({
             className='ip' type='text' onChange={handleChange} value={newPost.photo}
             name='photo' placeholder='Insert Photo Link Here (optional)'
           />
-        </label>
         <input className='post-btn' type='submit' value='post' />
       </form>
 
