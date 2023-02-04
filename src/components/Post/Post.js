@@ -25,9 +25,10 @@ export default function Post ({
 
 
         <div className='styles-Post'>
-        <img src={user.profilePhoto} alt='profile picture' className="postprofilephoto"/>
-        <br/>
+
           <Link className='nfn' to={`/${user._id}/posts`}> {user.firstName} {user.lastName} </Link>
+
+
           posted on
           <span>{post.createdAt.slice(0, -14)}</span>
           <br />
@@ -48,7 +49,7 @@ export default function Post ({
           <br />
           {post.photo
             ? <>
-              <img className='postPhoto' src={post.photo} />
+              <img className='styles.postPhoto' src={post.photo} />
             </>
             : <></>}
           <br />
