@@ -28,11 +28,7 @@ export default function LoginForm ({ setUser, setShowSignUp }) {
   }
 
   return (
-    <div className='login-main'>
-      <div className='title-box'>
-        <h1>fauxbook</h1>
-        <h2>Connect with friends and the world around on Fauxbook.</h2>
-      </div>
+
       <div className='box'>
         <div className='form-container'>
           <form autoComplete='off' onSubmit={handleSubmit}>
@@ -56,6 +52,5 @@ export default function LoginForm ({ setUser, setShowSignUp }) {
 
         <h1 className='error-message'>&nbsp;{error}</h1>
       </div>
-    </div>
   )
 }
