@@ -39,12 +39,13 @@
 <br />
 
 ## About The Project
-This application provides all the basic and necessary functionality needed for any online shop.
-- Add to Cart 
-- Increase or Decrease Quantity 
-- Ordering 
-- Order History 
-- User Sign Up 
+This application provides all the basic and necessary functionality needed for navigation and using our social media platform.
+- Create a profile 
+- Create a post
+- Post photos
+- Add friends
+- Comment on friends posts and photos
+- React to friends posts and photos 
 - Authorization
 - Authentication
 
@@ -110,11 +111,16 @@ This is an example of how to list things you need to use the software and how to
 # Roadmap
 
 - [x] User Sign Up, Login, Logout
-- [x] Order Item
-    - [x] Remove Item
-    - [x] Increase & Decrease Quantity
-- [x] Checkout Cart
-- [x] Order History
+- [x] Add a friend
+    - [x] React on friends posts
+    - [x] Comment on friends posts
+- [x] View friends
+- [x] Create a post
+    - [x] Delete a post
+    - [x] Edit a post
+- [x] Post a photo
+    - [x] Delete a photo
+    
 
 See the [open issues](https://github.com/Antonomy/fauxbook/issues) for a full list of proposed features (and known issues).
 
@@ -136,9 +142,10 @@ Don't forget to give the project a star ⭐! Thanks again!
 
 - Antony Yu: [github](https://github.com/Antonomy) and [Linkedin](https://www.linkedin.com/in/antonyyu/)
 - Svetlana Moes: [github](https://github.com/rouxgamine) and [Linkedin](https://www.linkedin.com/in/svetlana-moes/)
-- Yeva Gavrilov:
-- Kenneth Presedo:
-- Meilyn Duluc:
+- Yeva Gavrilov: [github](https://github.com/YevaGav) and [Linkedin](https://www.linkedin.com/in/yevangelinagav/)
+- Kenneth Presedo: [github](https://github.com/kennethpresedo) and [Linkedin](https://www.linkedin.com/in/kenneth-presedo/)
+- Meilyn Duluc: [github](https://github.com/MeilynDuluc) and [Linkedin](https://www.linkedin.com/in/meilyn-duluc/)
+- Christine Iyer: [github](https://github.com/christine-iyer) and [Linkedin](https://www.linkedin.com/in/christine-iyer-672b215a/)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -153,8 +160,15 @@ Don't forget to give the project a star ⭐! Thanks again!
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-# Trello Board:
+# Trello Board & Wireframes:
 
-# Wireframes:
+https://trello.com/b/jDgQKXm7/fauxbook
 
-# ERD:
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+# SlideDeck:
+
+https://docs.google.com/presentation/d/1-XUEgq1aNKk2knD0i5or7lbCFnYGNoCkKrBlGHL7Ij0/edit?usp=sharing
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
