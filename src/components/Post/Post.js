@@ -48,7 +48,7 @@ export default function Post ({
           <br />
           {post.photo
             ? <>
-              <img className='styles.postPhoto' src={post.photo} />
+              <img className='postPhoto' src={post.photo} />
             </>
             : <></>}
           <br />
