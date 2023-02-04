@@ -36,8 +36,6 @@ export default function FriendsPage ({}) {
         {
                     friends.map((user) => {
                       return (
-                      // <h2>HELLO FRIEND!</h2>
-
                         <User
                           key={user.id}
                           user={user}
