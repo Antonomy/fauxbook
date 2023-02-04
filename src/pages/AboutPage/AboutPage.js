@@ -5,7 +5,7 @@ import ProfileNavBar from '../../components/ProfileNavBar/ProfileNavBar'
 import editIcon from './images/editpencilicon.png'
 import { useParams } from 'react-router-dom'
 
-export default function AboutPage (user) {
+export default function AboutPage(user) {
   const [loggedInUser, setLoggedInUser] = useState(null)
   const [showSelfEditRights, setShowSelfEditRights] = useState(false)
   const [showFirstNameInput, setShowFirstNameInput] = useState(false)
@@ -47,7 +47,7 @@ export default function AboutPage (user) {
       console.error(error)
     }
   }
-  
+
 
   const handleUpdate = (evt) => {
     setFoundUser({ ...foundUser, [evt.target.name]: evt.target.value })
@@ -61,8 +61,9 @@ export default function AboutPage (user) {
 
   return (
 
-    <main>
+    <main className=''>
       <ProfileNavBar user={currentUser} />
+
       <div>First Name: {currentUser.firstName}
         {showSelfEditRights
           ? <>
@@ -123,11 +124,15 @@ export default function AboutPage (user) {
                 }
               }}
             />
+
             </>
-          : <></>}
-      </div>
+            : <></>}
+        </div>
+
+
 
       <div>Birthday: {currentUser.birthday}
+
         {showSelfEditRights
           ? <>
             <span onClick={(e) => { setShowBirthdayInput('true') }}>
@@ -145,9 +150,11 @@ export default function AboutPage (user) {
                 }
               }}
             />
+
             </>
-          : <></>}
-      </div>
+            : <></>}
+        </div>
+
 
       <div>High School: {currentUser.highSchool}
         {showSelfEditRights
@@ -188,9 +195,11 @@ export default function AboutPage (user) {
                 }
               }}
             />
+
             </>
-          : <></>}
-      </div>
+            : <></>}
+        </div>
+
 
       <div>Current City: {currentUser.currentCity}
         {showSelfEditRights
@@ -210,9 +219,11 @@ export default function AboutPage (user) {
                 }
               }}
             />
+
             </>
-          : <></>}
-      </div>
+            : <></>}
+        </div>
+
 
       <div>Home Town: {currentUser.hometown}
         {showSelfEditRights
@@ -232,9 +243,11 @@ export default function AboutPage (user) {
                 }
               }}
             />
+
             </>
-          : <></>}
-      </div>
+            : <></>}
+        </div>
+
 
       <div>Relationship Status: {currentUser.relationshipStatus}
         {showSelfEditRights
@@ -254,10 +267,11 @@ export default function AboutPage (user) {
                 }
               }}
             />
-            </>
-          : <></>}
-      </div>
 
+            </>
+            : <></>}
+        </div>
+      </div>
     </main>
   )
 }
