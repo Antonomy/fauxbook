@@ -49,10 +49,10 @@ export default function ProfilePage ({ user }) {
         }
       })
       const data = await response.json()
-    //   const postsCopy = [...posts]
-    //   const index = postsCopy.findIndex(post => id === post._id)
-    //   postsCopy.splice(index, 1)
-    setFoundPost(data)
+      //   const postsCopy = [...posts]
+      //   const index = postsCopy.findIndex(post => id === post._id)
+      //   postsCopy.splice(index, 1)
+      setFoundPost(data)
     //   setPosts(postsCopy)
     } catch (error) {
       console.error(error)
@@ -123,15 +123,14 @@ export default function ProfilePage ({ user }) {
     }
   }
 
-
   const doesUserOwnsPost = async (loggedInUser, post) => {
-    for(let i=0; i < loggedInUser.post.length; i++) {
-        const userPost = loggedInUser.post[i]
-        if(userPost._id === post._id) {
-            return true
-        } 
-    } 
-        return false
+    for (let i = 0; i < loggedInUser.post.length; i++) {
+      const userPost = loggedInUser.post[i]
+      if (userPost._id === post._id) {
+        return true
+      }
+    }
+    return false
   }
 
   const handleChange = evt => {
@@ -162,8 +161,8 @@ export default function ProfilePage ({ user }) {
                       ? (<ul>
                         {
                             currentUser.post.map((post) => {
-                                const result = doesUserOwnsPost(loggedInUser, post)
-                    
+                              const result = doesUserOwnsPost(loggedInUser, post)
+
                               return (
                                 <Post
                                   user={currentUser}

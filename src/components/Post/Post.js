@@ -21,14 +21,13 @@ export default function Post ({
   }
   return (
     <div>
-      <li className="post-container">
-
+      <li className='post-container'>
 
         <div className='styles-Post'>
-        <img src={user.profilePhoto} alt='profile picture' className="postprofilephoto"/>
-        <br/>
+          <img src={user.profilePhoto} alt='profile picture' className='postprofilephoto' />
+          <br />
           <Link className='nfn' to={`/${user._id}/posts`}> {user.firstName} {user.lastName} </Link>
-          posted on 
+          posted on
           <span> {post.createdAt.slice(0, -14)}</span>
           <br />
           <text onClick={() => setShowInput(!showInput)}>{post.post}</text>
@@ -63,11 +62,11 @@ export default function Post ({
           </form>
           <div className='post__footer'>
             {
-              result ?
-              <button onClick={() => deletePost(post._id)}>Delete Post</button> :
-              ""
+              result
+                ? <button onClick={() => deletePost(post._id)}>Delete Post</button>
+                : ''
             }
-           
+
             <button>Like</button> &nbsp;
             <button>Share</button> <br />
           </div>

@@ -36,7 +36,7 @@ export default function NavBar ({
 
           </li>
           <li>
-            <Link to={`/${user._id}/photos`}  class='tooltip' data-tooltip='Photos' id='btn_photos' className='navbarlink'>Photos</Link>
+            <Link to={`/${user._id}/photos`} class='tooltip' data-tooltip='Photos' id='btn_photos' className='navbarlink'>Photos</Link>
 
           </li>
           <li>

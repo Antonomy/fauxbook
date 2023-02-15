@@ -3,7 +3,6 @@ import PostForm from '../../components/PostForm/PostForm'
 import Post from '../../components/Post/Post'
 import { useEffect, useState } from 'react'
 
-
 export default function NewsFeedPage ({ user }) {
   /* --- State --- */
   const [loggedInUser, setLoggedInUser] = useState(null)
@@ -73,8 +72,6 @@ export default function NewsFeedPage ({ user }) {
     }
   }
 
-
-
   // create
   const createPost = async () => {
     try {
@@ -108,15 +105,14 @@ export default function NewsFeedPage ({ user }) {
     }
   }
 
-
   const doesUserOwnsPost = async (loggedInUser, post) => {
-    for(let i=0; i < loggedInUser.post.length; i++) {
-        const userPost = loggedInUser.post[i]
-        if(userPost._id === post._id) {
-            return true
-        } 
-    } 
-        return false
+    for (let i = 0; i < loggedInUser.post.length; i++) {
+      const userPost = loggedInUser.post[i]
+      if (userPost._id === post._id) {
+        return true
+      }
+    }
+    return false
   }
 
   const handleChange = evt => {

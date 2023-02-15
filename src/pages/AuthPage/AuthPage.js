@@ -3,7 +3,7 @@ import LoginForm from '../../components/LoginForm/LoginForm'
 import styles from './AuthPage.module.scss'
 import { useState, useEffect } from 'react'
 
-export default function AuthPage(props) {
+export default function AuthPage (props) {
   const [showSignUp, setShowSignUp] = useState(false)
 
   return (

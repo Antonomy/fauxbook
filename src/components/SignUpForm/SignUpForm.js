@@ -2,7 +2,7 @@ import { useState } from 'react'
 import * as userService from '../../utilities/users-service'
 import styles from './SignUpForm.module.scss'
 
-export default function SignUpForm({ setUser, setShowSignUp }) {
+export default function SignUpForm ({ setUser, setShowSignUp }) {
   const [credentials, setCredentials] = useState({
     firstName: '',
     lastName: '',
@@ -59,7 +59,7 @@ export default function SignUpForm({ setUser, setShowSignUp }) {
             }}
             >Already have an account?
             </button>
-        </div>
+          </div>
         </form>
       </div>
       <p className='error-message'>&nbsp;{error}</p>

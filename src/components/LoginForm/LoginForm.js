@@ -29,28 +29,28 @@ export default function LoginForm ({ setUser, setShowSignUp }) {
 
   return (
 
-      <div className='box'>
-        <div className='form-container'>
-          <form autoComplete='off' onSubmit={handleSubmit}>
-            <div className='form-box'>
-              <label>Email</label>
-              <input type='email' name='email' value={credentials.email} onChange={handleChange} required />
-              <label>Password</label>
-              <input type='password' name='password' value={credentials.password} onChange={handleChange} required />
-              <button type='submit'>LOG IN</button>
-              <button
-                className='create-btn' onClick={(evt) => {
-                  setShowSignUp(true)
-                }}
-              >Create A New Account
-              </button>
+    <div className='box'>
+      <div className='form-container'>
+        <form autoComplete='off' onSubmit={handleSubmit}>
+          <div className='form-box'>
+            <label>Email</label>
+            <input type='email' name='email' value={credentials.email} onChange={handleChange} required />
+            <label>Password</label>
+            <input type='password' name='password' value={credentials.password} onChange={handleChange} required />
+            <button type='submit'>LOG IN</button>
+            <button
+              className='create-btn' onClick={(evt) => {
+                setShowSignUp(true)
+              }}
+            >Create A New Account
+            </button>
 
-            </div>
+          </div>
 
-          </form>
-        </div>
-
-        <h1 className='error-message'>&nbsp;{error}</h1>
+        </form>
       </div>
+
+      <h1 className='error-message'>&nbsp;{error}</h1>
+    </div>
   )
 }

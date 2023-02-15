@@ -83,7 +83,6 @@ export default function PhotosPage ({ user }) {
     }
   }
 
-  
   useEffect(() => {
     getPhotos()
   }, [])
@@ -91,7 +90,7 @@ export default function PhotosPage ({ user }) {
   useEffect(() => {
     getOneUser()
   }, [userId])
-  
+
   return (
 
     <main className={styles.main}>
