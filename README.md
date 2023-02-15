@@ -8,7 +8,7 @@
     <br />
     <a href="https://github.com/Antonomy/fauxbook"><strong>Explore the docs »</strong></a>
     <br />
-    <a href="https://github.com/Antonomy/fauxbook">View Demo</a>
+    <a href="https://antonomy.github.io/fauxbook">View Demo</a>
     ·
     <a href="https://github.com/Antonomy/fauxbook/issues">Report Bug</a>
     ·
@@ -153,11 +153,6 @@ Don't forget to give the project a star ⭐! Thanks again!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
-# Acknowledgments
-
-* Arthur Bernier Jr.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
