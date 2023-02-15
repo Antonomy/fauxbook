@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/fauxbook/static/css/main.9dbcdc50.css",
+    "main.js": "/fauxbook/static/js/main.dd29d9c5.js",
+    "static/media/logo.png": "/fauxbook/static/media/logo.4e1a96664d34fbd9f488.png",
+    "static/media/home-icon.png": "/fauxbook/static/media/home-icon.78d2227f0dc6cde65e0d.png",
+    "static/media/editpencilicon.png": "/fauxbook/static/media/editpencilicon.7d16f724e75e9114d38a.png",
+    "index.html": "/fauxbook/index.html",
+    "main.9dbcdc50.css.map": "/fauxbook/static/css/main.9dbcdc50.css.map",
+    "main.dd29d9c5.js.map": "/fauxbook/static/js/main.dd29d9c5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9dbcdc50.css",
+    "static/js/main.dd29d9c5.js"
+  ]
+}
